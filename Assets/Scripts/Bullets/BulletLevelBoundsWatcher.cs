@@ -1,8 +1,9 @@
+using ShootEmUp.Level;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Bullets
 {
     public class BulletLevelBoundsWatcher : MonoBehaviour
     {

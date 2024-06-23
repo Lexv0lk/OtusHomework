@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Input
 {
     [CreateAssetMenu(
             fileName = "InputConfig",

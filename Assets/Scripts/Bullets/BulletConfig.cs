@@ -1,6 +1,7 @@
+using ShootEmUp.Common;
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Bullets
 {
     [CreateAssetMenu(
         fileName = "BulletConfig",

@@ -1,7 +1,8 @@
+using ShootEmUp.Common;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Bullets
 {
     public sealed class BulletSystem : MonoBehaviour
     {
@@ -10,10 +11,11 @@ namespace ShootEmUp
         [SerializeField] private BulletPool _bulletPool;
         [SerializeField] private BulletLevelBoundsWatcher _bulletBoundsWatcher;
 
-        public void FlyBulletByArgs(Args args)
+        public void SendBulletByArgs(Args args)
         {
             Bullet bullet = _bulletPool.Get();
             bullet.Init(args);
+            _bulletBoundsWatcher.AddTargetToWatch(bullet);
             
             if (_activeBullets.Add(bullet))
                 bullet.CollisionEntered += OnBulletCollision;

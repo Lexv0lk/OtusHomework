@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Input
 {
     public sealed class InputManager : MonoBehaviour
     {
@@ -10,9 +10,9 @@ namespace ShootEmUp
 
         private void Update()
         {
-            if (Input.GetKey(_inputConfig.Left))
+            if (UnityEngine.Input.GetKey(_inputConfig.Left))
                 _horizontalDirection = -1;
-            else if (Input.GetKey(_inputConfig.Right))
+            else if (UnityEngine.Input.GetKey(_inputConfig.Right))
                 _horizontalDirection = 1;
             else
                 _horizontalDirection = 0;
@@ -25,7 +25,7 @@ namespace ShootEmUp
 
         public bool IsAttackRequired()
         {
-            return Input.GetKeyDown(_inputConfig.Shoot);
+            return UnityEngine.Input.GetKeyDown(_inputConfig.Shoot);
         }
     }
 }

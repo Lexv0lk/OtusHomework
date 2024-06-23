@@ -1,16 +1,19 @@
+using ShootEmUp.Bullets;
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Components
 {
     public sealed class WeaponComponent : MonoBehaviour
     {
         [SerializeField] private Transform _firePoint;
         [SerializeField] private BulletConfig _bulletConfig;
+        [SerializeField] private TeamComponent _teamComponent;
 
         public BulletSystem.Args GetFireArgs()
         {
             return new BulletSystem.Args
             {
+                Team = _teamComponent.Team,
                 PhysicsLayer = (int)_bulletConfig.PhysicsLayer,
                 Color = _bulletConfig.Color,
                 Damage = _bulletConfig.Damage,

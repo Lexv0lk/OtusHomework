@@ -1,6 +1,7 @@
+using ShootEmUp.Components;
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Bullets
 {
     internal static class BulletUtils
     {

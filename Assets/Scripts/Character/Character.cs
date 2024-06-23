@@ -1,34 +1,18 @@
-using ShootEmUp;
+using ShootEmUp.Components;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+namespace ShootEmUp.Characters
 {
-    [SerializeField] private WeaponComponent _weaponComponent;
-    [SerializeField] private HitPointsComponent _hitPointsComponent;
-    [SerializeField] private TeamComponent _teamComponent;
-    [SerializeField] private MoveComponent _moveComponent;
-
-    public BulletSystem.Args GetFireArgs()
+    public class Character : MonoBehaviour
     {
-        BulletSystem.Args args = _weaponComponent.GetFireArgs();
-        args.Team = _teamComponent.Team;
-        return args;
-    }
+        [SerializeField] private WeaponComponent _weaponComponent;
+        [SerializeField] private HitPointsComponent _hitPointsComponent;
+        [SerializeField] private TeamComponent _teamComponent;
+        [SerializeField] private MoveComponent _moveComponent;
 
-    public BulletSystem.Args GetFireArgsAtTarget(Vector2 targetPosition)
-    {
-        BulletSystem.Args args = _weaponComponent.GetFireArgsAtTarget(targetPosition);
-        args.Team = _teamComponent.Team;
-        return args;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        _hitPointsComponent.TakeDamage(damage);
-    }
-
-    public void MoveByRigidbodyVelocity(Vector2 velocity)
-    {
-        _moveComponent.MoveByRigidbodyVelocity(velocity);
+        public WeaponComponent WeaponComponent => _weaponComponent;
+        public HitPointsComponent HitPointsComponent => _hitPointsComponent;
+        public TeamComponent TeamComponent => _teamComponent;
+        public MoveComponent MoveComponent => _moveComponent;
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Common
 {
     public abstract class MonoObjectsPool<T> : MonoBehaviour where T : MonoBehaviour
     {
@@ -25,7 +25,7 @@ namespace ShootEmUp
         {
             T obj;
 
-            if (_currentPool.TryDequeue(out obj) == false)
+            if (_currentPool.TryDequeue(out obj))
                 obj.transform.SetParent(_defaultWorldTransform);
             else
                 obj = Instantiate(_prefab, _defaultWorldTransform);

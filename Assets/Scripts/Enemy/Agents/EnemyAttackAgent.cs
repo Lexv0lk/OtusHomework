@@ -1,55 +1,55 @@
+using ShootEmUp.Bullets;
+using ShootEmUp.Characters;
+using ShootEmUp.Components;
 using System;
 using UnityEngine;
 
-namespace ShootEmUp
+namespace ShootEmUp.Enemies.Agents
 {
     public sealed class EnemyAttackAgent : MonoBehaviour
     {
-        public event Action<BulletSystem.Args> OnFire;
-
         [SerializeField] private WeaponComponent _weaponComponent;
         [SerializeField] private TeamComponent _teamComponent;
-        [SerializeField] private EnemyMoveAgent moveAgent;
-        [SerializeField] private float countdown;
+        [SerializeField] private EnemyMoveAgent _moveAgent;
+        [SerializeField] private float _fireDelay;
 
-        private GameObject target;
-        private float currentTime;
+        private Character _target;
+        private float _currentDelay;
 
-        public void SetTarget(GameObject target)
+        public event Action<BulletSystem.Args> Fired;
+
+        public void SetTarget(Character target)
         {
-            this.target = target;
+            _target = target;
         }
 
         public void Reset()
         {
-            this.currentTime = this.countdown;
+            _currentDelay = _fireDelay;
         }
 
         private void FixedUpdate()
         {
-            if (!this.moveAgent.IsReached)
-            {
+            if (_moveAgent.IsReached == false)
                 return;
-            }
             
-            if (!this.target.GetComponent<HitPointsComponent>().IsHitPointsExists())
-            {
+            if (_target.HitPointsComponent.IsHitPointsExists() == false)
                 return;
-            }
 
-            this.currentTime -= Time.fixedDeltaTime;
-            if (this.currentTime <= 0)
+            _currentDelay -= Time.fixedDeltaTime;
+
+            if (_currentDelay <= 0)
             {
-                this.Fire();
-                this.currentTime += this.countdown;
+                Fire();
+                _currentDelay += _fireDelay;
             }
         }
 
         private void Fire()
         {
-            BulletSystem.Args args = _weaponComponent.GetFireArgsAtTarget(target.transform.position);
+            BulletSystem.Args args = _weaponComponent.GetFireArgsAtTarget(_target.transform.position);
             args.Team = _teamComponent.Team;
-            this.OnFire?.Invoke(args);
+            Fired?.Invoke(args);
         }
     }
 }
