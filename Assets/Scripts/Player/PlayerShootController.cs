@@ -9,7 +9,7 @@ namespace ShootEmUp.Player
     public sealed class PlayerShootController : MonoBehaviour
     {
         [SerializeField] private InputManager _inputManager;
-        [SerializeField] private BulletSystem _bulletSystem;
+        [SerializeField] private BulletShooter _bulletSystem;
         [SerializeField] private Character _player;
 
         private void Update()
@@ -21,7 +21,7 @@ namespace ShootEmUp.Player
         private void Shoot()
         {
             WeaponComponent weapon = _player.WeaponComponent;
-            _bulletSystem.SendBulletByArgs(weapon.GetFireArgs());
+            _bulletSystem.ShootBullet(weapon.GetShootArgs());
         }
     }
 }

@@ -1,42 +1,49 @@
 using ShootEmUp.Common;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace ShootEmUp.Bullets
 {
-    public sealed class BulletSystem : MonoBehaviour
+    public sealed class BulletShooter : MonoBehaviour
     {
         private readonly HashSet<Bullet> _activeBullets = new();
 
         [SerializeField] private BulletPool _bulletPool;
         [SerializeField] private BulletLevelBoundsWatcher _bulletBoundsWatcher;
 
-        public void SendBulletByArgs(Args args)
+        public event Action<Bullet> Shooted;
+        public event Action<Bullet> Released;
+
+        private void OnEnable()
         {
-            Bullet bullet = _bulletPool.Get();
-            bullet.Init(args);
-            _bulletBoundsWatcher.AddTargetToWatch(bullet);
-            
-            if (_activeBullets.Add(bullet))
-                bullet.CollisionEntered += OnBulletCollision;
-        }
-        
-        private void OnBulletCollision(Bullet bullet, Collision2D collision)
-        {
-            BulletUtils.DealDamage(bullet, collision.gameObject);
-            RemoveBullet(bullet);
+            _bulletBoundsWatcher.WentOutOfBounds += ReleaseBullet;
         }
 
-        private void RemoveBullet(Bullet bullet)
+        private void OnDisable()
+        {
+            _bulletBoundsWatcher.WentOutOfBounds -= ReleaseBullet;
+        }
+
+        public void ShootBullet(ShootArgs args)
+        {
+            Bullet bullet = _bulletPool.Get();
+            _activeBullets.Add(bullet);
+            bullet.Init(args);
+            _bulletBoundsWatcher.AddTargetToWatch(bullet);
+            Shooted?.Invoke(bullet);
+        }
+
+        public void ReleaseBullet(Bullet bullet)
         {
             if (_activeBullets.Remove(bullet))
             {
-                bullet.CollisionEntered -= this.OnBulletCollision;
                 _bulletPool.Release(bullet);
+                Released?.Invoke(bullet);
             }
         }
         
-        public struct Args
+        public struct ShootArgs
         {
             public Vector2 Position;
             public Vector2 Velocity;

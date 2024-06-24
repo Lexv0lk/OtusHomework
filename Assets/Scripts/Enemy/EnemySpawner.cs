@@ -14,21 +14,24 @@ namespace ShootEmUp.Enemies
         [SerializeField] private float _spawnDelay = 1;
         [SerializeField] private bool _spawnOnStart;
 
+        private int _currentEnemyCount = 0;
+
         public event Action<Enemy> Spawned;
 
         private void Start()
         {
             if (_spawnOnStart)
-                SpawnAll();
+                StartSpawning();
         }
 
-        public void SpawnAll()
+        public void StartSpawning()
         {
             StartCoroutine(SpawnEnemiesWithDelay());
         }
 
         public void Release(Enemy enemy)
         {
+            _currentEnemyCount--;
             _pool.Release(enemy);
         }
 
@@ -36,12 +39,17 @@ namespace ShootEmUp.Enemies
         {
             WaitForSeconds delay = new WaitForSeconds(_spawnDelay);
 
-            for (int i = 0; i < _count; i++)
+            while (true)
             {
                 yield return delay;
-                Enemy enemy = _pool.Get();
-                _initializer.Initialize(enemy);
-                Spawned?.Invoke(enemy);
+
+                if (_currentEnemyCount < _count)
+                {
+                    Enemy enemy = _pool.Get();
+                    _initializer.Initialize(enemy);
+                    _currentEnemyCount++;
+                    Spawned?.Invoke(enemy);
+                }
             }
         }
     }

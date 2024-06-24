@@ -7,7 +7,7 @@ namespace ShootEmUp.Enemies
     {
         [SerializeField] private EnemySpawner _spawner;
         [SerializeField] private EnemyDeathObserver _deathObserver;
-        [SerializeField] private BulletSystem _bulletSystem;
+        [SerializeField] private BulletShooter _bulletSystem;
 
         private void OnEnable()
         {
@@ -31,9 +31,9 @@ namespace ShootEmUp.Enemies
             enemy.AttackAgent.Fired -= OnEnemyFired;
         }
 
-        private void OnEnemyFired(BulletSystem.Args args)
+        private void OnEnemyFired(BulletShooter.ShootArgs args)
         {
-            _bulletSystem.SendBulletByArgs(args);
+            _bulletSystem.ShootBullet(args);
         }
     }
 }

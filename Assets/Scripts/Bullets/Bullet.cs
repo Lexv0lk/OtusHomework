@@ -14,7 +14,7 @@ namespace ShootEmUp.Bullets
 
         public event Action<Bullet, Collision2D> CollisionEntered;
 
-        public void Init(BulletSystem.Args args)
+        public void Init(BulletShooter.ShootArgs args)
         {
             _rigidbody2D.velocity = args.Velocity;
             gameObject.layer = args.PhysicsLayer;

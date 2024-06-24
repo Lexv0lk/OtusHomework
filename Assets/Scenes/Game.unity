@@ -231,9 +231,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363245576}
-  - component: {fileID: 363245577}
   - component: {fileID: 363245579}
   - component: {fileID: 363245578}
+  - component: {fileID: 363245581}
+  - component: {fileID: 363245580}
   m_Layer: 0
   m_Name: BulletSystem
   m_TagString: Untagged
@@ -257,20 +258,6 @@ Transform:
   m_Father: {fileID: 3951702117947426122}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &363245577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363245575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bd15923a144ffbab0333dc6e74e641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bulletPool: {fileID: 363245579}
-  _bulletBoundsWatcher: {fileID: 363245578}
 --- !u!114 &363245578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +287,34 @@ MonoBehaviour:
   _prefab: {fileID: 201757604187811891, guid: 5fe72886874b4e445b06cf777ca4920d, type: 3}
   _objectsContainer: {fileID: 1831741369}
   _defaultWorldTransform: {fileID: 1683128698}
+--- !u!114 &363245580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363245575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c83d02ae355ae40aa0488797036cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shooter: {fileID: 363245581}
+  _pool: {fileID: 363245579}
+--- !u!114 &363245581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363245575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5d4f676094ea344b4809652196d0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPool: {fileID: 363245579}
+  _bulletBoundsWatcher: {fileID: 363245578}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 562298209}
   _deathObserver: {fileID: 562298205}
-  _bulletSystem: {fileID: 363245577}
+  _bulletSystem: {fileID: 363245581}
 --- !u!114 &562298209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputManager: {fileID: 1134805361}
-  _bulletSystem: {fileID: 363245577}
+  _bulletSystem: {fileID: 363245581}
   _player: {fileID: 3926786964592264469}
 --- !u!114 &1879759792
 MonoBehaviour:

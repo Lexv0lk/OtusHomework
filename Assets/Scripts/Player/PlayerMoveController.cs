@@ -11,7 +11,7 @@ namespace ShootEmUp.Player
 
         private void FixedUpdate()
         {
-            _player.MoveComponent.MoveByRigidbodyVelocity(_inputManager.GetDirection() * Time.fixedDeltaTime);
+            _player.MoveComponent.Move(_inputManager.GetDirection() * Time.fixedDeltaTime);
         }
     }
 }

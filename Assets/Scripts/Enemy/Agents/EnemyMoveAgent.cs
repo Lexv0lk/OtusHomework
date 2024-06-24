@@ -33,7 +33,7 @@ namespace ShootEmUp.Enemies.Agents
             }
 
             Vector2 resultDirection = direction.normalized * Time.fixedDeltaTime;
-            _moveComponent.MoveByRigidbodyVelocity(resultDirection);
+            _moveComponent.Move(resultDirection);
         }
     }
 }

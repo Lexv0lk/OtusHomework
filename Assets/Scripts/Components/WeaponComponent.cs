@@ -9,9 +9,9 @@ namespace ShootEmUp.Components
         [SerializeField] private BulletConfig _bulletConfig;
         [SerializeField] private TeamComponent _teamComponent;
 
-        public BulletSystem.Args GetFireArgs()
+        public BulletShooter.ShootArgs GetShootArgs()
         {
-            return new BulletSystem.Args
+            return new BulletShooter.ShootArgs
             {
                 Team = _teamComponent.Team,
                 PhysicsLayer = (int)_bulletConfig.PhysicsLayer,
@@ -22,9 +22,9 @@ namespace ShootEmUp.Components
             };
         }   
         
-        public BulletSystem.Args GetFireArgsAtTarget(Vector2 targetPosition)
+        public BulletShooter.ShootArgs GetShootArgs(Vector2 targetPosition)
         {
-            BulletSystem.Args args = GetFireArgs();
+            BulletShooter.ShootArgs args = GetShootArgs();
             args.Velocity = ((Vector2)targetPosition - args.Position).normalized * _bulletConfig.Speed;
             return args;
         }
