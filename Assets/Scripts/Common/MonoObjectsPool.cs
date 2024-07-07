@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using ShootEmUp.GameStates;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ShootEmUp.Common
 {
-    public abstract class MonoObjectsPool<T> : MonoBehaviour where T : MonoBehaviour
+    public abstract class MonoObjectsPool<T> : MonoOjbectsFabric, IGameInitializeListener where T : MonoBehaviour
     {
         [SerializeField] private int _initialCount = 50;
         [SerializeField] private T _prefab;
@@ -12,12 +14,15 @@ namespace ShootEmUp.Common
 
         private readonly Queue<T> _currentPool = new();
 
-        private void Awake()
+        public override event UnityAction<GameObject> Created;
+
+        void IGameInitializeListener.OnInitialize()
         {
             for (int i = 0; i < _initialCount; i++)
             {
                 T obj = Instantiate(_prefab, _objectsContainer);
                 _currentPool.Enqueue(obj);
+                Created?.Invoke(obj.gameObject);
             }
         }
 

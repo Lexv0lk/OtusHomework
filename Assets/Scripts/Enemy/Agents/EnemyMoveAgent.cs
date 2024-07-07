@@ -1,9 +1,10 @@
 using ShootEmUp.Components;
+using ShootEmUp.GameUpdate;
 using UnityEngine;
 
 namespace ShootEmUp.Enemies.Agents
 {
-    public sealed class EnemyMoveAgent : MonoBehaviour
+    public sealed class EnemyMoveAgent : MonoBehaviour, IGameFixedUpdateListener
     {
         [SerializeField] private MoveComponent _moveComponent;
         [SerializeField] private float _destinationAccuraccy = 0.25f;
@@ -19,7 +20,7 @@ namespace ShootEmUp.Enemies.Agents
             _isReached = false;
         }
 
-        private void FixedUpdate()
+        void IGameFixedUpdateListener.OnFixedUpdate(float fixedDeltaTime)
         {
             if (_isReached)
                 return;

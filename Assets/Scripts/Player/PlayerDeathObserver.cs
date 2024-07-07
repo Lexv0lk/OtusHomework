@@ -1,4 +1,5 @@
 ﻿using ShootEmUp.Characters;
+using ShootEmUp.GameStates;
 using ShootEmUp.Managers;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace ShootEmUp.Player
     public sealed class PlayerDeathObserver : MonoBehaviour
     {
         [SerializeField] private Character _player;
-        [SerializeField] private GameManager _gameManager;
+        [SerializeField] private GameStateController _gameStateController;
 
         private void OnEnable()
         {
@@ -21,7 +22,7 @@ namespace ShootEmUp.Player
 
         private void OnCharacterDeath(GameObject character)
         {
-            _gameManager.FinishGame();
+            _gameStateController.FinishGame();
         }
     }
 }

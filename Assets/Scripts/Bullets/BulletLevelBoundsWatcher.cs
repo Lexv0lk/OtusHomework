@@ -1,11 +1,12 @@
 using ShootEmUp.Level;
 using System;
 using System.Collections.Generic;
+using ShootEmUp.GameUpdate;
 using UnityEngine;
 
 namespace ShootEmUp.Bullets
 {
-    public class BulletLevelBoundsWatcher : MonoBehaviour
+    public class BulletLevelBoundsWatcher : MonoBehaviour, IGameFixedUpdateListener
     {
         private readonly HashSet<Bullet> _watchTargets = new();
         private readonly List<Bullet> _targetsToWatchInFrame = new List<Bullet>();
@@ -19,7 +20,7 @@ namespace ShootEmUp.Bullets
             _watchTargets.Add(newTarget);
         }
 
-        private void FixedUpdate()
+        void IGameFixedUpdateListener.OnFixedUpdate(float fixedDeltaTime)
         {
             if (_watchTargets.Count == 0)
                 return;

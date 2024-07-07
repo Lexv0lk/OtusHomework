@@ -2,11 +2,12 @@ using ShootEmUp.Bullets;
 using ShootEmUp.Characters;
 using ShootEmUp.Components;
 using System;
+using ShootEmUp.GameUpdate;
 using UnityEngine;
 
 namespace ShootEmUp.Enemies.Agents
 {
-    public sealed class EnemyAttackAgent : MonoBehaviour
+    public sealed class EnemyAttackAgent : MonoBehaviour, IGameFixedUpdateListener
     {
         [SerializeField] private WeaponComponent _weaponComponent;
         [SerializeField] private TeamComponent _teamComponent;
@@ -28,7 +29,14 @@ namespace ShootEmUp.Enemies.Agents
             _currentDelay = _fireDelay;
         }
 
-        private void FixedUpdate()
+        private void Fire()
+        {
+            BulletShooter.ShootArgs args = _weaponComponent.GetShootArgs(_target.transform.position);
+            args.Team = _teamComponent.Team;
+            Fired?.Invoke(args);
+        }
+
+        void IGameFixedUpdateListener.OnFixedUpdate(float fixedDeltaTime)
         {
             if (_moveAgent.IsReached == false)
                 return;
@@ -43,13 +51,6 @@ namespace ShootEmUp.Enemies.Agents
                 Fire();
                 _currentDelay += _fireDelay;
             }
-        }
-
-        private void Fire()
-        {
-            BulletShooter.ShootArgs args = _weaponComponent.GetShootArgs(_target.transform.position);
-            args.Team = _teamComponent.Team;
-            Fired?.Invoke(args);
         }
     }
 }

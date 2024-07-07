@@ -1,10 +1,11 @@
 using ShootEmUp.Common;
 using System;
+using ShootEmUp.GameStates;
 using UnityEngine;
 
 namespace ShootEmUp.Bullets
 {
-    public sealed class Bullet : MonoBehaviour
+    public sealed class Bullet : MonoBehaviour, IGamePauseListener, IGameResumeListener
     {
         [SerializeField] private Rigidbody2D _rigidbody2D;
         [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -27,6 +28,16 @@ namespace ShootEmUp.Bullets
         private void OnCollisionEnter2D(Collision2D collision)
         {
             CollisionEntered?.Invoke(this, collision);
+        }
+
+        void IGamePauseListener.OnPause()
+        {
+            _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        void IGameResumeListener.OnResume()
+        {
+            _rigidbody2D.constraints = RigidbodyConstraints2D.None;
         }
     }
 }

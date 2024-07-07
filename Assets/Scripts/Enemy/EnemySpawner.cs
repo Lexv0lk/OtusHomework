@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
+using ShootEmUp.GameStates;
 using UnityEngine;
 
 namespace ShootEmUp.Enemies
 {
-    public class EnemySpawner : MonoBehaviour
+    public class EnemySpawner : MonoBehaviour, IGameStartListener
     {
         [SerializeField] private EnemyPool _pool;
         [SerializeField] private EnemyInitializer _initializer;
@@ -18,8 +19,9 @@ namespace ShootEmUp.Enemies
 
         public event Action<Enemy> Spawned;
 
-        private void Start()
+        void IGameStartListener.OnStart()
         {
+            Debug.Log("SPAWN START");
             if (_spawnOnStart)
                 StartSpawning();
         }
