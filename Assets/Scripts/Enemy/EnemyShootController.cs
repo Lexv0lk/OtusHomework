@@ -5,19 +5,19 @@ namespace ShootEmUp.Enemies
 {
     public class EnemyShootController : MonoBehaviour
     {
-        [SerializeField] private EnemySpawner _spawner;
+        [SerializeField] private EnemyGameObjectSpawner gameObjectSpawner;
         [SerializeField] private EnemyDeathObserver _deathObserver;
-        [SerializeField] private BulletShooter _bulletSystem;
+        [SerializeField] private BulletSpawner _bulletSystem;
 
         private void OnEnable()
         {
-            _spawner.Spawned += OnEnemySpawned;
+            gameObjectSpawner.Spawned += OnEnemySpawned;
             _deathObserver.EnemyDied += OnEnemyDied;
         }
 
         private void OnDisable()
         {
-            _spawner.Spawned -= OnEnemySpawned;
+            gameObjectSpawner.Spawned -= OnEnemySpawned;
             _deathObserver.EnemyDied -= OnEnemyDied;
         }
 
@@ -31,7 +31,7 @@ namespace ShootEmUp.Enemies
             enemy.AttackAgent.Fired -= OnEnemyFired;
         }
 
-        private void OnEnemyFired(BulletShooter.ShootArgs args)
+        private void OnEnemyFired(BulletSpawner.ShootArgs args)
         {
             _bulletSystem.ShootBullet(args);
         }

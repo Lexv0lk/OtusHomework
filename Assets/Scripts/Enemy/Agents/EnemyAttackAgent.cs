@@ -17,7 +17,7 @@ namespace ShootEmUp.Enemies.Agents
         private Character _target;
         private float _currentDelay;
 
-        public event Action<BulletShooter.ShootArgs> Fired;
+        public event Action<BulletSpawner.ShootArgs> Fired;
 
         public void SetTarget(Character target)
         {
@@ -31,7 +31,7 @@ namespace ShootEmUp.Enemies.Agents
 
         private void Fire()
         {
-            BulletShooter.ShootArgs args = _weaponComponent.GetShootArgs(_target.transform.position);
+            BulletSpawner.ShootArgs args = _weaponComponent.GetShootArgs(_target.transform.position);
             args.Team = _teamComponent.Team;
             Fired?.Invoke(args);
         }

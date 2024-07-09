@@ -3,22 +3,22 @@ using UnityEngine;
 
 public class BulletCollisionObserver : MonoBehaviour
 {
-    [SerializeField] private BulletShooter _shooter;
+    [SerializeField] private BulletSpawner spawner;
     [SerializeField] private BulletPool _pool;
 
     private void OnEnable()
     {
-        _shooter.Shooted += OnBulletShooted;
-        _shooter.Released += OnBulletReleased;
+        spawner.Spawned += OnBulletSpawned;
+        spawner.Released += OnBulletReleased;
     }
 
     private void OnDisable()
     {
-        _shooter.Shooted -= OnBulletShooted;
-        _shooter.Released -= OnBulletReleased;
+        spawner.Spawned -= OnBulletSpawned;
+        spawner.Released -= OnBulletReleased;
     }
 
-    private void OnBulletShooted(Bullet bullet)
+    private void OnBulletSpawned(Bullet bullet)
     {
         bullet.CollisionEntered += OnBulletCollision;
     }
@@ -31,6 +31,6 @@ public class BulletCollisionObserver : MonoBehaviour
     private void OnBulletCollision(Bullet bullet, Collision2D collision)
     {
         BulletUtils.DealDamage(bullet, collision.gameObject);
-        _shooter.ReleaseBullet(bullet);
+        spawner.ReleaseBullet(bullet);
     }
 }

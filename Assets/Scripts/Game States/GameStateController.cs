@@ -16,11 +16,6 @@ namespace ShootEmUp.GameStates
         private readonly GameFinishHandler _gameFinishHandler = new();
         private readonly GameInitializeHandler _gameInitializeHandler = new();
 
-        private void Start()
-        {
-            StartGame();
-        }
-
         private void InitializeHandlersList()
         {
             _stateHandlers = new()
@@ -41,16 +36,23 @@ namespace ShootEmUp.GameStates
             foreach (var handler in _stateHandlers)
                 handler.Register(listener);
         }
+        
+        public void Remove(IGameStateListener listener)
+        {
+            if (_stateHandlers == null)
+                InitializeHandlersList();
+            
+            foreach (var handler in _stateHandlers)
+                handler.Remove(listener);
+        }
 
         public void InitializeGame()
         {
-            Debug.Log("INITIALIZE");
             _gameInitializeHandler.Handle(_gameStateModel);
         }
 
         public void StartGame()
         {
-             Debug.Log("START");
             _gameStartHandler.Handle(_gameStateModel);
         }
 

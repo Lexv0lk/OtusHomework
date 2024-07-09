@@ -8,18 +8,18 @@ namespace ShootEmUp.Enemies
     {
         private readonly HashSet<Enemy> _activeEnemies = new();
 
-        [SerializeField] private EnemySpawner _spawner;       
+        [SerializeField] private EnemyGameObjectSpawner gameObjectSpawner;       
 
         public event Action<Enemy> EnemyDied;
 
         private void OnEnable()
         {
-            _spawner.Spawned += OnEnemySpawned;
+            gameObjectSpawner.Spawned += OnEnemySpawned;
         }
 
         private void OnDisable()
         {
-            _spawner.Spawned -= OnEnemySpawned;
+            gameObjectSpawner.Spawned -= OnEnemySpawned;
         }
 
         private void OnEnemySpawned(Enemy enemy)
@@ -35,7 +35,7 @@ namespace ShootEmUp.Enemies
                 if (_activeEnemies.Remove(enemyComponent))
                 {
                     enemyComponent.Character.HitPointsComponent.HitPointsEnded -= OnEnemyDied;
-                    _spawner.Release(enemyComponent);
+                    gameObjectSpawner.Release(enemyComponent);
                     EnemyDied?.Invoke(enemyComponent);
                 }
             }

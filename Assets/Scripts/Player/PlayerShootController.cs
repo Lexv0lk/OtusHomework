@@ -10,7 +10,7 @@ namespace ShootEmUp.Player
     public sealed class PlayerShootController : MonoBehaviour, IGameSimpleUpdateListener
     {
         [SerializeField] private InputManager _inputManager;
-        [SerializeField] private BulletShooter _bulletSystem;
+        [SerializeField] private BulletSpawner _bulletSystem;
         [SerializeField] private Character _player;
 
         private void Shoot()
