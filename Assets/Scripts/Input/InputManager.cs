@@ -1,13 +1,19 @@
 using ShootEmUp.GameUpdate;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.Input
 {
-    public sealed class InputManager : MonoBehaviour, IGameSimpleUpdateListener
+    public sealed class InputManager : IGameSimpleUpdateListener
     {
-        [SerializeField] private InputConfig _inputConfig;
-
+        private readonly InputConfig _inputConfig;
         private float _horizontalDirection;
+
+        [Inject]
+        public InputManager(InputConfig inputConfig)
+        {
+            _inputConfig = inputConfig;
+        }
 
         public Vector2 GetDirection()
         {

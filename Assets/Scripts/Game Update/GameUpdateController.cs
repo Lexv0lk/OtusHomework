@@ -1,21 +1,26 @@
 using System.Collections.Generic;
 using ShootEmUp.GameStates;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.GameUpdate
 {
-    public class GameUpdateController : MonoBehaviour
+    public class GameUpdateController : ITickable, IFixedTickable
     {
-        [SerializeField] private GameStateModel _stateModel;
+        private readonly GameStateModel _stateModel;
         
-        private readonly List<IGameUpdateListener> _updateListeners = new();
-        private List<IGameUpdateHandler> _handlers;
+        private readonly List<IGameUpdateListener> _updateListeners;
+        private readonly List<IGameUpdateHandler> _handlers;
 
         private readonly GameSimpleUpdateHandler _gameSimpleUpdateHandler = new();
         private readonly GameFixedUpdateHandler _gameFixedUpdateHandler = new();
-
-        private void InitializeHandlersList()
+        
+        [Inject]
+        public GameUpdateController(GameStateModel stateModel, List<IGameUpdateListener> updateListeners)
         {
+            _stateModel = stateModel;
+            _updateListeners = updateListeners;
+            
             _handlers = new()
             {
                 _gameSimpleUpdateHandler,
@@ -23,15 +28,15 @@ namespace ShootEmUp.GameUpdate
             };
         }
 
-        private void Update()
+        void ITickable.Tick()
         {
             if (_stateModel.CurrentState != GameState.PLAYING)
                 return;
             
             _gameSimpleUpdateHandler.Handle(Time.deltaTime);
         }
-
-        private void FixedUpdate()
+        
+        void IFixedTickable.FixedTick()
         {
             if (_stateModel.CurrentState != GameState.PLAYING)
                 return;
@@ -41,9 +46,6 @@ namespace ShootEmUp.GameUpdate
 
         public void Register(IGameUpdateListener listener)
         {
-            if (_handlers == null)
-                InitializeHandlersList();
-            
             foreach (var handler in _handlers)
                 handler.Register(listener);
         }

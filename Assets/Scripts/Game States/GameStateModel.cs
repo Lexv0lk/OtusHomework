@@ -10,7 +10,7 @@ namespace ShootEmUp.GameStates
         FINISHED = 3
     }
     
-    public class GameStateModel : MonoBehaviour
+    public class GameStateModel
     {
         public GameState CurrentState { get; private set; }
 

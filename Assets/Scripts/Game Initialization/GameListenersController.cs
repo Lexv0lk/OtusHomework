@@ -1,39 +1,51 @@
-﻿using ShootEmUp.Common;
+﻿using System;
+using System.Collections.Generic;
+using ShootEmUp.Common;
 using ShootEmUp.GameStates;
 using ShootEmUp.GameUpdate;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.GameInitialization
 {
-    public class GameListenersController : MonoBehaviour
+    public class GameListenersController : IDisposable
     {
-        [SerializeField] private GameStateController _gameStateController;
-        [SerializeField] private GameUpdateController _gameUpdateController;
+        private readonly GameStateController _gameStateController;
+        private readonly GameUpdateController _gameUpdateController;
+        private readonly List<IGameObjectSpawner> _spawners;
+        private readonly List<IGameStateListener> _existingStateListeners;
+        private readonly List<IGameUpdateListener> _existingUpdateListeners;
         
-        private IGameObjectSpawner[] _spawners;
-
-        public void RegisterListeners()
+        [Inject]
+        public GameListenersController(GameStateController gameStateController, GameUpdateController gameUpdateController,
+            List<IGameObjectSpawner> spawners, List<IGameStateListener> existingStateListeners,
+            List<IGameUpdateListener> existingUpdateListeners)
         {
-            _spawners = GetComponentsInChildren<IGameObjectSpawner>();
+            _gameStateController = gameStateController;
+            _gameUpdateController = gameUpdateController;
+            _spawners = spawners;
+            _existingStateListeners = existingStateListeners;
+            _existingUpdateListeners = existingUpdateListeners;
+            
+            RegisterListeners();
+        }
 
+        private void RegisterListeners()
+        {
             foreach (var spawner in _spawners)
             {
                 spawner.SpawnedObject += OnObjectSpawned;
                 spawner.ReleasedObject += OnObjectReleased;
             }
-
-            var existingStateListeners = GetComponentsInChildren<IGameStateListener>();
-
-            foreach (var existingStateListener in existingStateListeners)
+            
+            foreach (var existingStateListener in _existingStateListeners)
                 _gameStateController.Register(existingStateListener);
             
-            var existingUpdateListeners = GetComponentsInChildren<IGameUpdateListener>();
-
-            foreach (var existingUpdateListener in existingUpdateListeners)
+            foreach (var existingUpdateListener in _existingUpdateListeners)
                 _gameUpdateController.Register(existingUpdateListener);
         }
 
-        private void OnDestroy()
+        public void Dispose()
         {
             foreach (var spawner in _spawners)
             {

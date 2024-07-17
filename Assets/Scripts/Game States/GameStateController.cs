@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.GameStates
 {
-    public class GameStateController : MonoBehaviour
+    public class GameStateController : IInitializable
     {
-        [SerializeField] private GameStateModel _gameStateModel;
-        
-        private List<IGameStateHandler> _stateHandlers;
+        private readonly GameStateModel _gameStateModel;
+        private readonly List<IGameStateHandler> _stateHandlers;
 
         private readonly GameStartHandler _gameStartHandler = new();
         private readonly GamePauseHandler _gamePauseHandler = new();
@@ -16,8 +16,11 @@ namespace ShootEmUp.GameStates
         private readonly GameFinishHandler _gameFinishHandler = new();
         private readonly GameInitializeHandler _gameInitializeHandler = new();
 
-        private void InitializeHandlersList()
+        [Inject]
+        public GameStateController(GameStateModel gameStateModel)
         {
+            _gameStateModel = gameStateModel;
+            
             _stateHandlers = new()
             {
                 _gameStartHandler,
@@ -25,28 +28,22 @@ namespace ShootEmUp.GameStates
                 _gameResumeHandler,
                 _gameFinishHandler,
                 _gameInitializeHandler
-            };
+            };        
         }
 
         public void Register(IGameStateListener listener)
         {
-            if (_stateHandlers == null)
-                InitializeHandlersList();
-            
             foreach (var handler in _stateHandlers)
                 handler.Register(listener);
         }
         
         public void Remove(IGameStateListener listener)
         {
-            if (_stateHandlers == null)
-                InitializeHandlersList();
-            
             foreach (var handler in _stateHandlers)
                 handler.Remove(listener);
         }
 
-        public void InitializeGame()
+        void IInitializable.Initialize()
         {
             _gameInitializeHandler.Handle(_gameStateModel);
         }

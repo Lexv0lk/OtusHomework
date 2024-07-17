@@ -1,21 +1,29 @@
-﻿using ShootEmUp.GameStates;
+﻿using System;
+using ShootEmUp.GameStates;
 using ShootEmUp.PauseSystem.UI;
-using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.PauseSystem
 {
-    public class GamePauseController : MonoBehaviour
+    public class GamePauseController : IInitializable, IDisposable
     {
-        [SerializeField] private PausePlayButton _pauseButton;
-        [SerializeField] private GameStateController _stateController;
-        [SerializeField] private GameStateModel _stateModel;
+        private readonly PausePlayButton _pauseButton;
+        private readonly GameStateController _stateController;
+        private readonly GameStateModel _stateModel;
+        
+        public GamePauseController(PausePlayButton pauseButton, GameStateController stateController, GameStateModel stateModel)
+        {
+            _pauseButton = pauseButton;
+            _stateController = stateController;
+            _stateModel = stateModel;
+        }
 
-        private void OnEnable()
+        void IInitializable.Initialize()
         {
             _pauseButton.Clicked += OnButtonClicked;
         }
 
-        private void OnDisable()
+        void IDisposable.Dispose()
         {
             _pauseButton.Clicked -= OnButtonClicked;
         }
