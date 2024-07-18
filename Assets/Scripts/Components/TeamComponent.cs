@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ShootEmUp.Components
 {
-    public sealed class TeamComponent : MonoBehaviour
+    public sealed class TeamComponent
     {
         [SerializeField] private Team _team;
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ShootEmUp.Characters;
 using UnityEngine;
 
 namespace ShootEmUp.Enemies
@@ -25,16 +26,16 @@ namespace ShootEmUp.Enemies
         private void OnEnemySpawned(Enemy enemy)
         {
             if (_activeEnemies.Add(enemy))
-                enemy.Character.HitPointsComponent.HitPointsEnded += OnEnemyDied;
+                enemy.Character.Died += OnEnemyDied;
         }
 
-        private void OnEnemyDied(GameObject enemy)
+        private void OnEnemyDied(Character enemy)
         {
             if (enemy.TryGetComponent(out Enemy enemyComponent))
             {
                 if (_activeEnemies.Remove(enemyComponent))
                 {
-                    enemyComponent.Character.HitPointsComponent.HitPointsEnded -= OnEnemyDied;
+                    enemyComponent.Character.Died -= OnEnemyDied;
                     gameObjectSpawner.Release(enemyComponent);
                     EnemyDied?.Invoke(enemyComponent);
                 }

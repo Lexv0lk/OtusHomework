@@ -1,21 +1,28 @@
+using System;
 using ShootEmUp.Bullets;
 using UnityEngine;
+using Zenject;
 
-public class BulletCollisionObserver : MonoBehaviour
+public class BulletCollisionObserver : IInitializable, IDisposable
 {
-    [SerializeField] private BulletSpawner spawner;
-    [SerializeField] private BulletPool _pool;
+    private readonly BulletSpawner _spawner;
 
-    private void OnEnable()
+    [Inject]
+    public BulletCollisionObserver(BulletSpawner spawner)
     {
-        spawner.Spawned += OnBulletSpawned;
-        spawner.Released += OnBulletReleased;
+        _spawner = spawner;
     }
 
-    private void OnDisable()
+    void IInitializable.Initialize()
     {
-        spawner.Spawned -= OnBulletSpawned;
-        spawner.Released -= OnBulletReleased;
+        _spawner.Spawned += OnBulletSpawned;
+        _spawner.Released += OnBulletReleased;
+    }
+
+    void IDisposable.Dispose()
+    {
+        _spawner.Spawned -= OnBulletSpawned;
+        _spawner.Released -= OnBulletReleased;
     }
 
     private void OnBulletSpawned(Bullet bullet)
@@ -31,6 +38,6 @@ public class BulletCollisionObserver : MonoBehaviour
     private void OnBulletCollision(Bullet bullet, Collision2D collision)
     {
         BulletUtils.DealDamage(bullet, collision.gameObject);
-        spawner.ReleaseBullet(bullet);
+        _spawner.ReleaseBullet(bullet);
     }
 }

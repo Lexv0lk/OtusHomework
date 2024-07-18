@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace ShootEmUp.Components
 {
-    public sealed class MoveComponent : MonoBehaviour
+    [Serializable]
+    public sealed class MoveComponent
     {
         [SerializeField] private Rigidbody2D _rigidbody2D;
         [SerializeField] private float _speed = 5.0f;

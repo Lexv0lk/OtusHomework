@@ -1,12 +1,20 @@
 using ShootEmUp.Characters;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.Enemies
 {
-    public class EnemyInitializer : MonoBehaviour
+    public class EnemyInitializer
     {
-        [SerializeField] private EnemyPositions _enemyPositions;
-        [SerializeField] private Character _player;
+        private readonly EnemyPositions _enemyPositions;
+        private readonly Character _player;
+
+        [Inject]
+        public EnemyInitializer(EnemyPositions enemyPositions, Character player)
+        {
+            _enemyPositions = enemyPositions;
+            _player = player;
+        }
 
         public void Initialize(Enemy enemy)
         {

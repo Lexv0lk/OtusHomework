@@ -1,5 +1,7 @@
-﻿using ShootEmUp.Characters;
+﻿using ShootEmUp.Bullets;
+using ShootEmUp.Characters;
 using ShootEmUp.Components;
+using ShootEmUp.Enemies;
 using ShootEmUp.GameStates;
 using ShootEmUp.GameUpdate;
 using ShootEmUp.Input;
@@ -19,6 +21,9 @@ namespace ShootEmUp.DI.Installers
         [SerializeField] private InputConfig _inputConfig;
         [SerializeField] private LevelBounds _levelBounds;
         [SerializeField] private PausePlayButton _pausePlayButton;
+        [SerializeField] private Character _player;
+        [SerializeField] private BulletPool _bulletPool;
+        [SerializeField] private EnemyPositions _enemyPositions;
         
         public override void InstallBindings()
         {
@@ -43,31 +48,41 @@ namespace ShootEmUp.DI.Installers
             Container.BindInterfacesAndSelfTo<InputManager>().AsSingle();
         }
 
-        private void InstallGameObservers()
+        private void InstallControllers()
         {
             Container.BindInterfacesAndSelfTo<GameFinishObserver>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BulletLevelBoundsWatcher>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<GamePauseController>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<PlayerDeathObserver>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerMoveController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerShootController>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<BulletCollisionObserver>().AsSingle();
         }
 
         private void InstallObjectsOnScene()
         {
             Container.BindInterfacesAndSelfTo<LevelBounds>().FromInstance(_levelBounds);
             Container.BindInterfacesAndSelfTo<PausePlayButton>().FromInstance(_pausePlayButton);
+            Container.BindInterfacesAndSelfTo<Character>().FromInstance(_player).AsCached();
+            Container.BindInterfacesAndSelfTo<EnemyPositions>().FromInstance(_enemyPositions);
         }
 
-        private void InstallPauseSystem()
+        private void InstallPools()
         {
-            Container.BindInterfacesAndSelfTo<GamePauseController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BulletPool>().FromInstance(_bulletPool);
         }
 
-        private void InstallPlayer()
+        private void InstallBulletSystem()
         {
-            Container.BindInterfacesAndSelfTo<TeamComponent>().AsTransient();
-            
-            Container.BindInterfacesAndSelfTo<Character>().AsSingle();
-            
-            Container.BindInterfacesAndSelfTo<PlayerDeathObserver>().AsSingle();
-            Container.BindInterfacesAndSelfTo<PlayerMoveController>().AsSingle();
-            Container.BindInterfacesAndSelfTo<PlayerShootController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BulletSpawner>().AsSingle();
+        }
+
+        private void InstalEnemiesSystem()
+        {
+            Container.BindInterfacesAndSelfTo<EnemyInitializer>().AsSingle();
         }
     }
 }

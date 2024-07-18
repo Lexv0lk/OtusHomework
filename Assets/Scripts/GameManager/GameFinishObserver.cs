@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ShootEmUp.Managers
 {
-    public sealed class GameFinishObserver : MonoBehaviour, IGameFinishListener
+    public sealed class GameFinishObserver : IGameFinishListener
     {
         void IGameFinishListener.OnFinish()
         {

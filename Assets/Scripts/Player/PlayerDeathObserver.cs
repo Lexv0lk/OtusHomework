@@ -1,26 +1,25 @@
 ﻿using ShootEmUp.Characters;
 using ShootEmUp.GameStates;
-using ShootEmUp.Managers;
 using UnityEngine;
 
 namespace ShootEmUp.Player
 {
-    public sealed class PlayerDeathObserver : MonoBehaviour
+    public sealed class PlayerDeathObserver
     {
         [SerializeField] private Character _player;
         [SerializeField] private GameStateController _gameStateController;
 
         private void OnEnable()
         {
-            _player.HitPointsComponent.HitPointsEnded += OnCharacterDeath;
+            _player.Died += OnCharacterDeath;
         }
 
         private void OnDisable()
         {
-            _player.HitPointsComponent.HitPointsEnded -= OnCharacterDeath;
+            _player.Died -= OnCharacterDeath;
         }
 
-        private void OnCharacterDeath(GameObject character)
+        private void OnCharacterDeath(Character character)
         {
             _gameStateController.FinishGame();
         }

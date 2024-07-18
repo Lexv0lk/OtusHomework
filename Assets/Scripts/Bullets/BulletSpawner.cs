@@ -2,27 +2,34 @@ using ShootEmUp.Common;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.Bullets
 {
-    public sealed class BulletSpawner : MonoBehaviour, IGameObjectSpawner
+    public sealed class BulletSpawner : IGameObjectSpawner, IInitializable, IDisposable
     {
         private readonly HashSet<Bullet> _activeBullets = new();
+        private readonly BulletPool _bulletPool;
+        private readonly BulletLevelBoundsWatcher _bulletBoundsWatcher;
 
-        [SerializeField] private BulletPool _bulletPool;
-        [SerializeField] private BulletLevelBoundsWatcher _bulletBoundsWatcher;
+        [Inject]
+        public BulletSpawner(BulletPool pool, BulletLevelBoundsWatcher bulletLevelBoundsWatcher)
+        {
+            _bulletPool = pool;
+            _bulletBoundsWatcher = bulletLevelBoundsWatcher;
+        }
 
         public event Action<Bullet> Spawned;
         public event Action<GameObject> SpawnedObject;
         public event Action<Bullet> Released;
         public event Action<GameObject> ReleasedObject;
 
-        private void OnEnable()
+        void IInitializable.Initialize()
         {
             _bulletBoundsWatcher.WentOutOfBounds += ReleaseBullet;
         }
 
-        private void OnDisable()
+        void IDisposable.Dispose()
         {
             _bulletBoundsWatcher.WentOutOfBounds -= ReleaseBullet;
         }

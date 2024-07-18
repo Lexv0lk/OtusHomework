@@ -1,9 +1,11 @@
+using System;
 using ShootEmUp.Bullets;
 using UnityEngine;
 
 namespace ShootEmUp.Components
 {
-    public sealed class WeaponComponent : MonoBehaviour
+    [Serializable]
+    public sealed class WeaponComponent
     {
         [SerializeField] private Transform _firePoint;
         [SerializeField] private BulletConfig _bulletConfig;

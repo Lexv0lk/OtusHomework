@@ -1,14 +1,15 @@
 using System;
+using ShootEmUp.Characters;
 using UnityEngine;
 
 namespace ShootEmUp.Components
 {
-    public sealed class HitPointsComponent : MonoBehaviour
+    public sealed class HitPointsComponent
     {
-        public event Action<GameObject> HitPointsEnded;
-        
         [SerializeField] private int _hitPoints;
         
+        public event Action HitPointsEnded;
+
         public bool IsHitPointsExists()
         {
             return _hitPoints > 0;
@@ -19,7 +20,7 @@ namespace ShootEmUp.Components
             _hitPoints -= damage;
 
             if (_hitPoints <= 0)
-                HitPointsEnded?.Invoke(gameObject);
+                HitPointsEnded?.Invoke();
         }
     }
 }

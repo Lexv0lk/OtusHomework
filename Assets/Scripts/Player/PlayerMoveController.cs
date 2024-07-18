@@ -2,13 +2,21 @@
 using ShootEmUp.GameUpdate;
 using ShootEmUp.Input;
 using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.Player
 {
-    public sealed class PlayerMoveController : MonoBehaviour, IGameFixedUpdateListener
+    public sealed class PlayerMoveController : IGameFixedUpdateListener
     {
-        [SerializeField] private InputManager _inputManager;
-        [SerializeField] private Character _player;
+        private InputManager _inputManager;
+        private Character _player;
+
+        [Inject]
+        public PlayerMoveController(Character player, InputManager inputManager)
+        {
+            _inputManager = inputManager;
+            _player = player;
+        }
         
         void IGameFixedUpdateListener.OnFixedUpdate(float fixedDeltaTime)
         {

@@ -2,16 +2,21 @@ using ShootEmUp.Level;
 using System;
 using System.Collections.Generic;
 using ShootEmUp.GameUpdate;
-using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.Bullets
 {
-    public class BulletLevelBoundsWatcher : MonoBehaviour, IGameFixedUpdateListener
+    public class BulletLevelBoundsWatcher : IGameFixedUpdateListener
     {
         private readonly HashSet<Bullet> _watchTargets = new();
         private readonly List<Bullet> _targetsToWatchInFrame = new List<Bullet>();
+        private readonly LevelBounds _levelBounds;
 
-        [SerializeField] private LevelBounds _levelBounds;
+        [Inject]
+        public BulletLevelBoundsWatcher(LevelBounds levelBounds)
+        {
+            _levelBounds = levelBounds;
+        }
 
         public event Action<Bullet> WentOutOfBounds;
 
