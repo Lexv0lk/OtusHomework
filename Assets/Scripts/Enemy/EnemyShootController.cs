@@ -1,23 +1,33 @@
+using System;
 using ShootEmUp.Bullets;
-using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.Enemies
 {
-    public class EnemyShootController : MonoBehaviour
+    public class EnemyShootController : IInitializable, IDisposable
     {
-        [SerializeField] private EnemyGameObjectSpawner gameObjectSpawner;
-        [SerializeField] private EnemyDeathObserver _deathObserver;
-        [SerializeField] private BulletSpawner _bulletSystem;
+        private readonly EnemyGameObjectSpawner _gameObjectSpawner;
+        private readonly EnemyDeathObserver _deathObserver;
+        private readonly BulletSpawner _bulletSpawner;
 
-        private void OnEnable()
+        [Inject]
+        public EnemyShootController(EnemyGameObjectSpawner gameObjectSpawner, EnemyDeathObserver deathObserver,
+            BulletSpawner bulletSpawner)
         {
-            gameObjectSpawner.Spawned += OnEnemySpawned;
+            _gameObjectSpawner = gameObjectSpawner;
+            _deathObserver = deathObserver;
+            _bulletSpawner = bulletSpawner;
+        }
+
+        void IInitializable.Initialize()
+        {
+            _gameObjectSpawner.Spawned += OnEnemySpawned;
             _deathObserver.EnemyDied += OnEnemyDied;
         }
 
-        private void OnDisable()
+        void IDisposable.Dispose()
         {
-            gameObjectSpawner.Spawned -= OnEnemySpawned;
+            _gameObjectSpawner.Spawned -= OnEnemySpawned;
             _deathObserver.EnemyDied -= OnEnemyDied;
         }
 
@@ -33,7 +43,7 @@ namespace ShootEmUp.Enemies
 
         private void OnEnemyFired(BulletSpawner.ShootArgs args)
         {
-            _bulletSystem.ShootBullet(args);
+            _bulletSpawner.ShootBullet(args);
         }
     }
 }

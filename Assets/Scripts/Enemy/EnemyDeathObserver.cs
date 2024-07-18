@@ -1,26 +1,31 @@
 using System;
 using System.Collections.Generic;
 using ShootEmUp.Characters;
-using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.Enemies
 {
-    public sealed class EnemyDeathObserver : MonoBehaviour
+    public sealed class EnemyDeathObserver : IInitializable, IDisposable
     {
         private readonly HashSet<Enemy> _activeEnemies = new();
-
-        [SerializeField] private EnemyGameObjectSpawner gameObjectSpawner;       
-
+        private readonly EnemyGameObjectSpawner _gameObjectSpawner;
+        
+        [Inject]
+        public EnemyDeathObserver(EnemyGameObjectSpawner gameObjectSpawner)
+        {
+            _gameObjectSpawner = gameObjectSpawner;
+        }
+        
         public event Action<Enemy> EnemyDied;
 
-        private void OnEnable()
+        void IInitializable.Initialize()
         {
-            gameObjectSpawner.Spawned += OnEnemySpawned;
+            _gameObjectSpawner.Spawned += OnEnemySpawned;
         }
 
-        private void OnDisable()
+        void IDisposable.Dispose()
         {
-            gameObjectSpawner.Spawned -= OnEnemySpawned;
+            _gameObjectSpawner.Spawned -= OnEnemySpawned;
         }
 
         private void OnEnemySpawned(Enemy enemy)
@@ -36,7 +41,7 @@ namespace ShootEmUp.Enemies
                 if (_activeEnemies.Remove(enemyComponent))
                 {
                     enemyComponent.Character.Died -= OnEnemyDied;
-                    gameObjectSpawner.Release(enemyComponent);
+                    _gameObjectSpawner.Release(enemyComponent);
                     EnemyDied?.Invoke(enemyComponent);
                 }
             }

@@ -2,38 +2,47 @@
 using Cysharp.Threading.Tasks;
 using ShootEmUp.GameStates;
 using ShootEmUp.StartScreen.UI;
-using UnityEngine;
-using UnityEngine.UI;
+using Zenject;
 
 namespace ShootEmUp.StartScreen
 {
-    public class StartTimerController : MonoBehaviour
+    public class StartTimerController : IInitializable, IDisposable
     {
-        [SerializeField] private StartTimerView _timerView;
-        [SerializeField] private GameStateController _gameStateController;
-        [SerializeField] private Button _startButton;
-        [SerializeField] private int _delayBeforeStart = 3;
-
-        private void OnEnable()
+        private readonly StartTimerView _timerView;
+        private readonly GameStateController _gameStateController;
+        private readonly StartScreenView _startScreen;
+        private readonly StartScreenConfig _startScreenConfig;
+        
+        [Inject]
+        public StartTimerController(StartTimerView timerView, GameStateController gameStateController,
+            StartScreenView startScreen, StartScreenConfig startScreenConfig)
         {
-            _startButton.onClick.AddListener(OnStartButtonClicked);
+            _timerView = timerView;
+            _gameStateController = gameStateController;
+            _startScreen = startScreen;
+            _startScreenConfig = startScreenConfig;
         }
 
-        private void OnDisable()
+        void IInitializable.Initialize()
         {
-            _startButton.onClick.RemoveListener(OnStartButtonClicked);
+            _startScreen.StartButtonClicked += OnStartButtonClicked;
+        }
+
+        void IDisposable.Dispose()
+        {
+            _startScreen.StartButtonClicked -= OnStartButtonClicked;
         }
 
         private void OnStartButtonClicked()
         {
-            _startButton.gameObject.SetActive(false);
+            _startScreen.DisableStartButton();
             StartGameAsync().Forget();
         }
 
         private async UniTaskVoid StartGameAsync()
         {
             _timerView.gameObject.SetActive(true);
-            await _timerView.AnimateTimeAsync(_delayBeforeStart);
+            await _timerView.AnimateTimeAsync(_startScreenConfig.DelayBeforeStart);
             _timerView.gameObject.SetActive(false);
             
             _gameStateController.StartGame();

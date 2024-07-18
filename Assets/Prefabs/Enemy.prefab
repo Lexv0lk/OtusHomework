@@ -12,14 +12,11 @@ GameObject:
   - component: {fileID: 7936085547460007407}
   - component: {fileID: 5568771391735819375}
   - component: {fileID: 659620479434099170}
-  - component: {fileID: 5568771391735819379}
-  - component: {fileID: 5568771391735819372}
-  - component: {fileID: 5568771391735819373}
-  - component: {fileID: 5568771391735819374}
   - component: {fileID: 8186052948131603766}
   - component: {fileID: 6896809305229427933}
   - component: {fileID: 5438581835233229299}
   - component: {fileID: 1780442679476832911}
+  - component: {fileID: 669322231488480914}
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Untagged
@@ -132,61 +129,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5568771391735819379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559606060570185700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52112fd3e5414bf991b1d54804cb28f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _team: 1
---- !u!114 &5568771391735819372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559606060570185700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce88fee201654f6e8064002ed15de594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody2D: {fileID: 659620479434099170}
-  _speed: 5
---- !u!114 &5568771391735819373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559606060570185700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5daa1be9cc40a78a2f07cd53e5b47e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hitPoints: 3
---- !u!114 &5568771391735819374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559606060570185700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce164c84a74a425f8d2e82764aef9e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _firePoint: {fileID: 3195880656587174614}
-  _bulletConfig: {fileID: 11400000, guid: 8499ec19c176c204a8d9e642b06cfebe, type: 2}
-  _teamComponent: {fileID: 5568771391735819379}
 --- !u!114 &8186052948131603766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdb5771141e4cf18c434a69ec116e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveComponent: {fileID: 5568771391735819372}
+  _moveComponent:
+    _rigidbody2D: {fileID: 0}
+    _speed: 5
   _destinationAccuraccy: 0.25
 --- !u!114 &6896809305229427933
 MonoBehaviour:
@@ -213,8 +157,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba7965842e74a9f89ba3aa66d61da46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponComponent: {fileID: 5568771391735819374}
-  _teamComponent: {fileID: 5568771391735819379}
+  _weaponComponent:
+    _firePoint: {fileID: 0}
+    _bulletConfig: {fileID: 0}
+    _teamComponent:
+      _team: 0
+  _teamComponent:
+    _team: 0
   _moveAgent: {fileID: 8186052948131603766}
   _fireDelay: 1
 --- !u!114 &5438581835233229299
@@ -229,10 +178,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251b997ba6d63f3468dcff419ccdb91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponComponent: {fileID: 5568771391735819374}
-  _hitPointsComponent: {fileID: 5568771391735819373}
-  _teamComponent: {fileID: 5568771391735819379}
-  _moveComponent: {fileID: 5568771391735819372}
+  _weaponComponent:
+    _firePoint: {fileID: 3195880656587174614}
+    _bulletConfig: {fileID: 11400000, guid: 8499ec19c176c204a8d9e642b06cfebe, type: 2}
+    _teamComponent:
+      _team: 0
+  _hitPointsComponent:
+    _hitPoints: 3
+  _moveComponent:
+    _rigidbody2D: {fileID: 659620479434099170}
+    _speed: 5
+  _teamComponent:
+    _team: 0
 --- !u!114 &1780442679476832911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +205,23 @@ MonoBehaviour:
   _character: {fileID: 5438581835233229299}
   _attackAgent: {fileID: 6896809305229427933}
   _moveAgent: {fileID: 8186052948131603766}
+--- !u!114 &669322231488480914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559606060570185700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers: []
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
 --- !u!1 &2239154907127902911
 GameObject:
   m_ObjectHideFlags: 0

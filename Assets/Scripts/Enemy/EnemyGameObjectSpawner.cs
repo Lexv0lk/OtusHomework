@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using Cysharp.Threading.Tasks;
 using ShootEmUp.Common;
 using ShootEmUp.GameStates;
 using UnityEngine;
@@ -11,17 +11,17 @@ namespace ShootEmUp.Enemies
     {
         private readonly EnemyPool _pool;
         private readonly EnemyInitializer _initializer;
-        private readonly EnemySpawnerSettings _settings;
+        private readonly EnemySpawnerConfig _config;
 
         private int _currentEnemyCount = 0;
 
         [Inject]
         public EnemyGameObjectSpawner(EnemyPool pool, EnemyInitializer initializer,
-            EnemySpawnerSettings spawnerSettings)
+            EnemySpawnerConfig spawnerConfig)
         {
             _pool = pool;
             _initializer = initializer;
-            _settings = spawnerSettings;
+            _config = spawnerConfig;
         }
 
         public event Action<Enemy> Spawned;
@@ -30,13 +30,13 @@ namespace ShootEmUp.Enemies
         
         void IGameStartListener.OnStart()
         {
-            if (_settings.SpawnOnStart)
+            if (_config.SpawnOnStart)
                 StartSpawning();
         }
 
         public void StartSpawning()
         {
-            StartCoroutine(SpawnEnemiesWithDelay());
+            SpawnEnemiesWithDelay();
         }
 
         public void Release(Enemy enemy)
@@ -46,15 +46,13 @@ namespace ShootEmUp.Enemies
             ReleasedObject?.Invoke(enemy.gameObject);
         }
 
-        private IEnumerator SpawnEnemiesWithDelay()
+        private UniTaskVoid SpawnEnemiesWithDelay()
         {
-            WaitForSeconds delay = new WaitForSeconds(_settings.SpawnDelay);
-
             while (true)
             {
-                yield return delay;
+                UniTask.WaitForSeconds(_config.SpawnDelay);
 
-                if (_currentEnemyCount < _settings.Count)
+                if (_currentEnemyCount < _config.Count)
                 {
                     Enemy enemy = _pool.Get();
                     _initializer.Initialize(enemy);

@@ -8,8 +8,8 @@ namespace ShootEmUp.Characters
     {
         [SerializeField] private WeaponComponent _weaponComponent;
         [SerializeField] private HitPointsComponent _hitPointsComponent;
-        [SerializeField] private TeamComponent _teamComponent;
         [SerializeField] private MoveComponent _moveComponent;
+        [SerializeField] private TeamComponent _teamComponent;
 
         public WeaponComponent WeaponComponent => _weaponComponent;
         public HitPointsComponent HitPointsComponent => _hitPointsComponent;

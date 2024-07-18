@@ -10,6 +10,8 @@ using ShootEmUp.Managers;
 using ShootEmUp.PauseSystem;
 using ShootEmUp.PauseSystem.UI;
 using ShootEmUp.Player;
+using ShootEmUp.StartScreen;
+using ShootEmUp.StartScreen.UI;
 using UnityEngine;
 using Zenject;
 
@@ -24,6 +26,9 @@ namespace ShootEmUp.DI.Installers
         [SerializeField] private Character _player;
         [SerializeField] private BulletPool _bulletPool;
         [SerializeField] private EnemyPositions _enemyPositions;
+        [SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
+        [SerializeField] private StartScreenView _startScreenView;
+        [SerializeField] private StartTimerView _startTimerView;
         
         public override void InstallBindings()
         {
@@ -60,6 +65,10 @@ namespace ShootEmUp.DI.Installers
             Container.BindInterfacesAndSelfTo<PlayerShootController>().AsSingle();
             
             Container.BindInterfacesAndSelfTo<BulletCollisionObserver>().AsSingle();
+
+            Container.BindInterfacesAndSelfTo<EnemyDeathObserver>().AsSingle();
+
+            Container.BindInterfacesAndSelfTo<StartTimerController>().AsSingle();
         }
 
         private void InstallObjectsOnScene()
@@ -68,6 +77,14 @@ namespace ShootEmUp.DI.Installers
             Container.BindInterfacesAndSelfTo<PausePlayButton>().FromInstance(_pausePlayButton);
             Container.BindInterfacesAndSelfTo<Character>().FromInstance(_player).AsCached();
             Container.BindInterfacesAndSelfTo<EnemyPositions>().FromInstance(_enemyPositions);
+            Container.BindInterfacesAndSelfTo<EnemySpawnerConfig>().FromInstance(_enemySpawnerConfig);
+            Container.BindInterfacesAndSelfTo<StartTimerView>().FromInstance(_startTimerView);
+            Container.BindInterfacesAndSelfTo<StartScreenView>().FromInstance(_startScreenView);
+        }
+
+        private void InstallConfigs()
+        {
+            Container.BindInterfacesAndSelfTo<EnemySpawnerConfig>();
         }
 
         private void InstallPools()
@@ -83,6 +100,8 @@ namespace ShootEmUp.DI.Installers
         private void InstalEnemiesSystem()
         {
             Container.BindInterfacesAndSelfTo<EnemyInitializer>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemyGameObjectSpawner>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemyShootController>().AsSingle();
         }
     }
 }
