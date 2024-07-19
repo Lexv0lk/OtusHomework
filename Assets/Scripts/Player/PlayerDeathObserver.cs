@@ -1,20 +1,24 @@
 ﻿using ShootEmUp.Characters;
 using ShootEmUp.GameStates;
-using UnityEngine;
+using Zenject;
 
 namespace ShootEmUp.Player
 {
     public sealed class PlayerDeathObserver
     {
-        [SerializeField] private Character _player;
-        [SerializeField] private GameStateController _gameStateController;
+        private readonly Character _player;
+        private readonly GameStateController _gameStateController;
 
-        private void OnEnable()
+        [Inject]
+        public PlayerDeathObserver(Character player, GameStateController gameStateController)
         {
+            _player = player;
+            _gameStateController = gameStateController;
+            
             _player.Died += OnCharacterDeath;
         }
 
-        private void OnDisable()
+        ~PlayerDeathObserver()
         {
             _player.Died -= OnCharacterDeath;
         }

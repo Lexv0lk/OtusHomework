@@ -31,7 +31,7 @@ namespace ShootEmUp.Enemies
         private void OnEnemySpawned(Enemy enemy)
         {
             if (_activeEnemies.Add(enemy))
-                enemy.Character.Died += OnEnemyDied;
+                enemy.Died += OnEnemyDied;
         }
 
         private void OnEnemyDied(Character enemy)
@@ -40,7 +40,7 @@ namespace ShootEmUp.Enemies
             {
                 if (_activeEnemies.Remove(enemyComponent))
                 {
-                    enemyComponent.Character.Died -= OnEnemyDied;
+                    enemyComponent.Died -= OnEnemyDied;
                     _gameObjectSpawner.Release(enemyComponent);
                     EnemyDied?.Invoke(enemyComponent);
                 }

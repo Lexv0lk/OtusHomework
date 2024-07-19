@@ -9,13 +9,11 @@ namespace ShootEmUp.Components
     {
         [SerializeField] private Transform _firePoint;
         [SerializeField] private BulletConfig _bulletConfig;
-        [SerializeField] private TeamComponent _teamComponent;
 
         public BulletSpawner.ShootArgs GetShootArgs()
         {
             return new BulletSpawner.ShootArgs
             {
-                Team = _teamComponent.Team,
                 PhysicsLayer = (int)_bulletConfig.PhysicsLayer,
                 Color = _bulletConfig.Color,
                 Damage = _bulletConfig.Damage,

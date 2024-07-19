@@ -1,5 +1,6 @@
 using System;
 using ShootEmUp.Bullets;
+using UnityEngine;
 using Zenject;
 
 namespace ShootEmUp.Enemies
@@ -33,16 +34,17 @@ namespace ShootEmUp.Enemies
 
         private void OnEnemySpawned(Enemy enemy)
         {
-            enemy.AttackAgent.Fired += OnEnemyFired;
+            enemy.Attacked += OnEnemyAttacked;
         }
 
         private void OnEnemyDied(Enemy enemy)
         {
-            enemy.AttackAgent.Fired -= OnEnemyFired;
+            enemy.Attacked -= OnEnemyAttacked;
         }
 
-        private void OnEnemyFired(BulletSpawner.ShootArgs args)
+        private void OnEnemyAttacked(BulletSpawner.TeamShootArgs args)
         {
+            Debug.Log("Attack handled");
             _bulletSpawner.ShootBullet(args);
         }
     }

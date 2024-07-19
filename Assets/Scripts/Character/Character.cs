@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ShootEmUp.Characters
 {
-    public class Character : MonoBehaviour
+    public class Character : MonoBehaviour, IAttackableTarget
     {
         [SerializeField] private WeaponComponent _weaponComponent;
         [SerializeField] private HitPointsComponent _hitPointsComponent;
@@ -15,6 +15,8 @@ namespace ShootEmUp.Characters
         public HitPointsComponent HitPointsComponent => _hitPointsComponent;
         public TeamComponent TeamComponent => _teamComponent;
         public MoveComponent MoveComponent => _moveComponent;
+
+        public Vector3 Position => transform.position;
 
         public event Action<Character> Died;
 

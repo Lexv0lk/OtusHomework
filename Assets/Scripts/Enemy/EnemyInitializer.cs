@@ -22,8 +22,7 @@ namespace ShootEmUp.Enemies
             Transform attackPosition = _enemyPositions.GetRandomAttackPosition();
 
             enemy.transform.position = spawnPosition.position;
-            enemy.MoveAgent.SetDestination(attackPosition.position);
-            enemy.AttackAgent.SetTarget(_player);
+            enemy.Initialize(_player, attackPosition.position);
         }
     }
 }

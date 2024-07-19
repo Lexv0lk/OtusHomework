@@ -8,6 +8,12 @@ namespace ShootEmUp.Components
     {
         [SerializeField] private Rigidbody2D _rigidbody2D;
         [SerializeField] private float _speed = 5.0f;
+
+        public MoveComponent(Rigidbody2D rigidbody2D, float speed)
+        {
+            _rigidbody2D = rigidbody2D;
+            _speed = speed;
+        }
         
         public void Move(Vector2 vector)
         {

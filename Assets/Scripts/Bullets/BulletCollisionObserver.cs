@@ -1,5 +1,6 @@
 using System;
 using ShootEmUp.Bullets;
+using ShootEmUp.Characters;
 using UnityEngine;
 using Zenject;
 
@@ -37,7 +38,9 @@ public class BulletCollisionObserver : IInitializable, IDisposable
 
     private void OnBulletCollision(Bullet bullet, Collision2D collision)
     {
-        BulletUtils.DealDamage(bullet, collision.gameObject);
+        if (collision.gameObject.TryGetComponent(out IDamageable damageable))
+            DamageMechanic.DealDamage(bullet, damageable);
+        
         _spawner.ReleaseBullet(bullet);
     }
 }

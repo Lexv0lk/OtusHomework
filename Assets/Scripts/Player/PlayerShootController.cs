@@ -24,7 +24,12 @@ namespace ShootEmUp.Player
         private void Shoot()
         {
             WeaponComponent weapon = _player.WeaponComponent;
-            _bulletSpawner.ShootBullet(weapon.GetShootArgs());
+            var teamShootArgs = new BulletSpawner.TeamShootArgs()
+            {
+                ShootArgs = weapon.GetShootArgs(),
+                Team = _player.TeamComponent.Team
+            };
+            _bulletSpawner.ShootBullet(teamShootArgs);
         }
 
         void IGameSimpleUpdateListener.OnUpdate(float deltaTime)

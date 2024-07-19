@@ -17,14 +17,14 @@ namespace ShootEmUp.Bullets
 
         public event Action<Bullet, Collision2D> CollisionEntered;
 
-        public void Init(BulletSpawner.ShootArgs args)
+        public void Init(BulletSpawner.TeamShootArgs args)
         {
-            _rigidbody2D.velocity = args.Velocity;
-            gameObject.layer = args.PhysicsLayer;
-            transform.position = args.Position;
-            _spriteRenderer.color = args.Color;
+            _rigidbody2D.velocity = args.ShootArgs.Velocity;
+            gameObject.layer = args.ShootArgs.PhysicsLayer;
+            transform.position = args.ShootArgs.Position;
+            _spriteRenderer.color = args.ShootArgs.Color;
             Team = args.Team;
-            Damage = args.Damage;
+            Damage = args.ShootArgs.Damage;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

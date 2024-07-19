@@ -34,7 +34,7 @@ namespace ShootEmUp.Bullets
             _bulletBoundsWatcher.WentOutOfBounds -= ReleaseBullet;
         }
 
-        public void ShootBullet(ShootArgs args)
+        public void ShootBullet(TeamShootArgs args)
         {
             Bullet bullet = _bulletPool.Get();
             _activeBullets.Add(bullet);
@@ -61,6 +61,11 @@ namespace ShootEmUp.Bullets
             public Color Color;
             public int PhysicsLayer;
             public int Damage;
+        }
+        
+        public struct TeamShootArgs
+        {
+            public ShootArgs ShootArgs;
             public Team Team;
         }
     }

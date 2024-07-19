@@ -2,18 +2,21 @@ using System;
 using Cysharp.Threading.Tasks;
 using ShootEmUp.Common;
 using ShootEmUp.GameStates;
+using ShootEmUp.GameUpdate;
 using UnityEngine;
 using Zenject;
 
 namespace ShootEmUp.Enemies
 {
-    public class EnemyGameObjectSpawner : IGameStartListener, IGameObjectSpawner
+    public class EnemyGameObjectSpawner : IGameStartListener, IGameObjectSpawner, IGameSimpleUpdateListener
     {
         private readonly EnemyPool _pool;
         private readonly EnemyInitializer _initializer;
         private readonly EnemySpawnerConfig _config;
 
         private int _currentEnemyCount = 0;
+        private float _timeBeforeSpawn;
+        private bool _startedSpawning;
 
         [Inject]
         public EnemyGameObjectSpawner(EnemyPool pool, EnemyInitializer initializer,
@@ -36,7 +39,7 @@ namespace ShootEmUp.Enemies
 
         public void StartSpawning()
         {
-            SpawnEnemiesWithDelay();
+            _startedSpawning = true;
         }
 
         public void Release(Enemy enemy)
@@ -46,20 +49,21 @@ namespace ShootEmUp.Enemies
             ReleasedObject?.Invoke(enemy.gameObject);
         }
 
-        private UniTaskVoid SpawnEnemiesWithDelay()
+        void IGameSimpleUpdateListener.OnUpdate(float deltaTime)
         {
-            while (true)
+            if (_startedSpawning == false) return;
+            
+            _timeBeforeSpawn = Mathf.Max(0, _timeBeforeSpawn - deltaTime);
+            
+            if (_timeBeforeSpawn <= 0 && _currentEnemyCount < _config.Count)
             {
-                UniTask.WaitForSeconds(_config.SpawnDelay);
+                Enemy enemy = _pool.Get();
+                _initializer.Initialize(enemy);
+                _currentEnemyCount++;
+                Spawned?.Invoke(enemy);
+                SpawnedObject?.Invoke(enemy.gameObject);
 
-                if (_currentEnemyCount < _config.Count)
-                {
-                    Enemy enemy = _pool.Get();
-                    _initializer.Initialize(enemy);
-                    _currentEnemyCount++;
-                    Spawned?.Invoke(enemy);
-                    SpawnedObject?.Invoke(enemy.gameObject);
-                }
+                _timeBeforeSpawn = _config.SpawnDelay;
             }
         }
     }
