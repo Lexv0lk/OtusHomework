@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2e1dc29-e087-4c86-bd62-a0583798811c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/ConfigsInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/ConfigsInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/ControllersInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/ControllersInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/SceneObjectsInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/SceneObjectsInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/ViewsInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/ViewsInstaller.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/GameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DI/Settings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DI/Settings/BulletConfigs.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DI/Settings/BulletConfigs.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/CooldownAttackMechanic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/CooldownAttackMechanic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyShootController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyShootController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="b2e1dc29-e087-4c86-bd62-a0583798811c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +82,7 @@
       <workItem from="1721323910552" duration="10533000" />
       <workItem from="1721399646205" duration="12093000" />
       <workItem from="1721426841035" duration="1753000" />
-      <workItem from="1721463170776" duration="1479000" />
+      <workItem from="1721463170776" duration="2156000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал базу для свой луп системы игрового цикла">
       <created>1720373996097</created>
