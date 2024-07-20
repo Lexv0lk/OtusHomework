@@ -15,6 +15,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/00/7ad79332/ILateDisposable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -82,7 +83,7 @@
       <workItem from="1721323910552" duration="10533000" />
       <workItem from="1721399646205" duration="12093000" />
       <workItem from="1721426841035" duration="1753000" />
-      <workItem from="1721463170776" duration="2156000" />
+      <workItem from="1721463170776" duration="3624000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал базу для свой луп системы игрового цикла">
       <created>1720373996097</created>
