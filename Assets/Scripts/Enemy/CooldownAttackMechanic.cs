@@ -63,7 +63,6 @@ namespace ShootEmUp.Enemies.Agents
                 Team = _teamComponent.Team
             };
             
-            Debug.Log("Attack called");
             _attackCallback?.Invoke(teamShootArgs);
         }
     }

@@ -935,8 +935,10 @@ GameObject:
   m_Component:
   - component: {fileID: 768590996}
   - component: {fileID: 768590999}
-  - component: {fileID: 768590998}
   - component: {fileID: 768590997}
+  - component: {fileID: 768591002}
+  - component: {fileID: 768591001}
+  - component: {fileID: 768591000}
   m_Layer: 0
   m_Name: '[GAME]'
   m_TagString: Untagged
@@ -977,30 +979,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce39f5ef335042e7bf715ab2707dbf12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &768590998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768590995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756c7ba1b480469e8bd59109a5e46453, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputConfig: {fileID: 11400000, guid: 49a14abc8ac54af4495cf518ab228849, type: 2}
-  _levelBounds: {fileID: 2572952653776768186}
-  _pausePlayButton: {fileID: 923967780}
-  _player: {fileID: 3926786964592264469}
-  _bulletPool: {fileID: 363245579}
-  _enemyPool: {fileID: 562298207}
-  _enemyPositions: {fileID: 7166351703523243261}
-  _enemySpawnerConfig: {fileID: 11400000, guid: b298bd413ce991746878c66652fc5ef9,
-    type: 2}
-  _startScreenConfig: {fileID: 11400000, guid: 853dfa07bfcb5d547b2722e971bf7fb9, type: 2}
-  _startScreenView: {fileID: 400157983}
-  _startTimerView: {fileID: 36562972}
 --- !u!114 &768590999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,7 +994,9 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 768590997}
-  - {fileID: 768590998}
+  - {fileID: 768591002}
+  - {fileID: 768591001}
+  - {fileID: 768591000}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1034,6 +1014,50 @@ MonoBehaviour:
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
   _parentContractNames: []
+--- !u!114 &768591000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768590995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2130b6fb498c4a1683f125005fc44710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &768591001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768590995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb6fd770e5147749c799389d9cb7d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pausePlayButton: {fileID: 923967780}
+  _startScreenView: {fileID: 400157983}
+  _startTimerView: {fileID: 36562972}
+--- !u!114 &768591002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768590995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389439dcfe324c94a1518928fdb3dce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelBounds: {fileID: 2572952653776768186}
+  _player: {fileID: 3926786964592264469}
+  _enemyPositions: {fileID: 7166351703523243261}
+  _bulletPool: {fileID: 363245579}
+  _enemyPool: {fileID: 562298207}
 --- !u!1 &883274639
 GameObject:
   m_ObjectHideFlags: 0

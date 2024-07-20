@@ -1,6 +1,5 @@
 ﻿using ShootEmUp.Bullets;
 using ShootEmUp.Characters;
-using ShootEmUp.Components;
 using ShootEmUp.Enemies;
 using ShootEmUp.GameInitialization;
 using ShootEmUp.GameStates;
@@ -21,14 +20,17 @@ namespace ShootEmUp.DI.Installers
     public class GameInstaller : MonoInstaller
     {
         [SerializeField] private InputConfig _inputConfig;
+        [SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
+        [SerializeField] private StartScreenConfig _startScreenConfig;
+        
         [SerializeField] private LevelBounds _levelBounds;
         [SerializeField] private PausePlayButton _pausePlayButton;
         [SerializeField] private Character _player;
+        [SerializeField] private EnemyPositions _enemyPositions;
+        
         [SerializeField] private BulletPool _bulletPool;
         [SerializeField] private EnemyPool _enemyPool;
-        [SerializeField] private EnemyPositions _enemyPositions;
-        [SerializeField] private EnemySpawnerConfig _enemySpawnerConfig;
-        [SerializeField] private StartScreenConfig _startScreenConfig;
+        
         [SerializeField] private StartScreenView _startScreenView;
         [SerializeField] private StartTimerView _startTimerView;
         
