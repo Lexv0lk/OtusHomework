@@ -31,7 +31,7 @@ namespace ShootEmUp.Enemies
             _attackAfterMovementMechanic.AttackAfterReached(target, destination).Forget();
         }
 
-        void IGameFixedUpdateListener.OnFixedUpdate(float fixedDeltaTime)
+        public void OnFixedUpdate(float fixedDeltaTime)
         {
             _moveToMechanic.OnFixedUpdate(fixedDeltaTime);
             _attackMechanic.OnFixedUpdate(fixedDeltaTime);

@@ -8,24 +8,24 @@ namespace ShootEmUp.Enemies
     public sealed class EnemyDeathObserver : IInitializable, IDisposable
     {
         private readonly HashSet<Enemy> _activeEnemies = new();
-        private readonly EnemyGameObjectSpawner _gameObjectSpawner;
+        private readonly EnemySpawner _spawner;
         
         [Inject]
-        public EnemyDeathObserver(EnemyGameObjectSpawner gameObjectSpawner)
+        public EnemyDeathObserver(EnemySpawner spawner)
         {
-            _gameObjectSpawner = gameObjectSpawner;
+            _spawner = spawner;
         }
         
         public event Action<Enemy> EnemyDied;
 
         void IInitializable.Initialize()
         {
-            _gameObjectSpawner.Spawned += OnEnemySpawned;
+            _spawner.Spawned += OnEnemySpawned;
         }
 
         void IDisposable.Dispose()
         {
-            _gameObjectSpawner.Spawned -= OnEnemySpawned;
+            _spawner.Spawned -= OnEnemySpawned;
         }
 
         private void OnEnemySpawned(Enemy enemy)
@@ -41,7 +41,7 @@ namespace ShootEmUp.Enemies
                 if (_activeEnemies.Remove(enemyComponent))
                 {
                     enemyComponent.Died -= OnEnemyDied;
-                    _gameObjectSpawner.Release(enemyComponent);
+                    _spawner.Release(enemyComponent);
                     EnemyDied?.Invoke(enemyComponent);
                 }
             }

@@ -8,7 +8,7 @@ using Zenject;
 
 namespace ShootEmUp.Enemies
 {
-    public class EnemyGameObjectSpawner : IGameStartListener, IGameObjectSpawner, IGameSimpleUpdateListener
+    public class EnemySpawner : IGameStartListener, IGameSimpleUpdateListener
     {
         private readonly EnemyPool _pool;
         private readonly EnemyInitializer _initializer;
@@ -19,7 +19,7 @@ namespace ShootEmUp.Enemies
         private bool _startedSpawning;
 
         [Inject]
-        public EnemyGameObjectSpawner(EnemyPool pool, EnemyInitializer initializer,
+        public EnemySpawner(EnemyPool pool, EnemyInitializer initializer,
             EnemySpawnerConfig spawnerConfig)
         {
             _pool = pool;
@@ -28,8 +28,7 @@ namespace ShootEmUp.Enemies
         }
 
         public event Action<Enemy> Spawned;
-        public event Action<GameObject> SpawnedObject;
-        public event Action<GameObject> ReleasedObject;
+        public event Action<Enemy> Released;
         
         void IGameStartListener.OnStart()
         {
@@ -46,7 +45,7 @@ namespace ShootEmUp.Enemies
         {
             _currentEnemyCount--;
             _pool.Release(enemy);
-            ReleasedObject?.Invoke(enemy.gameObject);
+            Released?.Invoke(enemy);
         }
 
         void IGameSimpleUpdateListener.OnUpdate(float deltaTime)
@@ -61,7 +60,6 @@ namespace ShootEmUp.Enemies
                 _initializer.Initialize(enemy);
                 _currentEnemyCount++;
                 Spawned?.Invoke(enemy);
-                SpawnedObject?.Invoke(enemy.gameObject);
 
                 _timeBeforeSpawn = _config.SpawnDelay;
             }

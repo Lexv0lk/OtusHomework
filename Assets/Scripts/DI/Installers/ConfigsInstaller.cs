@@ -15,9 +15,9 @@ namespace ShootEmUp.DI.Installers
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<InputConfig>().FromInstance(_inputConfig);
-            Container.BindInterfacesAndSelfTo<EnemySpawnerConfig>().FromInstance(_enemySpawnerConfig);
-            Container.BindInterfacesAndSelfTo<StartScreenConfig>().FromInstance(_startScreenConfig);
+            Container.Bind<InputConfig>().FromInstance(_inputConfig);
+            Container.Bind<EnemySpawnerConfig>().FromInstance(_enemySpawnerConfig);
+            Container.Bind<StartScreenConfig>().FromInstance(_startScreenConfig);
         }
     }
 }

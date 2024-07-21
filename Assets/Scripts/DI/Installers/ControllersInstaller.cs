@@ -18,26 +18,28 @@ namespace ShootEmUp.DI.Installers
         {
             Container.BindInterfacesAndSelfTo<InputManager>().AsSingle();
 
-            Container.BindInterfacesAndSelfTo<GameStateModel>().AsSingle();
+            Container.Bind<GameStateModel>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameStateController>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameUpdateController>().AsSingle();
             
             Container.BindInterfacesAndSelfTo<GameFinishObserver>().AsSingle();
             Container.BindInterfacesAndSelfTo<GamePauseController>().AsSingle();
-            Container.BindInterfacesAndSelfTo<GameListenersController>().AsSingle();
+            Container.Bind<GameListenersController>().AsSingle().NonLazy();
             
-            Container.BindInterfacesAndSelfTo<PlayerDeathObserver>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<PlayerMoveController>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerShootController>().AsSingle();
+            Container.Bind<PlayerDeathObserver>().AsSingle().NonLazy();
             
-            Container.BindInterfacesAndSelfTo<BulletSpawner>().AsSingle();
+            Container.Bind<BulletSpawner>().AsSingle();
             Container.BindInterfacesAndSelfTo<BulletCollisionObserver>().AsSingle();
             Container.BindInterfacesAndSelfTo<BulletLevelBoundsWatcher>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BulletsStateUpdateController>().AsSingle().NonLazy();
 
-            Container.BindInterfacesAndSelfTo<EnemyInitializer>().AsSingle();
-            Container.BindInterfacesAndSelfTo<EnemyGameObjectSpawner>().AsSingle();
+            Container.Bind<EnemyInitializer>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemySpawner>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyDeathObserver>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyShootController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemiesStateUpdateController>().AsSingle().NonLazy();
 
             Container.BindInterfacesAndSelfTo<StartTimerController>().AsSingle();
         }

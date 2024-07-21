@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ShootEmUp.Bullets
 {
-    public sealed class Bullet : MonoBehaviour, IGamePauseListener, IGameResumeListener, IGameFinishListener
+    public sealed class Bullet : MonoBehaviour, IGamePauseListener, IGameFinishListener, IGameResumeListener
     {
         [SerializeField] private Rigidbody2D _rigidbody2D;
         [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -32,20 +32,20 @@ namespace ShootEmUp.Bullets
             CollisionEntered?.Invoke(this, collision);
         }
 
-        void IGamePauseListener.OnPause()
+        public void OnPause()
         {
             _lastVelocity = _rigidbody2D.velocity;
             _rigidbody2D.velocity = Vector2.zero;
             _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
-        void IGameResumeListener.OnResume()
+        public void OnResume()
         {
             _rigidbody2D.constraints = RigidbodyConstraints2D.None;
             _rigidbody2D.velocity = _lastVelocity;
         }
 
-        void IGameFinishListener.OnFinish()
+        public void OnFinish()
         {
             _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
         }

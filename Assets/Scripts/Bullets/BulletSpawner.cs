@@ -6,42 +6,26 @@ using Zenject;
 
 namespace ShootEmUp.Bullets
 {
-    public sealed class BulletSpawner : IGameObjectSpawner, IInitializable, IDisposable
+    public sealed class BulletSpawner
     {
         private readonly HashSet<Bullet> _activeBullets = new();
         private readonly BulletPool _bulletPool;
-        private readonly BulletLevelBoundsWatcher _bulletBoundsWatcher;
 
         [Inject]
-        public BulletSpawner(BulletPool pool, BulletLevelBoundsWatcher bulletLevelBoundsWatcher)
+        public BulletSpawner(BulletPool pool)
         {
             _bulletPool = pool;
-            _bulletBoundsWatcher = bulletLevelBoundsWatcher;
         }
 
         public event Action<Bullet> Spawned;
-        public event Action<GameObject> SpawnedObject;
         public event Action<Bullet> Released;
-        public event Action<GameObject> ReleasedObject;
-
-        void IInitializable.Initialize()
-        {
-            _bulletBoundsWatcher.WentOutOfBounds += ReleaseBullet;
-        }
-
-        void IDisposable.Dispose()
-        {
-            _bulletBoundsWatcher.WentOutOfBounds -= ReleaseBullet;
-        }
 
         public void ShootBullet(TeamShootArgs args)
         {
             Bullet bullet = _bulletPool.Get();
             _activeBullets.Add(bullet);
             bullet.Init(args);
-            _bulletBoundsWatcher.AddTargetToWatch(bullet);
             Spawned?.Invoke(bullet);
-            SpawnedObject?.Invoke(bullet.gameObject);
         }
 
         public void ReleaseBullet(Bullet bullet)
@@ -50,7 +34,6 @@ namespace ShootEmUp.Bullets
             {
                 _bulletPool.Release(bullet);
                 Released?.Invoke(bullet);
-                ReleasedObject?.Invoke(bullet.gameObject);
             }
         }
         

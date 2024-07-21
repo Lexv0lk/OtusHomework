@@ -11,16 +11,23 @@ namespace ShootEmUp.Bullets
         private readonly HashSet<Bullet> _watchTargets = new();
         private readonly List<Bullet> _targetsToWatchInFrame = new List<Bullet>();
         private readonly LevelBounds _levelBounds;
+        private readonly BulletSpawner _spawner;
 
         [Inject]
-        public BulletLevelBoundsWatcher(LevelBounds levelBounds)
+        public BulletLevelBoundsWatcher(LevelBounds levelBounds, BulletSpawner spawner)
         {
             _levelBounds = levelBounds;
+            _spawner = spawner;
+            
+            _spawner.Spawned += AddTargetToWatch;
         }
 
-        public event Action<Bullet> WentOutOfBounds;
-
-        public void AddTargetToWatch(Bullet newTarget)
+        ~BulletLevelBoundsWatcher()
+        {
+            _spawner.Spawned -= AddTargetToWatch;
+        }
+        
+        private void AddTargetToWatch(Bullet newTarget)
         {
             _watchTargets.Add(newTarget);
         }
@@ -37,8 +44,9 @@ namespace ShootEmUp.Bullets
             {
                 if (_levelBounds.InBounds(_targetsToWatchInFrame[i].transform.position) == false)
                 {
-                    _watchTargets.Remove(_targetsToWatchInFrame[i]);
-                    WentOutOfBounds?.Invoke(_targetsToWatchInFrame[i]);
+                    var bullet = _targetsToWatchInFrame[i];
+                    _watchTargets.Remove(bullet);
+                    _spawner.ReleaseBullet(bullet);
                 }
             }
         }

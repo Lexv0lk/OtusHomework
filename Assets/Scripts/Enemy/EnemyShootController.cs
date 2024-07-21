@@ -6,28 +6,28 @@ namespace ShootEmUp.Enemies
 {
     public class EnemyShootController : IInitializable, IDisposable
     {
-        private readonly EnemyGameObjectSpawner _gameObjectSpawner;
+        private readonly EnemySpawner _spawner;
         private readonly EnemyDeathObserver _deathObserver;
         private readonly BulletSpawner _bulletSpawner;
 
         [Inject]
-        public EnemyShootController(EnemyGameObjectSpawner gameObjectSpawner, EnemyDeathObserver deathObserver,
+        public EnemyShootController(EnemySpawner spawner, EnemyDeathObserver deathObserver,
             BulletSpawner bulletSpawner)
         {
-            _gameObjectSpawner = gameObjectSpawner;
+            _spawner = spawner;
             _deathObserver = deathObserver;
             _bulletSpawner = bulletSpawner;
         }
 
         void IInitializable.Initialize()
         {
-            _gameObjectSpawner.Spawned += OnEnemySpawned;
+            _spawner.Spawned += OnEnemySpawned;
             _deathObserver.EnemyDied += OnEnemyDied;
         }
 
         void IDisposable.Dispose()
         {
-            _gameObjectSpawner.Spawned -= OnEnemySpawned;
+            _spawner.Spawned -= OnEnemySpawned;
             _deathObserver.EnemyDied -= OnEnemyDied;
         }
 
