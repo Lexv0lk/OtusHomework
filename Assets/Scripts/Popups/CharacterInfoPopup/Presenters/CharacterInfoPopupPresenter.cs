@@ -6,7 +6,7 @@ namespace Popups.CharacterInfoPopup.Presenters
 {
     public interface ICharacterInfoPopupPresenter
     {
-        IEnumerable<ICharacterStatViewPresenter> StatViewPresenters { get; }
+        IReadOnlyReactiveCollection<ICharacterStatViewPresenter> StatViewPresenters { get; }
         ICharacterXpBarViewPresenter XpBarViewPresenter { get; }
 
         IReadOnlyReactiveProperty<string> Name { get; }
