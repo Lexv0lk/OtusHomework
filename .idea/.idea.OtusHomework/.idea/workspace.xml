@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2e1dc29-e087-4c86-bd62-a0583798811c" name="Changes" comment="" />
+    <list default="true" id="b2e1dc29-e087-4c86-bd62-a0583798811c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterStatView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterStatView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterInfoPopupPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterInfoPopupPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterStatViewPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterStatViewPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterXpBarViewPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterXpBarViewPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/ReactiveView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/ReactiveView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +102,9 @@
       <workItem from="1721323910552" duration="10533000" />
       <workItem from="1721399646205" duration="12093000" />
       <workItem from="1721426841035" duration="1753000" />
-      <workItem from="1721463170776" duration="3624000" />
+      <workItem from="1721463170776" duration="4211000" />
+      <workItem from="1721505203186" duration="599000" />
+      <workItem from="1721553954494" duration="6429000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал базу для свой луп системы игрового цикла">
       <created>1720373996097</created>
