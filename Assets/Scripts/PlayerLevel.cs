@@ -1,28 +1,32 @@
 using System;
 using Sirenix.OdinInspector;
-using UniRx;
 
 namespace Lessons.Architecture.PM
 {
+    [Serializable]
     public sealed class PlayerLevel
     {
-        [ShowInInspector, ReadOnly] 
-        public readonly IntReactiveProperty CurrentLevel = new(1);
+        public event Action OnLevelUp;
+        public event Action<int> OnExperienceChanged;
 
-        [ShowInInspector, ReadOnly] 
-        public readonly IntReactiveProperty CurrentExperience = new();
+        [ShowInInspector, ReadOnly]
+        public int CurrentLevel { get; private set; } = 1;
+
+        [ShowInInspector, ReadOnly]
+        public int CurrentExperience { get; private set; }
 
         [ShowInInspector, ReadOnly]
         public int RequiredExperience
         {
-            get { return 100 * (this.CurrentLevel.Value + 1); }
+            get { return 100 * (this.CurrentLevel + 1); }
         }
 
         [Button]
         public void AddExperience(int range)
         {
-            var xp = Math.Min(this.CurrentExperience.Value + range, this.RequiredExperience);
-            CurrentExperience.Value = xp;
+            var xp = Math.Min(this.CurrentExperience + range, this.RequiredExperience);
+            this.CurrentExperience = xp;
+            this.OnExperienceChanged?.Invoke(xp);
         }
 
         [Button]
@@ -30,14 +34,16 @@ namespace Lessons.Architecture.PM
         {
             if (this.CanLevelUp())
             {
-                CurrentExperience.Value = 0;
-                CurrentLevel.Value++;
+                this.CurrentExperience = 0;
+                this.CurrentLevel++;
+                this.OnLevelUp?.Invoke();
+                this.OnExperienceChanged?.Invoke(this.CurrentExperience);
             }
         }
 
         public bool CanLevelUp()
         {
-            return CurrentExperience.Value == RequiredExperience;
+            return this.CurrentExperience == this.RequiredExperience;
         }
     }
 }

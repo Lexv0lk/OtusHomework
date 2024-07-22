@@ -33,7 +33,7 @@ namespace Popups.CharacterInfoPopup
             _currentPresenter = presenter;
             SubscribeToPresenter(_currentPresenter);
             
-            _xpBarView.Initialize(presenter.XpBarViewPresenter);
+            _xpBarView.Initialize(presenter.LevelViewPresenter);
             UpdateStats(presenter.StatViewPresenters);
         }
 

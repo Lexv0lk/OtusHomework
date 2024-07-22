@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Lessons.Architecture.PM;
 using UniRx;
 using UnityEngine;
@@ -9,88 +10,81 @@ namespace Popups.CharacterInfoPopup.Presenters
     public interface ICharacterInfoPopupPresenter
     {
         IReadOnlyReactiveCollection<ICharacterStatViewPresenter> StatViewPresenters { get; }
-        ICharacterXpBarViewPresenter XpBarViewPresenter { get; }
+        ICharacterLevelViewPresenter LevelViewPresenter { get; }
 
         IReadOnlyReactiveProperty<string> Name { get; }
-        IReadOnlyReactiveProperty<string> Level { get; }
         IReadOnlyReactiveProperty<string> Description { get; }
         IReadOnlyReactiveProperty<Sprite> Icon { get; }
     }
     
     public class DefaultCharacterInfoPopupPresenter : ICharacterInfoPopupPresenter
     {
+        private readonly UserInfo _userInfo;
         private readonly CharacterInfo _characterInfo;
 
-        private readonly ICharacterXpBarViewPresenter _xpBarViewPresenter;
-        private readonly ReactiveCollection<ICharacterStatViewPresenter> _statsPresenters = new();
+        private readonly ICharacterLevelViewPresenter _levelViewPresenter;
         
+        private readonly ReactiveCollection<ICharacterStatViewPresenter> _statsPresenters = new();
+        private readonly Dictionary<CharacterStat, ICharacterStatViewPresenter> _statPresenterConnections = new();
+
         private readonly StringReactiveProperty _name;
-        private readonly StringReactiveProperty _level;
         private readonly StringReactiveProperty _description;
         private readonly ReactiveProperty<Sprite> _icon;
         
-        private readonly CompositeDisposable _subscriptions = new();
-        
         public IReadOnlyReactiveCollection<ICharacterStatViewPresenter> StatViewPresenters => _statsPresenters;
-        public ICharacterXpBarViewPresenter XpBarViewPresenter => _xpBarViewPresenter;
+        public ICharacterLevelViewPresenter LevelViewPresenter => _levelViewPresenter;
         public IReadOnlyReactiveProperty<string> Name => _name;
-        public IReadOnlyReactiveProperty<string> Level => _level;
         public IReadOnlyReactiveProperty<string> Description => _description;
         public IReadOnlyReactiveProperty<Sprite> Icon => _icon;
 
         public DefaultCharacterInfoPopupPresenter(UserInfo userInfo, CharacterInfo characterInfo, PlayerLevel playerLevel)
         {
+            _userInfo = userInfo;
             _characterInfo = characterInfo;
 
-            _name = userInfo.Name;
-            _level = new StringReactiveProperty($"Level: {playerLevel.CurrentLevel}");
-            _description = userInfo.Description;
-            _icon = userInfo.Icon;
+            _name = new StringReactiveProperty(_userInfo.Name);
+            _description = new StringReactiveProperty(_userInfo.Description);
+            _icon = new ReactiveProperty<Sprite>(_userInfo.Icon);
 
-            _xpBarViewPresenter = new DefaultCharacterXpBarViewPresenter(playerLevel);
+            _userInfo.OnNameChanged += OnNameChanged;
+            _userInfo.OnDescriptionChanged += OnDescriptionChanged;
+            _userInfo.OnIconChanged += OnIconChanged;
+            _characterInfo.OnStatAdded += AddStatPresenter;
+            _characterInfo.OnStatRemoved += RemoveStatPresenter;
 
-            playerLevel.CurrentLevel.Subscribe(OnLevelChanged).AddTo(_subscriptions);
-
-            characterInfo.Stats.ObserveAdd().Subscribe(OnStatAdded).AddTo(_subscriptions);
-            characterInfo.Stats.ObserveRemove().Subscribe(OnStatRemoved).AddTo(_subscriptions);
-            characterInfo.Stats.ObserveReplace().Subscribe(OnStatReplaced).AddTo(_subscriptions);
-            characterInfo.Stats.ObserveMove().Subscribe(OnStatMoved).AddTo(_subscriptions);
+            _levelViewPresenter = new DefaultCharacterLevelViewPresenter(playerLevel);
         }
 
         ~DefaultCharacterInfoPopupPresenter()
         {
-            _subscriptions.Dispose();
+            _userInfo.OnNameChanged -= OnNameChanged;
+            _userInfo.OnDescriptionChanged -= OnDescriptionChanged;
+            _userInfo.OnIconChanged -= OnIconChanged;
+            _characterInfo.OnStatAdded -= AddStatPresenter;
+            _characterInfo.OnStatRemoved -= RemoveStatPresenter;
         }
 
-        private void UpdateStatsPresenters()
+        private void AddStatPresenter(CharacterStat stat)
         {
-            _statsPresenters.Clear();
-
-            foreach (CharacterStat characterStat in _characterInfo.Stats)
-                _statsPresenters.Add(new DefaultCharacterStatViewPresenter(characterStat));
+            var statPresenter = new DefaultCharacterStatViewPresenter(stat);
+            _statsPresenters.Add(statPresenter);
+            _statPresenterConnections.Add(stat, statPresenter);
         }
 
-        #region PROPERTIES_HANDLERS
-
-        private void OnLevelChanged(int newLevel) 
-            => _level.Value = $"Level: {newLevel}";
-
-        #endregion
-
-        #region COLLECTION_HANDLERS
-
-        private void OnStatMoved(CollectionMoveEvent<CharacterStat> moveEvent) 
-            => UpdateStatsPresenters();
-
-        private void OnStatReplaced(CollectionReplaceEvent<CharacterStat> replaceEvent) 
-            => UpdateStatsPresenters();
-
-        private void OnStatRemoved(CollectionRemoveEvent<CharacterStat> removeEvent) 
-            => UpdateStatsPresenters();
-
-        private void OnStatAdded(CollectionAddEvent<CharacterStat> addEvent) 
-            => _statsPresenters.Add(new DefaultCharacterStatViewPresenter(addEvent.Value));
-
-        #endregion
+        private void RemoveStatPresenter(CharacterStat stat)
+        {
+            var presenter = _statPresenterConnections[stat];
+            _statsPresenters.Remove(presenter);
+            _statPresenterConnections.Remove(stat);
+        }
+        
+        private void OnNameChanged(string newName) 
+            => _name.Value = $"@{newName}";
+        
+        private void OnDescriptionChanged(string newDescription) 
+            => _description.Value = newDescription;
+        
+        private void OnIconChanged(Sprite newIcon) 
+            => _icon.Value = newIcon;
     }
 }

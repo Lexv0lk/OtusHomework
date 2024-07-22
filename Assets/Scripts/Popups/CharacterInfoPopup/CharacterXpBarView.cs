@@ -16,16 +16,16 @@ namespace Popups.CharacterInfoPopup
         [SerializeField] private Sprite _notFilledSprite;
         [SerializeField] private Sprite _filledSprite;
         
-        public void Initialize(ICharacterXpBarViewPresenter presenter)
+        public void Initialize(ICharacterLevelViewPresenter presenter)
         {
             DisposeSubscriptions();
             SubscribeToPresenter(presenter);
         }
 
-        private void SubscribeToPresenter(ICharacterXpBarViewPresenter presenter)
+        private void SubscribeToPresenter(ICharacterLevelViewPresenter presenter)
         {
             presenter.XpGainPart.Subscribe(UpdateSliderValue).AddTo(Subscriptions);
-            presenter.CurrentXpValue.Subscribe(UpdateXpValue).AddTo(Subscriptions);
+            presenter.Experience.Subscribe(UpdateXpValue).AddTo(Subscriptions);
         }
 
         private void UpdateXpValue(string newValue)
