@@ -7,6 +7,12 @@ namespace Lessons.Architecture.PM
     [Serializable]
     public sealed class CharacterStat
     {
+        public CharacterStat(string name, int value)
+        {
+            Name = name;
+            Value = value;
+        }
+        
         public event Action<int> OnValueChanged; 
 
         [ShowInInspector, ReadOnly]

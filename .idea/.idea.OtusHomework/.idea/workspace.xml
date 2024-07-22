@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e1dc29-e087-4c86-bd62-a0583798811c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/GameInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/GameInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupAdapter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/PopupOpenManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/PopupOpenManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character Stat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character Stat.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterStat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerLevel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterInfoPopupPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterInfoPopupPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterStatViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterStatViewPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterXpBarViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterLevelViewPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterXpBarViewPresenter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterLevelViewPresenter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopupController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopupController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupAdapter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterLevelView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterLevelView.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +96,8 @@
       <workItem from="1721505203186" duration="599000" />
       <workItem from="1721553954494" duration="7261000" />
       <workItem from="1721646940703" duration="2535000" />
-      <workItem from="1721661052484" duration="7907000" />
+      <workItem from="1721661052484" duration="7965000" />
+      <workItem from="1721683452251" duration="713000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал базу для свой луп системы игрового цикла">
       <created>1720373996097</created>

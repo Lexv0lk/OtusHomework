@@ -15,8 +15,10 @@ namespace Lessons.Architecture.PM
         private readonly HashSet<CharacterStat> stats = new();
 
         [Button]
-        public void AddStat(CharacterStat stat)
+        public void AddStat(string name, int value)
         {
+            var stat = new CharacterStat(name, value);
+            
             if (this.stats.Add(stat))
             {
                 this.OnStatAdded?.Invoke(stat);
@@ -24,8 +26,10 @@ namespace Lessons.Architecture.PM
         }
 
         [Button]
-        public void RemoveStat(CharacterStat stat)
+        public void RemoveStat(string name)
         {
+            var stat = this.stats.FirstOrDefault(x => x.Name == name);
+            
             if (this.stats.Remove(stat))
             {
                 this.OnStatRemoved?.Invoke(stat);

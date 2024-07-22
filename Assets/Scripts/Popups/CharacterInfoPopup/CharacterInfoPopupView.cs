@@ -13,13 +13,11 @@ namespace Popups.CharacterInfoPopup
         
         [SerializeField] private TMP_Text _name;
         [SerializeField] private Image _icon;
-        [SerializeField] private TMP_Text _level;
         [SerializeField] private TMP_Text _description;
-        [SerializeField] private Button _levelUpButton;
         [SerializeField] private Transform _statsRoot;
         
         [Header("Views")]
-        [SerializeField] private CharacterXpBarView _xpBarView;
+        [SerializeField] private CharacterLevelView levelView;
 
         [Header("Prefabs")] 
         [SerializeField] private CharacterStatView _statViewPrefab;
@@ -33,7 +31,7 @@ namespace Popups.CharacterInfoPopup
             _currentPresenter = presenter;
             SubscribeToPresenter(_currentPresenter);
             
-            _xpBarView.Initialize(presenter.LevelViewPresenter);
+            levelView.Initialize(presenter.LevelViewPresenter);
             UpdateStats(presenter.StatViewPresenters);
         }
 
@@ -59,22 +57,13 @@ namespace Popups.CharacterInfoPopup
         {
             presenter.Name.Subscribe(OnNameChanged).AddTo(Subscriptions);
             presenter.Description.Subscribe(OnDescriptionChanged).AddTo(Subscriptions);
-            presenter.Level.Subscribe(OnLevelChanged).AddTo(Subscriptions);
             presenter.Icon.Subscribe(OnIconChanged).AddTo(Subscriptions);
             
             presenter.StatViewPresenters.ObserveAdd().Subscribe(OnStatAdded).AddTo(Subscriptions);
             presenter.StatViewPresenters.ObserveRemove().Subscribe(OnStatRemoved).AddTo(Subscriptions);
-            presenter.StatViewPresenters.ObserveReplace().Subscribe(OnStatReplaced).AddTo(Subscriptions);
-            presenter.StatViewPresenters.ObserveMove().Subscribe(OnStatMoved).AddTo(Subscriptions);
         }
         
         #region COLLECTION_HANDLERS
-
-        private void OnStatMoved(CollectionMoveEvent<ICharacterStatViewPresenter> moveEvent) 
-            => UpdateStats(_currentPresenter.StatViewPresenters);
-
-        private void OnStatReplaced(CollectionReplaceEvent<ICharacterStatViewPresenter> replaceEvent) 
-            => UpdateStats(_currentPresenter.StatViewPresenters);
 
         private void OnStatRemoved(CollectionRemoveEvent<ICharacterStatViewPresenter> removeEvent) 
             => UpdateStats(_currentPresenter.StatViewPresenters);
@@ -91,9 +80,6 @@ namespace Popups.CharacterInfoPopup
 
         private void OnDescriptionChanged(string newValue) 
             => _description.text = newValue;
-
-        private void OnLevelChanged(string newValue) 
-            => _level.text = newValue;
 
         private void OnIconChanged(Sprite newValue) 
             => _icon.sprite = newValue;
