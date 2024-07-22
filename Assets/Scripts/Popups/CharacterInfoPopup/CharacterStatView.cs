@@ -20,7 +20,7 @@ namespace Popups.CharacterInfoPopup
 
         private void SubscribeToPresenter(ICharacterStatViewPresenter presenter)
         {
-            Subscriptions.Add(presenter.Level.Subscribe(OnLevelChanged));
+            presenter.Level.Subscribe(OnLevelChanged).AddTo(Subscriptions);
         }
 
         private void OnLevelChanged(string newValue)

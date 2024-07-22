@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e1dc29-e087-4c86-bd62-a0583798811c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopupController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopupController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterStat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterStatView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterStatView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterInfoPopupPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterInfoPopupPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterStatViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterStatViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterXpBarViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterXpBarViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/ReactiveView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/ReactiveView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInfo.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +32,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/00/7ad79332/ILateDisposable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18f5482d17338a7bbdeae155929167e4a8be10b5d2e9aed96c2562ed98f34f/System.Collections.ObjectModel.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -88,6 +102,8 @@
       <workItem from="1721463170776" duration="4211000" />
       <workItem from="1721505203186" duration="599000" />
       <workItem from="1721553954494" duration="7261000" />
+      <workItem from="1721646940703" duration="2535000" />
+      <workItem from="1721661052484" duration="4515000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал базу для свой луп системы игрового цикла">
       <created>1720373996097</created>

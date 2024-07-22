@@ -15,6 +15,7 @@ namespace Popups.CharacterInfoPopup
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _level;
         [SerializeField] private TMP_Text _description;
+        [SerializeField] private Button _levelUpButton;
         [SerializeField] private Transform _statsRoot;
         
         [Header("Views")]
@@ -33,10 +34,10 @@ namespace Popups.CharacterInfoPopup
             SubscribeToPresenter(_currentPresenter);
             
             _xpBarView.Initialize(presenter.XpBarViewPresenter);
-            CreateStats(presenter.StatViewPresenters);
+            UpdateStats(presenter.StatViewPresenters);
         }
 
-        private void CreateStats(IEnumerable<ICharacterStatViewPresenter> statPresenters)
+        private void UpdateStats(IEnumerable<ICharacterStatViewPresenter> statPresenters)
         {
             for (int i = 0; i < _currentStats.Count; i++)
                 Destroy(_currentStats[i].gameObject);
@@ -44,20 +45,46 @@ namespace Popups.CharacterInfoPopup
             _currentStats.Clear();
 
             foreach (var presenter in statPresenters)
-            {
-                var statView = Instantiate(_statViewPrefab, _statsRoot);
-                statView.Initialize(presenter);
-                _currentStats.Add(statView);
-            }
+                AddStatView(presenter);
+        }
+
+        private void AddStatView(ICharacterStatViewPresenter presenter)
+        {
+            var statView = Instantiate(_statViewPrefab, _statsRoot);
+            statView.Initialize(presenter);
+            _currentStats.Add(statView);
         }
 
         private void SubscribeToPresenter(ICharacterInfoPopupPresenter presenter)
         {
-            Subscriptions.Add(presenter.Name.Subscribe(OnNameChanged));
-            Subscriptions.Add(presenter.Description.Subscribe(OnDescriptionChanged));
-            Subscriptions.Add(presenter.Level.Subscribe(OnLevelChanged));
-            Subscriptions.Add(presenter.Icon.Subscribe(OnIconChanged));
+            presenter.Name.Subscribe(OnNameChanged).AddTo(Subscriptions);
+            presenter.Description.Subscribe(OnDescriptionChanged).AddTo(Subscriptions);
+            presenter.Level.Subscribe(OnLevelChanged).AddTo(Subscriptions);
+            presenter.Icon.Subscribe(OnIconChanged).AddTo(Subscriptions);
+            
+            presenter.StatViewPresenters.ObserveAdd().Subscribe(OnStatAdded).AddTo(Subscriptions);
+            presenter.StatViewPresenters.ObserveRemove().Subscribe(OnStatRemoved).AddTo(Subscriptions);
+            presenter.StatViewPresenters.ObserveReplace().Subscribe(OnStatReplaced).AddTo(Subscriptions);
+            presenter.StatViewPresenters.ObserveMove().Subscribe(OnStatMoved).AddTo(Subscriptions);
         }
+        
+        #region COLLECTION_HANDLERS
+
+        private void OnStatMoved(CollectionMoveEvent<ICharacterStatViewPresenter> moveEvent) 
+            => UpdateStats(_currentPresenter.StatViewPresenters);
+
+        private void OnStatReplaced(CollectionReplaceEvent<ICharacterStatViewPresenter> replaceEvent) 
+            => UpdateStats(_currentPresenter.StatViewPresenters);
+
+        private void OnStatRemoved(CollectionRemoveEvent<ICharacterStatViewPresenter> removeEvent) 
+            => UpdateStats(_currentPresenter.StatViewPresenters);
+
+        private void OnStatAdded(CollectionAddEvent<ICharacterStatViewPresenter> addEvent) 
+            => AddStatView(addEvent.Value);
+
+        #endregion
+
+        #region PROPERTIES_HANDLERS
 
         private void OnNameChanged(string newValue) 
             => _name.text = newValue;
@@ -70,5 +97,7 @@ namespace Popups.CharacterInfoPopup
 
         private void OnIconChanged(Sprite newValue) 
             => _icon.sprite = newValue;
+
+        #endregion
     }
 }

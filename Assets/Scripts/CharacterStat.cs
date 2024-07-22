@@ -1,24 +1,28 @@
 using System;
 using Sirenix.OdinInspector;
+using UniRx;
 using UnityEngine;
 
 namespace Lessons.Architecture.PM
 {
     public sealed class CharacterStat
     {
-        public event Action<int> OnValueChanged; 
+        [ShowInInspector, ReadOnly] 
+        public readonly StringReactiveProperty Name = new();
 
-        [ShowInInspector, ReadOnly]
-        public string Name { get; private set; }
-
-        [ShowInInspector, ReadOnly]
-        public int Value { get; private set; }
+        [ShowInInspector, ReadOnly] 
+        public readonly IntReactiveProperty Level = new();
 
         [Button]
-        public void ChangeValue(int value)
+        public void ChangeLevel(int value)
         {
-            this.Value = value;
-            this.OnValueChanged?.Invoke(value);
+            Level.Value = value;
+        }
+        
+        [Button]
+        public void ChangeName(string value)
+        {
+            Name.Value = value;
         }
     }
 }

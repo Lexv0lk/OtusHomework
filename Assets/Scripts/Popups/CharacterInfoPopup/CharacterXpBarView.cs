@@ -11,22 +11,21 @@ namespace Popups.CharacterInfoPopup
         [SerializeField] private Slider _xpBar;
         [SerializeField] private Image _barForeground;
         [SerializeField] private TMP_Text _xpValue;
-        
-        private ICharacterXpBarViewPresenter _currentPresenter;
 
+        [Header("Sprites")] 
+        [SerializeField] private Sprite _notFilledSprite;
+        [SerializeField] private Sprite _filledSprite;
+        
         public void Initialize(ICharacterXpBarViewPresenter presenter)
         {
             DisposeSubscriptions();
-            
-            _currentPresenter = presenter;
-            SubscribeToPresenter(_currentPresenter);
+            SubscribeToPresenter(presenter);
         }
 
         private void SubscribeToPresenter(ICharacterXpBarViewPresenter presenter)
         {
-            Subscriptions.Add(presenter.XpGainPart.Subscribe(UpdateSliderValue));
-            Subscriptions.Add(presenter.CurrentXpValue.Subscribe(UpdateXpValue));
-            Subscriptions.Add(presenter.CurrentSliderForeground.Subscribe(UpdateBarForeground));
+            presenter.XpGainPart.Subscribe(UpdateSliderValue).AddTo(Subscriptions);
+            presenter.CurrentXpValue.Subscribe(UpdateXpValue).AddTo(Subscriptions);
         }
 
         private void UpdateXpValue(string newValue)
@@ -37,11 +36,11 @@ namespace Popups.CharacterInfoPopup
         private void UpdateSliderValue(float newValue)
         {
             _xpBar.value = newValue;
-        }
 
-        private void UpdateBarForeground(Sprite newForeground)
-        {
-            _barForeground.sprite = newForeground;
+            if (newValue < 1)
+                _barForeground.sprite = _notFilledSprite;
+            else
+                _barForeground.sprite = _filledSprite;
         }
     }
 }
