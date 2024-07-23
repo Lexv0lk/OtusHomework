@@ -1,4 +1,4 @@
-using Lessons.Architecture.PM;
+using PlayerData;
 using UniRx;
 
 namespace Popups.CharacterInfoPopup.Presenters

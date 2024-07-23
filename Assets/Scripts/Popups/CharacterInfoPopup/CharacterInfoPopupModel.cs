@@ -1,6 +1,8 @@
+using PlayerData;
 using UnityEngine;
+using CharacterInfo = PlayerData.CharacterInfo;
 
-namespace Lessons.Architecture.PM.Popups
+namespace Popups.CharacterInfoPopup
 {
     public sealed class CharacterInfoPopupModel : MonoBehaviour
     {

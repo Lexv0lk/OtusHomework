@@ -655,8 +655,13 @@ MonoBehaviour:
   _icon: {fileID: 938229074}
   _description: {fileID: 502368281}
   _statsRoot: {fileID: 506697000}
-  levelView: {fileID: 1745889230}
+  _level: {fileID: 1783303283}
+  _closeButton: {fileID: 289537508}
+  _levelUpButton: {fileID: 2137669968}
+  experienceView: {fileID: 1745889230}
   _statViewPrefab: {fileID: 6294658107843692291, guid: 3f5f239f7dc49ae4385026f94c0f65c4, type: 3}
+  _inactiveLevelUpButtonSprite: {fileID: 21300000, guid: 9ef0c11205b6f41a88353f491a8396d1, type: 3}
+  _activeLevelUpButtonSprite: {fileID: 21300000, guid: cf4c106fc0fd9489580b9e716e4eed17, type: 3}
 --- !u!1 &642558602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,7 +1907,6 @@ MonoBehaviour:
   _xpBar: {fileID: 1745889229}
   _barForeground: {fileID: 1789126394}
   _xpValue: {fileID: 1143106702}
-  _level: {fileID: 1200706601}
   _notFilledSprite: {fileID: 21300000, guid: c9ea6483ca2494ae892f993fec2cb4a6, type: 3}
   _filledSprite: {fileID: 21300000, guid: ebca5e0b7178447bea6a7fe825585b0a, type: 3}
 --- !u!1 &1783303281
@@ -2275,14 +2279,14 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: cf4c106fc0fd9489580b9e716e4eed17, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: cf4c106fc0fd9489580b9e716e4eed17, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: cf4c106fc0fd9489580b9e716e4eed17, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 9ef0c11205b6f41a88353f491a8396d1, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2314,7 +2318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9ef0c11205b6f41a88353f491a8396d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf4c106fc0fd9489580b9e716e4eed17, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

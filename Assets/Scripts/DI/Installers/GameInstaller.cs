@@ -1,9 +1,11 @@
-using Lessons.Architecture.PM.Popups;
+using Popups;
 using Popups.CharacterInfoPopup;
+using Popups.CharacterInfoPopup.Views;
+using Popups.Common;
 using UnityEngine;
 using Zenject;
 
-namespace Lessons.Architecture.PM.DI.Installers
+namespace Installers
 {
     public class GameInstaller : MonoInstaller
     {
@@ -15,7 +17,7 @@ namespace Lessons.Architecture.PM.DI.Installers
         {
             Container.Bind<CharacterInfoPopupView>().FromInstance(_characterInfoPopupView);
             Container.Bind<CharacterInfoPopupModel>().FromInstance(_characterInfoPopupModel);
-            Container.Bind<CharacterInfoPopupAdapter>().AsSingle().NonLazy();
+            Container.Bind<IPopupAdapter>().To<CharacterInfoPopupAdapter>().AsSingle();
             Container.Bind<PopupOpenManager>().FromInstance(_popupOpenManager);
         }
     }

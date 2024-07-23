@@ -1,15 +1,16 @@
+using Popups.Common;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
 
-namespace Lessons.Architecture.PM.Popups
+namespace Popups
 {
     public class PopupOpenManager : MonoBehaviour
     {
-        private CharacterInfoPopupAdapter _characterInfoPopupAdapter;
+        private IPopupAdapter _characterInfoPopupAdapter;
         
         [Inject]
-        private void Construct(CharacterInfoPopupAdapter characterInfoPopupAdapter)
+        private void Construct(IPopupAdapter characterInfoPopupAdapter)
         {
             _characterInfoPopupAdapter = characterInfoPopupAdapter;
         }

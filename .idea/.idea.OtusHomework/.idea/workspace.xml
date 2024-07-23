@@ -2,13 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2e1dc29-e087-4c86-bd62-a0583798811c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Views.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/Common.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/Common/IPopupAdapter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/Common/IPopupAdapter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CharacterStat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterLevelView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterXpBarView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterLevelView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/CharacterInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/CharacterInfo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/CharacterStat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CharacterStat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/CharacterStat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DI/Installers/GameInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerLevel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/PlayerLevel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Views/CharacterInfoPopupView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterInfoPopupView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Views/CharacterInfoPopupView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterLevelView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Views/CharacterExperienceView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterLevelView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Views/CharacterExperienceView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterStatView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Views/CharacterStatView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/CharacterStatView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Views/CharacterStatView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterInfoPopupPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterInfoPopupPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterLevelViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterLevelViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterStatViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/Presenters/CharacterStatViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/ReactiveView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/Common/ReactiveView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/CharacterInfoPopup/ReactiveView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/Common/ReactiveView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Popups/PopupOpenManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Popups/PopupOpenManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/UserInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInfo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerData/UserInfo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +47,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UserInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerData/UserInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/00/7ad79332/ILateDisposable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18f5482d17338a7bbdeae155929167e4a8be10b5d2e9aed96c2562ed98f34f/System.Collections.ObjectModel.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -98,6 +122,7 @@
       <workItem from="1721646940703" duration="2535000" />
       <workItem from="1721661052484" duration="7965000" />
       <workItem from="1721683452251" duration="713000" />
+      <workItem from="1721737070259" duration="3194000" />
     </task>
     <task id="LOCAL-00001" summary="Сделал базу для свой луп системы игрового цикла">
       <created>1720373996097</created>

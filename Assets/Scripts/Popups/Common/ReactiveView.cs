@@ -1,7 +1,7 @@
 using UniRx;
 using UnityEngine;
 
-namespace Popups.CharacterInfoPopup
+namespace Popups.Common
 {
     public abstract class ReactiveView : MonoBehaviour
     {

@@ -1,9 +1,10 @@
 using Popups.CharacterInfoPopup.Presenters;
+using Popups.Common;
 using TMPro;
 using UnityEngine;
 using UniRx;
 
-namespace Popups.CharacterInfoPopup
+namespace Popups.CharacterInfoPopup.Views
 {
     public class CharacterStatView : ReactiveView
     {

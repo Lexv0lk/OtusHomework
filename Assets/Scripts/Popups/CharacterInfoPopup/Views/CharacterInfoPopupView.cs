@@ -1,11 +1,13 @@
+using System;
 using System.Collections.Generic;
 using Popups.CharacterInfoPopup.Presenters;
+using Popups.Common;
 using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Popups.CharacterInfoPopup
+namespace Popups.CharacterInfoPopup.Views
 {
     public class CharacterInfoPopupView : ReactiveView
     {
@@ -15,14 +17,35 @@ namespace Popups.CharacterInfoPopup
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _description;
         [SerializeField] private Transform _statsRoot;
-        
+        [SerializeField] private TMP_Text _level;
+
+        [Header("Buttons")] 
+        [SerializeField] private Button _closeButton;
+        [SerializeField] private Button _levelUpButton;
+
         [Header("Views")]
-        [SerializeField] private CharacterLevelView levelView;
+        [SerializeField] private CharacterExperienceView experienceView;
 
         [Header("Prefabs")] 
         [SerializeField] private CharacterStatView _statViewPrefab;
 
+        [Header("Sprites")] 
+        [SerializeField] private Sprite _inactiveLevelUpButtonSprite;
+        [SerializeField] private Sprite _activeLevelUpButtonSprite;
+
         private ICharacterInfoPopupPresenter _currentPresenter;
+
+        public event Action CloseButtonClicked;
+
+        private void OnEnable()
+        {
+            _closeButton.onClick.AddListener(OnCloseButtonClicked);
+        }
+
+        private void OnDisable()
+        {
+            _closeButton.onClick.RemoveListener(OnCloseButtonClicked);
+        }
 
         public void Initialize(ICharacterInfoPopupPresenter presenter)
         {
@@ -31,7 +54,7 @@ namespace Popups.CharacterInfoPopup
             _currentPresenter = presenter;
             SubscribeToPresenter(_currentPresenter);
             
-            levelView.Initialize(presenter.LevelViewPresenter);
+            experienceView.Initialize(presenter.ExperienceViewPresenter);
             UpdateStats(presenter.StatViewPresenters);
         }
 
@@ -58,9 +81,13 @@ namespace Popups.CharacterInfoPopup
             presenter.Name.Subscribe(OnNameChanged).AddTo(Subscriptions);
             presenter.Description.Subscribe(OnDescriptionChanged).AddTo(Subscriptions);
             presenter.Icon.Subscribe(OnIconChanged).AddTo(Subscriptions);
-            
+            presenter.Level.Subscribe(UpdateLevelValue).AddTo(Subscriptions);
+            presenter.CanLevelUp.Subscribe(OnLevelUpConditionChanged).AddTo(Subscriptions);
+
             presenter.StatViewPresenters.ObserveAdd().Subscribe(OnStatAdded).AddTo(Subscriptions);
             presenter.StatViewPresenters.ObserveRemove().Subscribe(OnStatRemoved).AddTo(Subscriptions);
+            
+            presenter.LevelUpCommand.BindTo(_levelUpButton).AddTo(Subscriptions);
         }
         
         #region COLLECTION_HANDLERS
@@ -83,7 +110,23 @@ namespace Popups.CharacterInfoPopup
 
         private void OnIconChanged(Sprite newValue) 
             => _icon.sprite = newValue;
+        
+        private void UpdateLevelValue(string level) 
+            => _level.text = level;
+
+        private void OnLevelUpConditionChanged(bool canLevelUp)
+        {
+            if (canLevelUp)
+                _levelUpButton.image.sprite = _activeLevelUpButtonSprite;
+            else
+                _levelUpButton.image.sprite = _inactiveLevelUpButtonSprite;
+        }
 
         #endregion
+
+        private void OnCloseButtonClicked()
+        {
+            CloseButtonClicked?.Invoke();
+        }
     }
 }

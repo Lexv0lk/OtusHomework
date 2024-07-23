@@ -1,10 +1,11 @@
-using Popups.CharacterInfoPopup;
 using Popups.CharacterInfoPopup.Presenters;
+using Popups.CharacterInfoPopup.Views;
+using Popups.Common;
 using Zenject;
 
-namespace Lessons.Architecture.PM.Popups
+namespace Popups.CharacterInfoPopup
 {
-    public sealed class CharacterInfoPopupAdapter
+    public sealed class CharacterInfoPopupAdapter : IPopupAdapter
     {
         private readonly CharacterInfoPopupModel _model;
         private readonly CharacterInfoPopupView _view;
@@ -14,8 +15,14 @@ namespace Lessons.Architecture.PM.Popups
         {
             _model = model;
             _view = view;
-            
+
+            _view.CloseButtonClicked += ClosePopup;
             _view.Initialize(new DefaultCharacterInfoPopupPresenter(_model.UserInfo, _model.CharacterInfo, _model.PlayerLevel));
+        }
+
+        ~CharacterInfoPopupAdapter()
+        {
+            _view.CloseButtonClicked -= ClosePopup;
         }
 
         public void OpenPopup()
