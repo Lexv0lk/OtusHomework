@@ -1,32 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace GameEngine
 {
     //Нельзя менять!
-    [Serializable]
     public sealed class UnitManager
     {
-        [SerializeField]
         private Transform container;
-
-        [ShowInInspector, ReadOnly]
         private HashSet<Unit> sceneUnits = new();
 
-        public UnitManager()
-        {
-        }
-
-        public UnitManager(Transform container)
+        public UnitManager(Transform container, List<Unit> units)
         {
             this.container = container;
-        }
-        
-        public void SetupUnits(IEnumerable<Unit> units)
-        {
             this.sceneUnits = new HashSet<Unit>(units);
         }
 
@@ -35,7 +21,6 @@ namespace GameEngine
             this.container = container;
         }
 
-        [Button]
         public Unit SpawnUnit(Unit prefab, Vector3 position, Quaternion rotation)
         {
             var unit = Object.Instantiate(prefab, position, rotation, this.container);
@@ -43,7 +28,6 @@ namespace GameEngine
             return unit;
         }
 
-        [Button]
         public void DestroyUnit(Unit unit)
         {
             if (this.sceneUnits.Remove(unit))
