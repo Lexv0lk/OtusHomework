@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using DI.Contexts;
 
 namespace GameEngine
 {
     //Нельзя менять!
-    public sealed class ResourceService
+    public sealed class ResourceService : IGameService
     {
         private Dictionary<string, Resource> sceneResources = new();
 
@@ -16,6 +17,11 @@ namespace GameEngine
         public IEnumerable<Resource> GetResources()
         {
             return this.sceneResources.Values;
+        }
+
+        public Resource GetResource(string id)
+        {
+            return sceneResources[id];
         }
     }
 }
