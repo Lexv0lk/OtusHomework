@@ -1,28 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Security.Cryptography;
-using Newtonsoft.Json;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SaveSystem.DataSaving
 {
-    public class FileEncryptedSaver : IDataSaver
-    {
-        public void SaveData(string value)
-        {
-            byte[] enctryptedBytes;
-
-            using (Aes aes = Aes.Create())
-            {
-                
-            }
-        }
-
-        public bool TryGetData(out string result)
-        {
-            
-        }
-    }
-    
     public class PlayerPrefsSaver : IDataSaver
     {
         private const string DATA_SAVE_KEY = "Save";

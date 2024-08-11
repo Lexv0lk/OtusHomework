@@ -25,7 +25,7 @@ namespace DI
 
             Container.Bind<GameContext>().AsSingle();
 
-            Container.BindInterfacesAndSelfTo<PlayerPrefsSaver>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EncryptedFileSaver>().AsSingle();
             Container.Bind<GameRepository>().AsSingle();
             Container.Bind<UnitPrefabController>().AsSingle();
 
