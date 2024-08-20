@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Game.Scripts.Components
 {
     [Serializable]
-    public class MoveComponent : ConditionalComponent
+    public class SimpleMoveComponent : ConditionalComponent
     {
         public AtomicVariable<Vector3> Direction;
 

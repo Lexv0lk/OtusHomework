@@ -8,5 +8,7 @@ namespace Game.Scripts.Components
         public virtual void Compose() {}
         
         public virtual void Update(float deltaTime) {}
+        
+        public virtual void Dispose() {}
     }
 }

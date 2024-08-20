@@ -1,22 +1,19 @@
+using System;
 using System.Collections.Generic;
 using Game.Scripts.Components;
 
 namespace Game.Scripts.Entities
 {
-    [System.Serializable]
-    public class CharacterCore
+    [Serializable]
+    public class PlayerCore
     {
-        public SimpleMoveComponent MoveComponent;
-        public RotateComponent RotateComponent;
-        public LifeComponent LifeComponent;
-
+        public ShootComponent ShootComponent;
+        
         private readonly HashSet<Component> _components = new();
 
         public void Compose()
         {
-            _components.Add(MoveComponent);
-            _components.Add(RotateComponent);
-            _components.Add(LifeComponent);
+            _components.Add(ShootComponent);
 
             foreach (var component in _components)
                 component.Compose();
