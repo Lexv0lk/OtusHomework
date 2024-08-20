@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="" />
+    <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/AmmunitionRefillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/AmmunitionRefillController.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +114,7 @@
       <workItem from="1722790426748" duration="3533000" />
       <workItem from="1723727491295" duration="7838000" />
       <workItem from="1723817787348" duration="5782000" />
-      <workItem from="1724166587157" duration="9230000" />
+      <workItem from="1724166587157" duration="9649000" />
     </task>
     <servers />
   </component>

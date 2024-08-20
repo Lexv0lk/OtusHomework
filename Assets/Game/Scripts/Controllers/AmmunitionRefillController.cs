@@ -10,5 +10,15 @@ namespace Game.Scripts.Controllers
         {
             _config = config;
         }
+
+        private void StartRefilling()
+        {
+            while (true)
+            {
+                
+            }
+        }
+        
+        private UniTask
     }
 }
