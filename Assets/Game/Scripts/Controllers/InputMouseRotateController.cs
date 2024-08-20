@@ -34,16 +34,6 @@ namespace Game.Scripts.Controllers
 
                 _entityForwardDirection.Value = _cachedHitPosition - _entityPosition.Value;
             }
-            
-            // _cachedMousePosition = Input.mousePosition;
-            // _cachedMousePosition.z = Vector3.Distance(_camera.transform.position, _entityPosition.Value);
-            //
-            // _cachedMouseWorldPosition = _camera.ScreenToWorldPoint(_cachedMousePosition);
-            // _cachedMouseWorldPosition.y = _entityPosition.Value.y;
-            //
-            // _cachedTargetDirection = _cachedMouseWorldPosition - _entityPosition.Value;
-            //
-            // _entityForwardDirection.Value = _cachedTargetDirection;
         }
     }
 }
