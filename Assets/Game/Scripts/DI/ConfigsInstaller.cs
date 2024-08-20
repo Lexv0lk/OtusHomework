@@ -1,3 +1,4 @@
+using Game.Scripts.Configs.Controllers;
 using Game.Scripts.Configs.Fabrics;
 using Game.Scripts.Configs.Input;
 using Game.Scripts.Configs.Models;
@@ -13,6 +14,7 @@ namespace Game.Scripts.DI
         [SerializeField] private MouseRotationConfig _mouseRotationConfig;
         [SerializeField] private BulletFabricConfig _bulletFabricConfig;
         [SerializeField] private RiffleStoreConfig _riffleStoreConfig;
+        [SerializeField] private AmmunitionRefillConfig _ammunitionRefillConfig;
 
         public override void InstallBindings()
         {
@@ -20,6 +22,7 @@ namespace Game.Scripts.DI
             Container.Bind<MouseRotationConfig>().FromInstance(_mouseRotationConfig).AsCached();
             Container.Bind<BulletFabricConfig>().FromInstance(_bulletFabricConfig).AsCached();
             Container.Bind<RiffleStoreConfig>().FromInstance(_riffleStoreConfig).AsCached();
+            Container.Bind<AmmunitionRefillConfig>().FromInstance(_ammunitionRefillConfig).AsCached();
         }
     }
 }

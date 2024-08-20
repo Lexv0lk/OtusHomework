@@ -18,3 +18,5 @@ MonoBehaviour:
   _bulletFabricConfig: {fileID: 11400000, guid: 14bee78613be15a40ad1b1d050589df3,
     type: 2}
   _riffleStoreConfig: {fileID: 11400000, guid: 40e2045e5f500db41b0cec2d1ba2fc71, type: 2}
+  _ammunitionRefillConfig: {fileID: 11400000, guid: c537dc7b13a2cfc4b8eb60b936d91075,
+    type: 2}

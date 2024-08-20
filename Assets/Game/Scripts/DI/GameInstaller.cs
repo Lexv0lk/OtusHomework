@@ -25,6 +25,7 @@ namespace Game.Scripts.DI
             Container.BindInterfacesAndSelfTo<InputMouseRotateController>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<ShootController>().AsSingle().NonLazy();
             Container.Bind<PlayerDeathObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<AmmunitionRefillController>().AsSingle().NonLazy();
         }
     }
 }
