@@ -20,6 +20,9 @@ namespace Game.Scripts.Entities
 
             foreach (var component in _components)
                 component.Compose();
+            
+            MoveComponent.AppendCondition(IsAlive);
+            RotateComponent.AppendCondition(IsAlive);
         }
 
         public void Update(float deltaTime)
@@ -32,6 +35,11 @@ namespace Game.Scripts.Entities
         {
             foreach (var component in _components)
                 component.Dispose();
+        }
+
+        private bool IsAlive()
+        {
+            return LifeComponent.IsDead.Value == false;
         }
     }
 }

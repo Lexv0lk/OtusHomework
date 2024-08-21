@@ -1,3 +1,4 @@
+using System;
 using Atomic.Objects;
 using Game.Scripts.Configs.Fabrics;
 using UnityEngine;
@@ -12,10 +13,14 @@ namespace Game.Scripts.Fabrics
         {
             _config = config;
         }
+
+        public event Action<IAtomicEntity> CreatedBullet;
         
         public IAtomicEntity GetBullet()
         {
-            return GameObject.Instantiate(_config.BulletPrefab);
+            IAtomicEntity bullet = GameObject.Instantiate(_config.BulletPrefab);
+            CreatedBullet?.Invoke(bullet);
+            return bullet;
         }
     }
 }

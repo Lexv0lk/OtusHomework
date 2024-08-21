@@ -13,8 +13,15 @@ namespace Game.Scripts.Entities
         
         [Get(TransformAPI.POSITION)] 
         public AtomicVariable<Vector3> Position;
-        
+
+        [Get(PhysicsAPI.COLLIDE_EVENT)] 
+        public AtomicEvent<IAtomicEntity> Collided;
+
+        [Get(TransformAPI.GAME_OBJECT)] 
+        public IAtomicValue<GameObject> GameObject => new AtomicFunction<GameObject>(GetGameObject);
+
         [SerializeField] private RigidbodyMoveComponent _rigidbodyMoveComponent;
+        [SerializeField] private int _damage = 1;
 
         private void Awake()
         {
@@ -36,6 +43,20 @@ namespace Game.Scripts.Entities
         private void ChangePosition(Vector3 newPos)
         {
             transform.position = newPos;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out IAtomicEntity atomicEntity))
+                if (atomicEntity.TryGet<IAtomicAction<int>>(LifeAPI.TAKE_DAMAGE, out var action))
+                    action.Invoke(_damage);
+            
+            Collided.Invoke(this);
+        }
+
+        private GameObject GetGameObject()
+        {
+            return gameObject;
         }
     }
 }

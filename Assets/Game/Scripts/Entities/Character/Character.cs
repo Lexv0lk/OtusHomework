@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Entities
 {
-    public abstract class Character : AtomicEntity
+    public abstract class Character : AtomicObject
     {
         [Get(MoveAPI.MOVE_DIRECTION)]
         public IAtomicVariable<Vector3> MoveDirection => CharacterCore.MoveComponent.Direction;

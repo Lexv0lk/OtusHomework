@@ -26,6 +26,7 @@ namespace Game.Scripts.DI
             Container.BindInterfacesAndSelfTo<ShootController>().AsSingle().NonLazy();
             Container.Bind<PlayerDeathObserver>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<AmmunitionRefillController>().AsSingle().NonLazy();
+            Container.Bind<BulletDestroyController>().AsSingle().NonLazy();
         }
     }
 }

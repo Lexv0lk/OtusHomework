@@ -20,5 +20,11 @@ namespace Game.Scripts.Tech
     {
         public const string POSITION = "Position";
         public const string FORWARD_DIRECTION = "ForwardDirection";
+        public const string GAME_OBJECT = "GameObject";
+    }
+
+    public static class PhysicsAPI
+    {
+        public const string COLLIDE_EVENT = "CollideEvent";
     }
 }
