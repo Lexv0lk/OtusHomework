@@ -13,8 +13,11 @@ namespace Game.Scripts.Components
 
         [SerializeField] private int _healthAmount;
 
+        private int _startHealthAmount;
+
         public override void Compose()
         {
+            _startHealthAmount = _healthAmount;
             TakeDamageAction.Subscribe(TakeDamage);
         }
 
@@ -30,6 +33,12 @@ namespace Game.Scripts.Components
                 IsDead.Value = true;
             
             TakeDamageEvent?.Invoke(lastHealthAmount - _healthAmount);
+        }
+
+        public void Reset()
+        {
+            _healthAmount = _startHealthAmount;
+            IsDead.Value = false;
         }
     }
 }

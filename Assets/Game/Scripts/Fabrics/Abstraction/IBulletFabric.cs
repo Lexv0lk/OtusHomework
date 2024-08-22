@@ -5,7 +5,6 @@ namespace Game.Scripts.Fabrics
 {
     public interface IBulletFabric
     {
-        event Action<IAtomicEntity> CreatedBullet;
-        IAtomicEntity GetBullet();
+        AtomicEntity GetBullet();
     }
 }

@@ -11,14 +11,9 @@ namespace Game.Scripts.Entities
         [Get(MoveAPI.MOVE_DIRECTION)]
         public IAtomicVariable<Vector3> MoveDirection => _rigidbodyMoveComponent.Direction;
         
-        [Get(TransformAPI.POSITION)] 
-        public AtomicVariable<Vector3> Position;
 
         [Get(PhysicsAPI.COLLIDE_EVENT)] 
-        public AtomicEvent<IAtomicEntity> Collided;
-
-        [Get(TransformAPI.GAME_OBJECT)] 
-        public IAtomicValue<GameObject> GameObject => new AtomicFunction<GameObject>(GetGameObject);
+        public AtomicEvent<AtomicEntity> Collided;
 
         [SerializeField] private RigidbodyMoveComponent _rigidbodyMoveComponent;
         [SerializeField] private int _damage = 1;
@@ -26,7 +21,6 @@ namespace Game.Scripts.Entities
         private void Awake()
         {
             _rigidbodyMoveComponent.Compose();
-            Position.Subscribe(ChangePosition);
         }
 
         private void Update()
@@ -37,26 +31,15 @@ namespace Game.Scripts.Entities
         private void OnDestroy()
         {
             _rigidbodyMoveComponent.Dispose();
-            Position.Unsubscribe(ChangePosition);
-        }
-
-        private void ChangePosition(Vector3 newPos)
-        {
-            transform.position = newPos;
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out IAtomicEntity atomicEntity))
-                if (atomicEntity.TryGet<IAtomicAction<int>>(LifeAPI.TAKE_DAMAGE, out var action))
+                if (atomicEntity.TryGet<IAtomicAction<int>>(LifeAPI.TAKE_DAMAGE_ACTION, out var action))
                     action.Invoke(_damage);
             
             Collided.Invoke(this);
-        }
-
-        private GameObject GetGameObject()
-        {
-            return gameObject;
         }
     }
 }

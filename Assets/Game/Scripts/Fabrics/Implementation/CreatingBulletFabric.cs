@@ -14,11 +14,11 @@ namespace Game.Scripts.Fabrics
             _config = config;
         }
 
-        public event Action<IAtomicEntity> CreatedBullet;
+        public event Action<AtomicEntity> CreatedBullet;
         
-        public IAtomicEntity GetBullet()
+        public AtomicEntity GetBullet()
         {
-            IAtomicEntity bullet = GameObject.Instantiate(_config.BulletPrefab);
+            AtomicEntity bullet = GameObject.Instantiate(_config.BulletPrefab);
             CreatedBullet?.Invoke(bullet);
             return bullet;
         }

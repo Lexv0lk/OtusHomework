@@ -45,9 +45,9 @@ namespace Game.Scripts.Components
             if (Condition.IsTrue() == false)
                 return;
             
-            IAtomicEntity bullet = _bulletFabric.GetBullet();
+            AtomicEntity bullet = _bulletFabric.GetBullet();
             
-            bullet.Get<IAtomicVariable<Vector3>>(TransformAPI.POSITION).Value = _shootPoint.position;
+            bullet.transform.position = _shootPoint.position;
             bullet.Get<IAtomicVariable<Vector3>>(MoveAPI.MOVE_DIRECTION).Value = _shootPoint.forward;
 
             _reloadTimeLeft = _reloadTime;

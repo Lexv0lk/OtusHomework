@@ -8,24 +8,23 @@ namespace Game.Scripts.Controllers
 {
     public class BulletDestroyController
     {
-        private readonly IBulletFabric _bulletFabric;
+        private readonly CreatingBulletFabric _bulletFabric;
 
-        public BulletDestroyController(IBulletFabric bulletFabric)
+        public BulletDestroyController(CreatingBulletFabric bulletFabric)
         {
             _bulletFabric = bulletFabric;
             _bulletFabric.CreatedBullet += OnBulletCreated;
         }
 
-        private void OnBulletCreated(IAtomicEntity bullet)
+        private void OnBulletCreated(AtomicEntity bullet)
         {
-            bullet.Get<IAtomicEvent<IAtomicEntity>>(PhysicsAPI.COLLIDE_EVENT).Subscribe(OnBulletCollided);
+            bullet.Get<IAtomicEvent<AtomicEntity>>(PhysicsAPI.COLLIDE_EVENT).Subscribe(OnBulletCollided);
         }
 
-        private void OnBulletCollided(IAtomicEntity bullet)
+        private void OnBulletCollided(AtomicEntity bullet)
         {
-            bullet.Get<IAtomicEvent<IAtomicEntity>>(PhysicsAPI.COLLIDE_EVENT).Unsubscribe(OnBulletCollided);
-            GameObject gameObject = bullet.Get<IAtomicValue<GameObject>>(TransformAPI.GAME_OBJECT).Value;
-            GameObject.Destroy(gameObject);
+            bullet.Get<IAtomicEvent<AtomicEntity>>(PhysicsAPI.COLLIDE_EVENT).Unsubscribe(OnBulletCollided);
+            GameObject.Destroy(bullet.gameObject);
         }
 
         ~BulletDestroyController()

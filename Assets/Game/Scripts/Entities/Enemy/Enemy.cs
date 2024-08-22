@@ -1,3 +1,5 @@
+using System;
+using Atomic.Elements;
 using Atomic.Objects;
 using UnityEngine;
 using Zenject;
@@ -9,14 +11,14 @@ namespace Game.Scripts.Entities
         [SerializeField] private EnemyCore _enemyCore;
 
         [Inject]
-        private void Construct(IAtomicEntity player)
+        private void Construct(AtomicEntity player)
         {
             _enemyCore.Construct(player);
         }
 
         protected override void OnAwake()
         {
-            _enemyCore.Compose(CharacterCore, Position);
+            _enemyCore.Compose(CharacterCore, new AtomicFunction<Vector3>(GetPosition));
 
             foreach (var mechanic in _enemyCore.GetMechanics())
                 AddLogic(mechanic);
@@ -28,6 +30,11 @@ namespace Game.Scripts.Entities
                 return;
             
             OnUpdate(Time.deltaTime);
+        }
+
+        private Vector3 GetPosition()
+        {
+            return transform.position;
         }
     }
 }
