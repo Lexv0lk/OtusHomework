@@ -5,49 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/Enemies.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/Enemies/EnemySpawnConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Configs/Enemies/EnemySpawnConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/BulletPoolReleaseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/BulletPoolReleaseController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/EnemyDeathObserver.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/EnemyDeathObserver.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/EnemySpawnController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/EnemySpawnController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Fabrics/Implementation/PoolBulletFabric.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Fabrics/Implementation/PoolBulletFabric.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/AtomicEntityPool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/AtomicEntityPool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/GamePools.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/GamePools.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/IAtomicEntityPool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/IAtomicEntityPool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/InjectedAtomicEntityPool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/InjectedAtomicEntityPool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/NonInjectedAtomicEntityPool.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/NonInjectedAtomicEntityPool.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Utilities/EnemySpawnPositions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Utilities/EnemySpawnPositions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Character/CharacterAnimation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Character/CharacterAnimation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Enemy/EnemyAnimation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Enemy/EnemyAnimation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Player/PlayerAnimation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Player/PlayerAnimation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Animation/BoolAnimationMechanics.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Animation/BoolAnimationMechanics.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Animation/InverseMoveDirectionMechanics.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Animation/InverseMoveDirectionMechanics.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Animation/Vector2AnimationMechanics.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Mechanics/Animation/Vector2AnimationMechanics.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetsPack/Kevin Iglesias/Soldier Animations/AnimatorControllers/AssaultRifle/SoldierAssaultRifle - CombatIdle.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetsPack/Kevin Iglesias/Soldier Animations/AnimatorControllers/AssaultRifle/SoldierAssaultRifle - CombatIdle.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Animation/Animations/Human (Move).anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Animation/Animations/Human (Move).anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Animation/Animators/Humanoid.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Animation/Animators/Humanoid.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Zombie.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Zombie.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Components/Implementation/LifeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Components/Implementation/LifeComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Components/Implementation/ShootComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Components/Implementation/ShootComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/BulletDestroyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/BulletDestroyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/InputMouseRotateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/InputMouseRotateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/DI/ConfigsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/DI/ConfigsInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/DI/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/DI/GameInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Bullet/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Bullet/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Components/Implementation/SimpleMoveComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Components/Implementation/SimpleMoveComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/PlayerDeathObserver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/PlayerDeathObserver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/ShootController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Controllers/ShootController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Character/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Enemy/EnemyCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Enemy/EnemyCore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Fabrics/Abstraction/IBulletFabric.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Fabrics/Abstraction/IBulletFabric.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Fabrics/Implementation/CreatingBulletFabric.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Fabrics/Implementation/CreatingBulletFabric.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Tech/AtomicAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Tech/AtomicAPI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/DI/Configs Installer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/DI/Configs Installer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Entities/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/AtomicEntityPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Pools/AtomicEntityPool.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +48,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -134,10 +119,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8416">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8416" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -160,6 +145,8 @@
       <workItem from="1724166587157" duration="10538000" />
       <workItem from="1724241859792" duration="3648000" />
       <workItem from="1724332451657" duration="7110000" />
+      <workItem from="1724421411074" duration="1437000" />
+      <workItem from="1724520324038" duration="9400000" />
     </task>
     <servers />
   </component>

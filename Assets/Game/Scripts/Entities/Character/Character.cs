@@ -28,24 +28,43 @@ namespace Game.Scripts.Entities
 
         [SerializeField] protected CharacterCore CharacterCore;
 
+        [SerializeField] protected CharacterAnimation CharacterAnimation;
+
         private void Awake()
         {
             CharacterCore.Compose();
+
+            CharacterAnimation.Compose(CharacterCore);
             
             CharacterCore.LifeComponent.IsDead.Subscribe(OnDeadStateChanged);
+
+            foreach (var mechanic in CharacterAnimation.GetMechanics())
+                AddLogic(mechanic);
             
             OnAwake();
+        }
+
+        private void OnEnable()
+        {
+            Enable();
         }
 
         private void Update()
         {
             CharacterCore.Update(Time.deltaTime);
             OnUpdate();
+            
+            base.OnUpdate(Time.deltaTime);
         }
 
         public void Reset()
         {
             CharacterCore.LifeComponent.Reset();
+        }
+
+        private void OnDisable()
+        {
+            Disable();
         }
 
         private void OnDestroy()

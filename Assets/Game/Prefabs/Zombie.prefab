@@ -146,6 +146,8 @@ MonoBehaviour:
     MoveComponent:
       Direction:
         value: {x: 0, y: 0, z: 0}
+      IsMoving:
+        value: 0
       _root: {fileID: 7964997623459932075}
       _speed: 2
     RotateComponent:
@@ -157,6 +159,10 @@ MonoBehaviour:
       IsDead:
         value: 0
       _healthAmount: 1
+  CharacterAnimation:
+    _animator: {fileID: 4828065441531083015}
+    _deadBoolean: IsDead
+    _moveBoolean: IsMoving
   _enemyCore:
     _followReachDistance: 1
     _damage: 1
@@ -558,6 +564,12 @@ PrefabInstance:
 --- !u!4 &4782524890436215783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4376485179048344, guid: a3029e28af10f4f458f5d25d6118a906,
+    type: 3}
+  m_PrefabInstance: {fileID: 4778738596848624255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4828065441531083015 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95075453375667064, guid: a3029e28af10f4f458f5d25d6118a906,
     type: 3}
   m_PrefabInstance: {fileID: 4778738596848624255}
   m_PrefabAsset: {fileID: 0}

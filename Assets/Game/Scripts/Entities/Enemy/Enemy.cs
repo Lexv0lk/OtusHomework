@@ -1,4 +1,3 @@
-using System;
 using Atomic.Elements;
 using Atomic.Objects;
 using UnityEngine;
@@ -10,6 +9,8 @@ namespace Game.Scripts.Entities
     {
         [SerializeField] private EnemyCore _enemyCore;
 
+        [SerializeField] private EnemyAnimation _enemyAnimation;
+
         [Inject]
         private void Construct(AtomicEntity player)
         {
@@ -19,8 +20,12 @@ namespace Game.Scripts.Entities
         protected override void OnAwake()
         {
             _enemyCore.Compose(CharacterCore, new AtomicFunction<Vector3>(GetPosition));
+            _enemyAnimation.Compose(CharacterCore, CharacterAnimation);
 
             foreach (var mechanic in _enemyCore.GetMechanics())
+                AddLogic(mechanic);
+            
+            foreach (var mechanic in _enemyAnimation.GetMechanics())
                 AddLogic(mechanic);
         }
 

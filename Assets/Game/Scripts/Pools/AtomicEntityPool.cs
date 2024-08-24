@@ -17,6 +17,7 @@ namespace Game.Scripts.Pools
         private readonly Queue<AtomicEntity> _spawnedEntities = new();
 
         public event Action<AtomicEntity> Given;
+        public event Action<AtomicEntity> Released;
 
         private void Awake()
         {
@@ -51,6 +52,7 @@ namespace Game.Scripts.Pools
         {
             entity.gameObject.SetActive(false);
             _spawnedEntities.Enqueue(entity);
+            Released?.Invoke(entity);
         }
 
         protected abstract AtomicEntity Instantiate(AtomicEntity prefab, Transform root);

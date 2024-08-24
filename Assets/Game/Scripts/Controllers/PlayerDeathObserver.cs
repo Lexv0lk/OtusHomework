@@ -7,10 +7,12 @@ namespace Game.Scripts.Controllers
 {
     public class PlayerDeathObserver
     {
+        private readonly ShootController _shootController;
         private readonly IAtomicObservable<bool> _isDeadObservable;
 
-        public PlayerDeathObserver(IAtomicEntity player)
+        public PlayerDeathObserver(IAtomicEntity player, ShootController shootController)
         {
+            _shootController = shootController;
             _isDeadObservable = player.Get<IAtomicObservable<bool>>(LifeAPI.IS_DEAD);
             _isDeadObservable.Subscribe(OnPlayerDied);
         }
@@ -19,8 +21,9 @@ namespace Game.Scripts.Controllers
         {
             if (isDead == false)
                 return;
-            
-            Debug.Log("GAME OVER");
+
+            Time.timeScale = 0;
+            _shootController.Disable();
         }
 
         ~PlayerDeathObserver()
