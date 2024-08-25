@@ -7,9 +7,12 @@ namespace Game.Scripts.Models
     {
         public AtomicVariable<int> AmmunitionAmount;
 
+        public int MaxAmmunitionAmount { get; }
+
         public RiffleStoreModel(RiffleStoreConfig config)
         {
             AmmunitionAmount = new AtomicVariable<int>(config.StartAmount);
+            MaxAmmunitionAmount = config.MaximalAmount;
         }
     }
 }

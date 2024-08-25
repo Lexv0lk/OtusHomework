@@ -6,7 +6,9 @@ namespace Game.Scripts.Configs.Models
     public class RiffleStoreConfig : ScriptableObject
     {
         [SerializeField] private int _startAmount;
+        [SerializeField] private int _maximalAmount;
 
         public int StartAmount => _startAmount;
+        public int MaximalAmount => _maximalAmount;
     }
 }

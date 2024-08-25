@@ -2,6 +2,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using Game.Scripts.Configs.Controllers;
 using Game.Scripts.Models;
+using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.Controllers
@@ -46,8 +47,9 @@ namespace Game.Scripts.Controllers
                 
                 if (cts.IsCancellationRequested)
                     break;
-                
-                _model.AmmunitionAmount.Value += _config.RefillCount;
+
+                _model.AmmunitionAmount.Value =
+                    Mathf.Min(_model.AmmunitionAmount.Value + 1, _model.MaxAmmunitionAmount);
             }
         }
 

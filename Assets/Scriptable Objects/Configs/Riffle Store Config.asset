@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Riffle Store Config
   m_EditorClassIdentifier: 
   _startAmount: 3
+  _maximalAmount: 10

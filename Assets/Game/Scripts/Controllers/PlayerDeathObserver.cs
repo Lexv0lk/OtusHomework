@@ -30,7 +30,6 @@ namespace Game.Scripts.Controllers
             if (isDead == false)
                 return;
 
-            //Time.timeScale = 0;
             _shootController.Disable();
             _spawnController.Disable();
             _refillController.Disable();
