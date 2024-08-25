@@ -1,5 +1,6 @@
 using Atomic.Elements;
 using Atomic.Objects;
+using Game.Scripts.Models;
 using Game.Scripts.Pools;
 using Game.Scripts.Tech;
 
@@ -7,10 +8,12 @@ namespace Game.Scripts.Controllers
 {
     public class EnemyDeathObserver
     {
+        private readonly KillCountModel _killCountModel;
         private readonly IAtomicEntityPool _enemyPool;
 
-        public EnemyDeathObserver(GamePools gamePools)
+        public EnemyDeathObserver(GamePools gamePools, KillCountModel killCountModel)
         {
+            _killCountModel = killCountModel;
             _enemyPool = gamePools.EnemyPool;
 
             _enemyPool.Given += OnEnemyGiven;
@@ -18,12 +21,19 @@ namespace Game.Scripts.Controllers
 
         private void OnEnemyGiven(AtomicEntity enemy)
         {
+            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_ANIMATION_EVENT).Subscribe(EnemyDiedInAnimation);
             enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_EVENT).Subscribe(EnemyDied);
         }
-
+        
         private void EnemyDied(AtomicEntity enemy)
         {
             enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_EVENT).Unsubscribe(EnemyDied);
+            _killCountModel.Kills.Value++;
+        }
+
+        private void EnemyDiedInAnimation(AtomicEntity enemy)
+        {
+            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_ANIMATION_EVENT).Unsubscribe(EnemyDiedInAnimation);
             _enemyPool.ReleaseEntity(enemy);
         }
 

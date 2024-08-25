@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Scripts.Mechanics.Animation
 {
-    public class Vector2AnimationMechanics : IAtomicEnable, IAtomicDisable, IAtomicUpdate
+    public class Vector2AnimationMechanics : IAtomicUpdate
     {
         private readonly IAtomicValue<Vector2> _source;
         private readonly Animator _animator;
@@ -23,16 +23,6 @@ namespace Game.Scripts.Mechanics.Animation
             _xAnimatorKey = xAnimatorKey;
             _yAnimatorKey = yAnimatorKey;
             _changeSpeed = changeSpeed;
-        }
-
-        public void Enable()
-        {
-            //_source.Subscribe(OnSourceValueChanged);
-        }
-
-        public void Disable()
-        {
-            //_source.Unsubscribe(OnSourceValueChanged);
         }
         
         public void OnUpdate(float deltaTime)

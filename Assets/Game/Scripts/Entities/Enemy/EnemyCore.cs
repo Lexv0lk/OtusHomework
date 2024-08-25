@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Atomic.Elements;
 using Atomic.Objects;
+using Game.Scripts.Components;
 using Game.Scripts.Mechanics;
 using Game.Scripts.Tech;
 using UnityEngine;
@@ -11,13 +14,14 @@ namespace Game.Scripts.Entities
     [Serializable]
     public class EnemyCore
     {
+        public AttackComponent AttackComponent;
+        
         [SerializeField] private float _followReachDistance = 1;
-        [SerializeField] private int _damage;
-        [SerializeField] private float _hitReloadTime;
+        [SerializeField] private Collider _collider;
         
         private FollowTargetMechanic _followTargetMechanic;
         private LookAtTargetMechanic _lookAtTargetMechanic;
-        private ReloadingHitMechanic _reloadingHitMechanic;
+        private ColliderStateChangeFromDeathMechanic _colliderStateMechanic;
         private AtomicEntity _player;
 
         public void Construct(AtomicEntity player)
@@ -34,16 +38,25 @@ namespace Game.Scripts.Entities
             
             _lookAtTargetMechanic = new LookAtTargetMechanic(targetPosition,
                 rootPosition, characterCore.RotateComponent.ForwardDirection);
-
-            IAtomicAction<int> playerTakeDamageAction = _player.Get<IAtomicAction<int>>(LifeAPI.TAKE_DAMAGE_ACTION);
             
-            _reloadingHitMechanic = new ReloadingHitMechanic(_followTargetMechanic.IsReachedTarget,
-                playerTakeDamageAction, _hitReloadTime, _damage);
+            _colliderStateMechanic =
+                new ColliderStateChangeFromDeathMechanic(characterCore.LifeComponent.IsDead, _collider);
+            
+            IAtomicAction<int> playerTakeDamageAction = _player.Get<IAtomicAction<int>>(LifeAPI.TAKE_DAMAGE_ACTION);
+            AttackComponent.Compose(_followTargetMechanic.IsReachedTarget, playerTakeDamageAction);
+        }
+
+        public void Dispose()
+        {
+            AttackComponent.Dispose();
         }
 
         public IEnumerable<IAtomicLogic> GetMechanics()
         {
-            return new IAtomicLogic[] { _followTargetMechanic, _lookAtTargetMechanic, _reloadingHitMechanic };
+            var selfMechanics = new IAtomicLogic[]
+                { _followTargetMechanic, _lookAtTargetMechanic, _colliderStateMechanic };
+            
+            return selfMechanics.Union(AttackComponent.GetMechanics());
         }
 
         private Vector3 GetTargetPosition()

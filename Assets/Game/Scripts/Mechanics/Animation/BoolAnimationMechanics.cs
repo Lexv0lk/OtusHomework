@@ -1,4 +1,5 @@
 using Atomic.Elements;
+using Atomic.Extensions;
 using Atomic.Objects;
 using UnityEngine;
 
@@ -6,11 +7,12 @@ namespace Game.Scripts.Mechanics.Animation
 {
     public class BoolAnimationMechanics : IAtomicEnable, IAtomicDisable
     {
-        private readonly IAtomicObservable<bool> _condition;
+        private readonly IAtomicVariableObservable<bool> _condition;
         private readonly Animator _animator;
         private readonly int _animatorKey;
+        private readonly bool _showDebug;
 
-        public BoolAnimationMechanics(IAtomicObservable<bool> condition, Animator animator, int animatorKey)
+        public BoolAnimationMechanics(IAtomicVariableObservable<bool> condition, Animator animator, int animatorKey)
         {
             _condition = condition;
             _animator = animator;
@@ -19,6 +21,7 @@ namespace Game.Scripts.Mechanics.Animation
 
         public void Enable()
         {
+            OnConditionChanged(_condition.Value);
             _condition.Subscribe(OnConditionChanged);
         }
 

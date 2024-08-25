@@ -9,15 +9,15 @@ namespace Game.Scripts.Components
     {
         public AtomicEvent<int> TakeDamageAction;
         public AtomicEvent<int> TakeDamageEvent;
+        
         public AtomicVariable<bool> IsDead;
-
-        [SerializeField] private int _healthAmount;
+        public AtomicVariable<int> HealthAmount;
 
         private int _startHealthAmount;
 
         public override void Compose()
         {
-            _startHealthAmount = _healthAmount;
+            _startHealthAmount = HealthAmount.Value;
             TakeDamageAction.Subscribe(TakeDamage);
         }
 
@@ -26,18 +26,18 @@ namespace Game.Scripts.Components
             if (IsDead.Value)
                 return;
 
-            int lastHealthAmount = _healthAmount;
-            _healthAmount = Mathf.Max(0, _healthAmount - value);
+            int lastHealthAmount = HealthAmount.Value;
+            HealthAmount.Value = Mathf.Max(0, HealthAmount.Value - value);
 
-            if (_healthAmount == 0)
+            if (HealthAmount.Value == 0)
                 IsDead.Value = true;
             
-            TakeDamageEvent?.Invoke(lastHealthAmount - _healthAmount);
+            TakeDamageEvent?.Invoke(lastHealthAmount - HealthAmount.Value);
         }
 
         public void Reset()
         {
-            _healthAmount = _startHealthAmount;
+            HealthAmount.Value = _startHealthAmount;
             IsDead.Value = false;
         }
     }

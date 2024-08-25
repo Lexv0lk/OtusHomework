@@ -31,7 +31,7 @@ namespace Game.Scripts.Components
 
         private void OnDirectionChanged(Vector3 newDirection)
         {
-            IsMoving.Value = newDirection != Vector3.zero;
+            IsMoving.Value = newDirection != Vector3.zero && Condition.IsTrue();
         }
     }
 }

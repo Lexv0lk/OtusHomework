@@ -158,15 +158,28 @@ MonoBehaviour:
     LifeComponent:
       IsDead:
         value: 0
-      _healthAmount: 1
+      HealthAmount:
+        value: 1
   CharacterAnimation:
     _animator: {fileID: 4828065441531083015}
+    _animatorDispatcher: {fileID: 7917360334873893046}
     _deadBoolean: IsDead
     _moveBoolean: IsMoving
+    _deadEvent: Died
+  CharacterVfx:
+    _takeDamageVfx: {fileID: 1696610920232104273}
   _enemyCore:
-    _followReachDistance: 1
-    _damage: 1
-    _hitReloadTime: 1
+    AttackComponent:
+      IsInAttack:
+        value: 0
+      _damage: 1
+      _hitReloadTime: 1
+    _followReachDistance: 1.7
+    _collider: {fileID: 6486345383869258}
+  _enemyAnimation:
+    _attackTrigger: Attack
+    _attackEvent: Attacked
+    _attackEndEvent: AttackEnd
 --- !u!1001 &1696610920246370783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -272,6 +285,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bf0b90e6d2294a4c8186ac5febf7653, type: 3}
+--- !u!198 &1696610920232104273 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19845262, guid: 9bf0b90e6d2294a4c8186ac5febf7653,
+    type: 3}
+  m_PrefabInstance: {fileID: 1696610920246370783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1696610920246208439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 493160, guid: 9bf0b90e6d2294a4c8186ac5febf7653,
@@ -561,6 +580,24 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3310429949319040486, guid: a3029e28af10f4f458f5d25d6118a906, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a3029e28af10f4f458f5d25d6118a906, type: 3}
+--- !u!1 &4780442273041933957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1960997148460282, guid: a3029e28af10f4f458f5d25d6118a906,
+    type: 3}
+  m_PrefabInstance: {fileID: 4778738596848624255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7917360334873893046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780442273041933957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563b51b7576f4844a9b4fad02584af41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4782524890436215783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4376485179048344, guid: a3029e28af10f4f458f5d25d6118a906,

@@ -576,8 +576,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 1366530279}
     m_Modifications:
     - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
-      propertyPath: CharacterCore.LifeComponent._healthAmount
-      value: 100
+      propertyPath: CharacterCore.LifeComponent.HealthAmount.value
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3006422773680130874, guid: 3b5b2ae0f895574449961910366cbf8a,
         type: 3}
@@ -1098,6 +1098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125839406}
   - component: {fileID: 1125839405}
+  - component: {fileID: 1125839407}
   m_Layer: 5
   m_Name: EndGamPopup
   m_TagString: Untagged
@@ -1135,6 +1136,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1125839407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125839404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca17dfb901e42c5a4887839ba563a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1175784353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,6 +1347,8 @@ MonoBehaviour:
   _character: {fileID: 625937921}
   _gamePools: {fileID: 1900978641}
   _enemySpawnPositions: {fileID: 2009337340}
+  _gameInfoView: {fileID: 2039635884}
+  _gameEndView: {fileID: 1125839407}
 --- !u!114 &1236566379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,6 +2041,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2039635883}
+  - component: {fileID: 2039635884}
   m_Layer: 5
   m_Name: <Screen>
   m_TagString: Untagged
@@ -2056,6 +2072,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2039635884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039635882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7101ae259054a9bba4c8b8fbfb1d5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletsLeft: {fileID: 1625409112}
+  _hitPoints: {fileID: 6615131717051902429}
+  _kills: {fileID: 91941560}
 --- !u!224 &1980450348533929280
 RectTransform:
   m_ObjectHideFlags: 0

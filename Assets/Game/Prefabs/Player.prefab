@@ -126,15 +126,29 @@ MonoBehaviour:
     LifeComponent:
       IsDead:
         value: 0
-      _healthAmount: 5
+      HealthAmount:
+        value: 10
   CharacterAnimation:
     _animator: {fileID: 3435628029611942440}
+    _animatorDispatcher: {fileID: 6589063960706316028}
     _deadBoolean: IsDead
     _moveBoolean: IsMoving
+    _deadEvent: Died
+  CharacterVfx:
+    _takeDamageVfx: {fileID: 1977376666174438541}
   _playerCore:
     ShootComponent:
       _shootPoint: {fileID: 1067890634428359185}
       _reloadTime: 0.5
+  _playerAnimation:
+    _animationValueChangeSpeed: 10
+    _moveXFloat: MoveX
+    _moveYFloat: MoveZ
+    _attackTrigger: Shoot
+    _takeDamageTrigger: TakeDamage
+    _attackEvent: Shooted
+  _playerVfx:
+    _shootVfx: {fileID: 922185958035770484}
 --- !u!1 &8550233314304206884
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +286,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b840149de5449b548821bfc78aa833ea, type: 3}
+--- !u!198 &922185958035770484 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19801142, guid: b840149de5449b548821bfc78aa833ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 922185958021752898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1977376666189032451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,6 +473,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bf0b90e6d2294a4c8186ac5febf7653, type: 3}
+--- !u!198 &1977376666174438541 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19845262, guid: 9bf0b90e6d2294a4c8186ac5febf7653,
+    type: 3}
+  m_PrefabInstance: {fileID: 1977376666189032451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1977376666188540523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 493160, guid: 9bf0b90e6d2294a4c8186ac5febf7653,
@@ -2980,3 +3006,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2190258717553286253}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3435628029621325908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3587277423659650105, guid: 4754efaa13741644aa1a61e4869e2c0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2190258717553286253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6589063960706316028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435628029621325908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563b51b7576f4844a9b4fad02584af41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

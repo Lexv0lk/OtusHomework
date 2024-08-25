@@ -16,6 +16,7 @@ namespace Game.Scripts.Entities
         [SerializeField] private PlayerCore _playerCore;
 
         [SerializeField] private PlayerAnimation _playerAnimation;
+        [SerializeField] private PlayerVfx _playerVfx;
 
         [Inject]
         private void Construct(IBulletFabric fabric, RiffleStoreModel riffleStoreModel)
@@ -26,7 +27,8 @@ namespace Game.Scripts.Entities
         protected override void OnAwake()
         {
             _playerCore.Compose();
-            _playerAnimation.Compose(CharacterCore, CharacterAnimation, transform);
+            _playerAnimation.Compose(CharacterCore, _playerCore, CharacterAnimation, transform);
+            _playerVfx.Compose(_playerCore);
             
             foreach (var mechanic in _playerAnimation.GetMechanics())
                 AddLogic(mechanic);
@@ -40,6 +42,8 @@ namespace Game.Scripts.Entities
         protected override void OnDispose()
         {
             _playerCore.Dispose();
+            _playerVfx.Dispose();
+            _playerAnimation.Dispose();
         }
     }
 }

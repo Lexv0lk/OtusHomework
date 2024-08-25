@@ -1,4 +1,3 @@
-using System;
 using Atomic.Elements;
 using Atomic.Objects;
 using Game.Scripts.Tech;
@@ -17,11 +16,17 @@ namespace Game.Scripts.Entities
         [Get(LifeAPI.TAKE_DAMAGE_ACTION)]
         public IAtomicAction<int> TakeDamageAction => CharacterCore.LifeComponent.TakeDamageAction;
 
+        [Get(LifeAPI.HEALTH)] 
+        public IAtomicValueObservable<int> Health => CharacterCore.LifeComponent.HealthAmount;
+
         [Get(LifeAPI.IS_DEAD)] 
-        public IAtomicObservable<bool> IsDead => CharacterCore.LifeComponent.IsDead;
+        public IAtomicValueObservable<bool> IsDead => CharacterCore.LifeComponent.IsDead;
 
         [Get(LifeAPI.DIE_EVENT)] 
         public AtomicEvent<AtomicEntity> DieEvent;
+        
+        [Get(LifeAPI.DIE_ANIMATION_EVENT)] 
+        public AtomicEvent<AtomicEntity> DieAnimationEvent;
 
         [Get(TechAPI.RESET_ACTION)] 
         public IAtomicAction ResetAction => new AtomicAction(Reset);
@@ -29,12 +34,14 @@ namespace Game.Scripts.Entities
         [SerializeField] protected CharacterCore CharacterCore;
 
         [SerializeField] protected CharacterAnimation CharacterAnimation;
+        [SerializeField] protected CharacterVfx CharacterVfx;
 
         private void Awake()
         {
             CharacterCore.Compose();
 
-            CharacterAnimation.Compose(CharacterCore);
+            CharacterAnimation.Compose(CharacterCore, InvokeDieAnimationEvent);
+            CharacterVfx.Compose(CharacterCore);
             
             CharacterCore.LifeComponent.IsDead.Subscribe(OnDeadStateChanged);
 
@@ -60,6 +67,7 @@ namespace Game.Scripts.Entities
         public void Reset()
         {
             CharacterCore.LifeComponent.Reset();
+            OnReset();
         }
 
         private void OnDisable()
@@ -72,6 +80,8 @@ namespace Game.Scripts.Entities
             CharacterCore.LifeComponent.IsDead.Unsubscribe(OnDeadStateChanged);
 
             CharacterCore.Dispose();
+            CharacterAnimation.Dispose();
+            CharacterVfx.Dispose();
             
             OnDispose();
         }
@@ -81,11 +91,18 @@ namespace Game.Scripts.Entities
         protected virtual void OnUpdate() {}
         
         protected virtual void OnDispose() {}
+        
+        protected virtual void OnReset() {}
 
         private void OnDeadStateChanged(bool isDead)
         {
             if (isDead)
                 DieEvent.Invoke(this);
+        }
+
+        private void InvokeDieAnimationEvent()
+        {
+            DieAnimationEvent.Invoke(this);
         }
     }
 }

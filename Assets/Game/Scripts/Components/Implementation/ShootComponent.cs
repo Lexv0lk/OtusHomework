@@ -12,7 +12,10 @@ namespace Game.Scripts.Components
     public class ShootComponent : ConditionalComponent
     {
         public AtomicEvent ShootRequest;
+        public AtomicEvent ShootAction;
         public AtomicEvent ShootEvent;
+
+        public AtomicFunction<bool> CanShoot;
         
         [SerializeField] private Transform _shootPoint;
         [SerializeField] private float _reloadTime;
@@ -31,8 +34,10 @@ namespace Game.Scripts.Components
         {
             Condition.AddCondition(IsReloaded);
             Condition.AddCondition(IsAmmoEnough);
+
+            CanShoot.Compose(Condition.IsTrue);
             
-            ShootRequest.Subscribe(Shoot);
+            ShootAction.Subscribe(Shoot);
         }
 
         public override void Update(float deltaTime)

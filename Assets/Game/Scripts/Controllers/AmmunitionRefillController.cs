@@ -1,3 +1,4 @@
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Game.Scripts.Configs.Controllers;
 using Game.Scripts.Models;
@@ -10,6 +11,8 @@ namespace Game.Scripts.Controllers
         private readonly AmmunitionRefillConfig _config;
         private readonly RiffleStoreModel _model;
 
+        private CancellationTokenSource _cancellationTokenSource;
+
         public AmmunitionRefillController(AmmunitionRefillConfig config, RiffleStoreModel model)
         {
             _config = config;
@@ -18,19 +21,40 @@ namespace Game.Scripts.Controllers
         
         public void Initialize()
         {
-            StartRefilling().Forget();
+            Enable();
         }
 
-        private async UniTaskVoid StartRefilling()
+        public void Enable()
+        {
+            if (_cancellationTokenSource != null)
+                _cancellationTokenSource.Dispose();
+
+            _cancellationTokenSource = new CancellationTokenSource();
+            StartRefilling(_cancellationTokenSource).Forget();
+        }
+
+        public void Disable()
+        {
+            _cancellationTokenSource.Cancel();
+        }
+
+        private async UniTaskVoid StartRefilling(CancellationTokenSource cts)
         {
             while (true)
-                await RefillDelayed();
+            {
+                await UniTask.WaitForSeconds(_config.Delay, cancellationToken: cts.Token);
+                
+                if (cts.IsCancellationRequested)
+                    break;
+                
+                _model.AmmunitionAmount.Value += _config.RefillCount;
+            }
         }
 
-        private async UniTask RefillDelayed()
+        ~AmmunitionRefillController()
         {
-            await UniTask.WaitForSeconds(_config.Delay);
-            _model.AmmunitionAmount.Value += _config.RefillCount;
+            if (_cancellationTokenSource != null)
+                _cancellationTokenSource.Dispose();
         }
     }
 }

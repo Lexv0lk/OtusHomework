@@ -1,3 +1,4 @@
+using System.Threading;
 using Atomic.Elements;
 using Atomic.Objects;
 using Cysharp.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace Game.Scripts.Controllers
         private readonly EnemySpawnPositions _enemySpawnPositions;
         private readonly IAtomicEntityPool _pool;
 
+        private CancellationTokenSource _currentCancellationToken;
+
         public EnemySpawnController(EnemySpawnConfig config,
             GamePools gamePools, EnemySpawnPositions enemySpawnPositions)
         {
@@ -26,17 +29,40 @@ namespace Game.Scripts.Controllers
         
         public void Initialize()
         {
-            StartSpawning().Forget();
+            Enable();
         }
 
-        private async UniTaskVoid StartSpawning()
+        public void Enable()
+        {
+            if (_currentCancellationToken != null)
+                _currentCancellationToken.Dispose();
+            
+            _currentCancellationToken = new CancellationTokenSource();
+            StartSpawning(_currentCancellationToken).Forget();
+        }
+
+        public void Disable()
+        {
+            _currentCancellationToken.Cancel();
+        }
+
+        private async UniTaskVoid StartSpawning(CancellationTokenSource cancellationTokenSource)
         {
             while (true)
             {
+                if (cancellationTokenSource.IsCancellationRequested)
+                    break;
+                
                 AtomicEntity enemy = _pool.GetEntity();
                 enemy.transform.position = _enemySpawnPositions.GetRandomPosition();
-                await UniTask.WaitForSeconds(_config.Delay);
+                await UniTask.WaitForSeconds(_config.Delay, cancellationToken: cancellationTokenSource.Token);
             }
+        }
+
+        ~EnemySpawnController()
+        {
+            if (_currentCancellationToken != null)
+                _currentCancellationToken.Dispose();
         }
     }
 }

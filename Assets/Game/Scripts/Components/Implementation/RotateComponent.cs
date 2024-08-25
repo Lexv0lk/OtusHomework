@@ -21,6 +21,9 @@ namespace Game.Scripts.Components
 
         public override void Update(float deltaTime)
         {
+            if (Condition.IsTrue() == false)
+                return;
+            
             if (_root.forward == ForwardDirection.Value)
                 return;
 
