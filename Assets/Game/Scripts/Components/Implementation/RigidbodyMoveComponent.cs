@@ -1,30 +1,28 @@
 using System;
+using System.Collections.Generic;
 using Atomic.Elements;
+using Atomic.Objects;
+using Game.Scripts.Mechanics;
 using UnityEngine;
 
 namespace Game.Scripts.Components
 {
     [Serializable]
-    public class RigidbodyMoveComponent : ConditionalComponent
+    public class RigidbodyMoveComponent
     {
         public AtomicVariable<Vector3> Direction;
 
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float _speed;
+        
+        private List<IAtomicLogic> _mechanics = new();
 
-        public override void Compose()
+        public void Compose()
         {
-            Direction.Subscribe(OnDirectionChanged);
+            RigidbodyMoveMechanic moveMechanic = new(Direction, _rigidbody, _speed);
+            _mechanics.Add(moveMechanic);
         }
-
-        public override void Dispose()
-        {
-            Direction.Unsubscribe(OnDirectionChanged);
-        }
-
-        private void OnDirectionChanged(Vector3 newDirection)
-        {
-            _rigidbody.velocity = Direction.Value.normalized * _speed;
-        }
+        
+        public IEnumerable<IAtomicLogic> GetMechanics() => _mechanics;
     }
 }

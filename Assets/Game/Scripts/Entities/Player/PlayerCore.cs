@@ -1,34 +1,50 @@
 using System;
 using System.Collections.Generic;
+using Atomic.Elements;
+using Atomic.Objects;
 using Game.Scripts.Components;
+using Game.Scripts.Fabrics;
+using Game.Scripts.Models;
 
 namespace Game.Scripts.Entities
 {
     [Serializable]
     public class PlayerCore
     {
+        public SimpleMoveComponent MoveComponent;
+        public RotateComponent RotateComponent;
+        public LifeComponent LifeComponent;
         public ShootComponent ShootComponent;
         
-        private readonly HashSet<Component> _components = new();
-
-        public void Compose()
+        public void Compose(IBulletFabric bulletFabric, RiffleStoreModel riffleStoreModel)
         {
-            _components.Add(ShootComponent);
+            LifeComponent.Compose();
+            MoveComponent.Compose();
+            RotateComponent.Compose();
+            ShootComponent.Compose(bulletFabric, riffleStoreModel);
 
-            foreach (var component in _components)
-                component.Compose();
+            AtomicFunction<bool> isAlive = new AtomicFunction<bool>(IsAlive);
+            
+            MoveComponent.CanMove.Append(isAlive);
+            RotateComponent.CanRotate.Append(isAlive);
+            ShootComponent.CanShoot.Append(isAlive);
+        }
+        
+        public IEnumerable<IAtomicLogic> GetMechanics()
+        {
+            List<IAtomicLogic> mechanics = new();
+            
+            mechanics.AddRange(MoveComponent.GetMechanics());
+            mechanics.AddRange(RotateComponent.GetMechanics());
+            mechanics.AddRange(LifeComponent.GetMechanics());
+            mechanics.AddRange(ShootComponent.GetMechanics());
+
+            return mechanics;
         }
 
-        public void Update(float deltaTime)
+        private bool IsAlive()
         {
-            foreach (var component in _components)
-                component.Update(deltaTime);
-        }
-
-        public void Dispose()
-        {
-            foreach (var component in _components)
-                component.Dispose();
+            return LifeComponent.IsDead.Value == false;
         }
     }
 }

@@ -22,55 +22,30 @@ namespace Game.Scripts.Components
 
         private IAtomicAction<int> _targetTakeDamageAction;
         private IAtomicValue<bool> _isTargetReached;
-        
-        private ReloadingHitMechanic _reloadingHitMechanic;
+
+        private List<IAtomicLogic> _mechanics = new();
 
         public void Compose(IAtomicValue<bool> isTargetReached, IAtomicAction<int> targetTakeDamageAction)
         {
             _targetTakeDamageAction = targetTakeDamageAction;
             _isTargetReached = isTargetReached;
             
-            _reloadingHitMechanic = new ReloadingHitMechanic(isTargetReached,
+            ReloadingHitMechanic hitMechanic = new ReloadingHitMechanic(isTargetReached,
                 AttackRequest, _hitReloadTime);
+
+            ConditionalStateAttackMechanic attackMechanic = new ConditionalStateAttackMechanic(AttackRequest,
+                AttackAction, AttackEndEvent, _isTargetReached, _targetTakeDamageAction, AttackEvent, IsInAttack,
+                _damage);
             
-            AttackAction.Subscribe(AttackTarget);
-            AttackRequest.Subscribe(ChangeToAttackState);
-            AttackEndEvent.Subscribe(ChangeToNonAttackState);
+            _mechanics.Add(hitMechanic);
+            _mechanics.Add(attackMechanic);
         }
 
-        public void Dispose()
-        {
-            AttackAction.Unsubscribe(AttackTarget);
-            AttackRequest.Unsubscribe(ChangeToAttackState);
-            AttackEndEvent.Unsubscribe(ChangeToNonAttackState);
-        }
+        public IEnumerable<IAtomicLogic> GetMechanics() => _mechanics;
 
         public void Reset()
         {
             IsInAttack.Value = false;
-        }
-
-        private void AttackTarget()
-        {
-            if (_isTargetReached.Value)
-                _targetTakeDamageAction.Invoke(_damage);
-            
-            AttackEvent.Invoke();
-        }
-
-        private void ChangeToAttackState()
-        {
-            IsInAttack.Value = true;
-        }
-
-        private void ChangeToNonAttackState()
-        {
-            IsInAttack.Value = false;
-        }
-
-        public IEnumerable<IAtomicLogic> GetMechanics()
-        {
-            return new[] { _reloadingHitMechanic };
         }
     }
 }

@@ -1,34 +1,33 @@
 using System;
+using System.Collections.Generic;
 using Atomic.Elements;
+using Atomic.Objects;
+using Game.Scripts.Mechanics;
 using UnityEngine;
 
 namespace Game.Scripts.Components
 {
     [Serializable]
-    public class RotateComponent : ConditionalComponent
+    public class RotateComponent
     {
         public AtomicVariable<Vector3> ForwardDirection;
 
+        public AtomicAnd CanRotate;
+
         [SerializeField] private Transform _root;
         [SerializeField] private float _speed;
+        
+        private List<IAtomicLogic> _mechanics = new();
 
-        private Quaternion _cachedTargetRotation;
-
-        public override void Compose()
+        public void Compose()
         {
             ForwardDirection.Value = _root.forward;
-        }
-
-        public override void Update(float deltaTime)
-        {
-            if (Condition.IsTrue() == false)
-                return;
             
-            if (_root.forward == ForwardDirection.Value)
-                return;
-
-            _cachedTargetRotation = Quaternion.LookRotation(ForwardDirection.Value.normalized, Vector3.up);
-            _root.rotation = Quaternion.Lerp(_root.rotation, _cachedTargetRotation, _speed * Time.deltaTime);
+            RotationMechanic rotationMechanic = new RotationMechanic(CanRotate, _root, ForwardDirection, _speed);
+            
+            _mechanics.Add(rotationMechanic);
         }
+
+        public IEnumerable<IAtomicLogic> GetMechanics() => _mechanics;
     }
 }

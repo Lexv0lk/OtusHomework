@@ -6,12 +6,11 @@ using UnityEngine;
 
 namespace Game.Scripts.Entities
 {
-    public class Bullet : AtomicEntity
+    public class Bullet : AtomicObject
     {
         [Get(MoveAPI.MOVE_DIRECTION)]
         public IAtomicVariable<Vector3> MoveDirection => _rigidbodyMoveComponent.Direction;
         
-
         [Get(PhysicsAPI.COLLIDE_EVENT)] 
         public AtomicEvent<AtomicEntity> Collided;
 
@@ -21,16 +20,9 @@ namespace Game.Scripts.Entities
         private void Awake()
         {
             _rigidbodyMoveComponent.Compose();
-        }
 
-        private void Update()
-        {
-            _rigidbodyMoveComponent.Update(Time.deltaTime);
-        }
-
-        private void OnDestroy()
-        {
-            _rigidbodyMoveComponent.Dispose();
+            foreach (var mechanic in _rigidbodyMoveComponent.GetMechanics())
+                AddLogic(mechanic);
         }
 
         private void OnTriggerEnter(Collider other)

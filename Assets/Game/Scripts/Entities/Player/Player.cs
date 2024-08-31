@@ -8,42 +8,101 @@ using Zenject;
 
 namespace Game.Scripts.Entities
 {
-    public class Player : Character
+    public class Player : AtomicObject
     {
-        [Get(ShootAPI.SHOOT_REQUEST)]
-        public IAtomicAction ShootRequest => _playerCore.ShootComponent.ShootRequest;
+        [Get(MoveAPI.MOVE_DIRECTION)]
+        public IAtomicVariable<Vector3> MoveDirection => _core.MoveComponent.Direction;
         
-        [SerializeField] private PlayerCore _playerCore;
+        [Get(MoveAPI.FORWARD_DIRECTION)]
+        public IAtomicVariable<Vector3> ForwardDirection => _core.RotateComponent.ForwardDirection;
 
+        [Get(LifeAPI.TAKE_DAMAGE_ACTION)]
+        public IAtomicAction<int> TakeDamageAction => _core.LifeComponent.TakeDamageAction;
+
+        [Get(LifeAPI.HEALTH)] 
+        public IAtomicValueObservable<int> Health => _core.LifeComponent.HealthAmount;
+
+        [Get(LifeAPI.IS_DEAD)] 
+        public IAtomicValueObservable<bool> IsDead => _core.LifeComponent.IsDead;
+
+        [Get(LifeAPI.DIE_EVENT)] 
+        public AtomicEvent<AtomicEntity> DieEvent;
+        
+        [Get(LifeAPI.DIE_ANIMATION_EVENT)] 
+        public AtomicEvent<AtomicEntity> DieAnimationEvent;
+
+        [Get(TechAPI.RESET_ACTION)] 
+        public IAtomicAction ResetAction => new AtomicAction(Reset);
+        
+        [Get(ShootAPI.SHOOT_REQUEST)]
+        public IAtomicAction ShootRequest => _core.ShootComponent.ShootRequest;
+        
+        [SerializeField] private PlayerCore _core;
         [SerializeField] private PlayerAnimation _playerAnimation;
         [SerializeField] private PlayerVfx _playerVfx;
+
+        private IBulletFabric _bulletFabric;
+        private RiffleStoreModel _riffleStoreModel;
 
         [Inject]
         private void Construct(IBulletFabric fabric, RiffleStoreModel riffleStoreModel)
         {
-            _playerCore.ShootComponent.Construct(fabric, riffleStoreModel);
+            _bulletFabric = fabric;
+            _riffleStoreModel = riffleStoreModel;
         }
-
-        protected override void OnAwake()
+        
+        private void Awake()
         {
-            _playerCore.Compose();
-            _playerAnimation.Compose(CharacterCore, _playerCore, CharacterAnimation, transform);
-            _playerVfx.Compose(_playerCore);
+            _core.Compose(_bulletFabric, _riffleStoreModel);
+            _playerAnimation.Compose(_core, InvokeDieAnimationEvent, transform);
+            _playerVfx.Compose(_core);
+            
+            foreach (var mechanic in _core.GetMechanics())
+                AddLogic(mechanic);
             
             foreach (var mechanic in _playerAnimation.GetMechanics())
                 AddLogic(mechanic);
+            
+            _core.LifeComponent.IsDead.Subscribe(OnDeadStateChanged);
         }
 
-        protected override void OnUpdate()
+        private void OnEnable()
         {
-            _playerCore.Update(Time.deltaTime);
+            Enable();
         }
 
-        protected override void OnDispose()
+        private void Update()
         {
-            _playerCore.Dispose();
+            OnUpdate(Time.deltaTime);
+        }
+
+        public void Reset()
+        {
+            _core.LifeComponent.Reset();
+        }
+
+        private void OnDisable()
+        {
+            Disable();
+        }
+
+        private void OnDestroy()
+        {
+            _core.LifeComponent.IsDead.Unsubscribe(OnDeadStateChanged);
+            
             _playerVfx.Dispose();
             _playerAnimation.Dispose();
+        }
+
+        private void OnDeadStateChanged(bool isDead)
+        {
+            if (isDead)
+                DieEvent.Invoke(this);
+        }
+
+        private void InvokeDieAnimationEvent()
+        {
+            DieAnimationEvent.Invoke(this);
         }
     }
 }

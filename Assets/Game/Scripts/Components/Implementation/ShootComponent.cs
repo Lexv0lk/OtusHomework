@@ -1,69 +1,60 @@
 using System;
+using System.Collections.Generic;
 using Atomic.Elements;
 using Atomic.Objects;
 using Game.Scripts.Fabrics;
+using Game.Scripts.Mechanics;
 using Game.Scripts.Models;
-using Game.Scripts.Tech;
 using UnityEngine;
 
 namespace Game.Scripts.Components
 {
     [Serializable]
-    public class ShootComponent : ConditionalComponent
+    public class ShootComponent
     {
         public AtomicEvent ShootRequest;
         public AtomicEvent ShootAction;
         public AtomicEvent ShootEvent;
 
-        public AtomicFunction<bool> CanShoot;
+        public AtomicAnd CanShoot;
         
         [SerializeField] private Transform _shootPoint;
         [SerializeField] private float _reloadTime;
 
         private IBulletFabric _bulletFabric;
         private RiffleStoreModel _riffleStoreModel;
-        private float _reloadTimeLeft;
+        private AtomicVariable<float> _reloadTimeLeft;
         
-        public void Construct(IBulletFabric bulletFabric, RiffleStoreModel riffleStoreModel)
+        private List<IAtomicLogic> _mechanics = new();   
+
+        public void Compose(IBulletFabric bulletFabric, RiffleStoreModel riffleStoreModel)
         {
+            _reloadTimeLeft = new AtomicVariable<float>(0);
+            
             _bulletFabric = bulletFabric;
             _riffleStoreModel = riffleStoreModel;
+            
+            AtomicFunction<bool> isReloaded = new AtomicFunction<bool>(IsReloaded);
+            AtomicFunction<bool> isAmmoEnough = new AtomicFunction<bool>(IsAmmoEnough);
+            
+            CanShoot.Append(isReloaded);
+            CanShoot.Append(isAmmoEnough);
+            
+            AtomicFunction<Transform> shootPoint = new AtomicFunction<Transform>(GetShootPoint);
+
+            ShootMechanic shootMechanic = new ShootMechanic(CanShoot, _bulletFabric, shootPoint, _reloadTimeLeft,
+                ShootRequest, ShootEvent, _reloadTime, _riffleStoreModel);
+            ReloadMechanic reloadMechanic = new ReloadMechanic(_reloadTimeLeft);
+            
+            _mechanics.Add(shootMechanic);
+            _mechanics.Add(reloadMechanic);
         }
 
-        public override void Compose()
-        {
-            Condition.AddCondition(IsReloaded);
-            Condition.AddCondition(IsAmmoEnough);
-
-            CanShoot.Compose(Condition.IsTrue);
-            
-            ShootAction.Subscribe(Shoot);
-        }
-
-        public override void Update(float deltaTime)
-        {
-            _reloadTimeLeft -= deltaTime;
-        }
-
-        private void Shoot()
-        {
-            if (Condition.IsTrue() == false)
-                return;
-            
-            AtomicEntity bullet = _bulletFabric.GetBullet();
-            
-            bullet.transform.position = _shootPoint.position;
-            bullet.Get<IAtomicVariable<Vector3>>(MoveAPI.MOVE_DIRECTION).Value = _shootPoint.forward;
-
-            _reloadTimeLeft = _reloadTime;
-            _riffleStoreModel.AmmunitionAmount.Value--;
-            
-            ShootEvent.Invoke();
-        }
+        public IEnumerable<IAtomicLogic> GetMechanics() => _mechanics;
 
         private bool IsReloaded()
         {
-            return _reloadTimeLeft <= 0;
+            return _reloadTimeLeft.Value <= 0;
         }
 
         private bool IsAmmoEnough()
@@ -71,9 +62,9 @@ namespace Game.Scripts.Components
             return _riffleStoreModel.AmmunitionAmount.Value > 0;
         }
 
-        public override void Dispose()
+        private Transform GetShootPoint()
         {
-            ShootRequest.Unsubscribe(Shoot);
+            return _shootPoint;
         }
     }
 }

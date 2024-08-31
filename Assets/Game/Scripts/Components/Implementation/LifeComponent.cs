@@ -1,11 +1,13 @@
 using System;
+using System.Collections.Generic;
 using Atomic.Elements;
-using UnityEngine;
+using Atomic.Objects;
+using Game.Scripts.Mechanics;
 
 namespace Game.Scripts.Components
 {
     [Serializable]
-    public class LifeComponent : Component
+    public class LifeComponent
     {
         public AtomicEvent<int> TakeDamageAction;
         public AtomicEvent<int> TakeDamageEvent;
@@ -14,26 +16,17 @@ namespace Game.Scripts.Components
         public AtomicVariable<int> HealthAmount;
 
         private int _startHealthAmount;
-
-        public override void Compose()
+        private List<IAtomicLogic> _mechanics = new();
+        
+        public void Compose()
         {
             _startHealthAmount = HealthAmount.Value;
-            TakeDamageAction.Subscribe(TakeDamage);
+            TakeDamageMechanic takeDamageMechanic =
+                new TakeDamageMechanic(TakeDamageAction, IsDead, HealthAmount, TakeDamageEvent);
+            _mechanics.Add(takeDamageMechanic);
         }
-
-        private void TakeDamage(int value)
-        {
-            if (IsDead.Value)
-                return;
-
-            int lastHealthAmount = HealthAmount.Value;
-            HealthAmount.Value = Mathf.Max(0, HealthAmount.Value - value);
-
-            if (HealthAmount.Value == 0)
-                IsDead.Value = true;
-            
-            TakeDamageEvent?.Invoke(lastHealthAmount - HealthAmount.Value);
-        }
+        
+        public IEnumerable<IAtomicLogic> GetMechanics() => _mechanics;
 
         public void Reset()
         {
