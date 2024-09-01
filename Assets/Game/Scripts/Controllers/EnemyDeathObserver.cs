@@ -21,19 +21,19 @@ namespace Game.Scripts.Controllers
 
         private void OnEnemyGiven(AtomicEntity enemy)
         {
-            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_ANIMATION_EVENT).Subscribe(EnemyDiedInAnimation);
-            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_EVENT).Subscribe(EnemyDied);
+            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_EVENT).Subscribe(EnemyDiedInAnimation);
+            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_ACTION).Subscribe(EnemyDied);
         }
         
         private void EnemyDied(AtomicEntity enemy)
         {
-            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_EVENT).Unsubscribe(EnemyDied);
+            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_ACTION).Unsubscribe(EnemyDied);
             _killCountModel.Kills.Value++;
         }
 
         private void EnemyDiedInAnimation(AtomicEntity enemy)
         {
-            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_ANIMATION_EVENT).Unsubscribe(EnemyDiedInAnimation);
+            enemy.Get<IAtomicEvent<AtomicEntity>>(LifeAPI.DIE_EVENT).Unsubscribe(EnemyDiedInAnimation);
             _enemyPool.ReleaseEntity(enemy);
         }
 

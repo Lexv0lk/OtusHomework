@@ -24,11 +24,11 @@ namespace Game.Scripts.Entities
         [Get(LifeAPI.IS_DEAD)] 
         public IAtomicValueObservable<bool> IsDead => _core.LifeComponent.IsDead;
 
+        [Get(LifeAPI.DIE_ACTION)] 
+        public AtomicEvent<AtomicEntity> DieAction;
+        
         [Get(LifeAPI.DIE_EVENT)] 
         public AtomicEvent<AtomicEntity> DieEvent;
-        
-        [Get(LifeAPI.DIE_ANIMATION_EVENT)] 
-        public AtomicEvent<AtomicEntity> DieAnimationEvent;
 
         [Get(TechAPI.RESET_ACTION)] 
         public IAtomicAction ResetAction => new AtomicAction(Reset);
@@ -89,12 +89,12 @@ namespace Game.Scripts.Entities
         private void OnDeadStateChanged(bool isDead)
         {
             if (isDead)
-                DieEvent.Invoke(this);
+                DieAction.Invoke(this);
         }
 
         private void InvokeDieAnimationEvent()
         {
-            DieAnimationEvent.Invoke(this);
+            DieEvent.Invoke(this);
         }
 
         private Vector3 GetPosition()

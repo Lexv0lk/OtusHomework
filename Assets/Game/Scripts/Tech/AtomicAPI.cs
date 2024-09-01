@@ -11,8 +11,8 @@ namespace Game.Scripts.Tech
     {
         public const string TAKE_DAMAGE_ACTION = "TakeDamage";
         public const string IS_DEAD = "IsDead";
-        public const string DIE_EVENT = "DieEvent";
-        public const string DIE_ANIMATION_EVENT = "DieEventAnimation";
+        public const string DIE_ACTION = "DieEvent";
+        public const string DIE_EVENT = "DieEventAnimation";
         public const string HEALTH = "Health";
     }
     
