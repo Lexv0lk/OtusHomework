@@ -21,6 +21,11 @@ namespace Game.Scripts.Tech
         public const string SHOOT_REQUEST = "ShootRequest";
     }
 
+    public static class EnemyAPI
+    {
+        public const string TARGET = "Target";
+    }
+
     public static class PhysicsAPI
     {
         public const string COLLIDE_EVENT = "CollideEvent";

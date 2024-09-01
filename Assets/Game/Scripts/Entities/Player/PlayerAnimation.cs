@@ -14,18 +14,8 @@ namespace Game.Scripts.Entities
         [SerializeField] private Animator _animator;
         [SerializeField] private AnimatorDispatcher _animatorDispatcher;
         [SerializeField] private float _animationValueChangeSpeed = 10;
-        
-        [Header("Animation Keys")] 
-        [SerializeField] private string _deadBoolean = "IsDead";
-        [SerializeField] private string _moveBoolean = "IsMoving";
-        [SerializeField] private string _moveXFloat = "MoveX";
-        [SerializeField] private string _moveYFloat = "MoveZ";
-        [SerializeField] private string _attackTrigger = "Shoot";
-        [SerializeField] private string _takeDamageTrigger = "TakeDamage";
-        
-        [Header("Animation Events")] 
-        [SerializeField] private string _deadEvent = "Died";
-        [SerializeField] private string _attackEvent = "Shooted";
+        [SerializeField] private PlayerAnimatorKeys _animatorKeys;
+        [SerializeField] private PlayerAnimationEvents _animationEvents;
 
         private AtomicEvent _takeDamageEvent = new();
         private PlayerCore _core;
@@ -44,33 +34,33 @@ namespace Game.Scripts.Entities
             _dieAnimationAction = dieAnimationAction;
             
             _moveAnimationMechanics = new BoolAnimationMechanics(core.MoveComponent.IsMoving,
-                _animator, Animator.StringToHash(_moveBoolean));
+                _animator, Animator.StringToHash(_animatorKeys.MoveBoolean));
 
             _deadAnimationMechanics = new BoolAnimationMechanics(core.LifeComponent.IsDead, _animator,
-                Animator.StringToHash(_deadBoolean));
+                Animator.StringToHash(_animatorKeys.DeadBoolean));
             
             _inverseMoveDirectionMechanics =
                 new InverseMoveDirectionMechanics(transform, _core.MoveComponent.Direction);
             
             _vector2AnimationMechanics = new Vector2AnimationMechanics(_inverseMoveDirectionMechanics.ConvertedDirection,
-                _animator, Animator.StringToHash(_moveXFloat), Animator.StringToHash(_moveYFloat), _animationValueChangeSpeed);
+                _animator, Animator.StringToHash(_animatorKeys.MoveXFloat), Animator.StringToHash(_animatorKeys.MoveYFloat), _animationValueChangeSpeed);
 
             _attackAnimationMechanics = new AttackAnimationMechanics(_animator,
-                _animatorDispatcher, _attackTrigger, _attackEvent,
+                _animatorDispatcher, _animatorKeys.AttackTrigger, _animationEvents.AttackEvent,
                 core.ShootComponent.ShootRequest, core.ShootComponent.ShootAction,
                 core.ShootComponent.CanShoot);
 
             _takeDamageAnimationMechanics = new TriggerAnimationMechanics(_takeDamageEvent,
-                _animator, Animator.StringToHash(_takeDamageTrigger));
+                _animator, Animator.StringToHash(_animatorKeys.TakeDamageTrigger));
             
             _core.LifeComponent.TakeDamageEvent.Subscribe(OnCharacterTakeDamageEvent);
-            _animatorDispatcher.SubscribeOnEvent(_deadEvent, _dieAnimationAction);
+            _animatorDispatcher.SubscribeOnEvent(_animationEvents.DeadEvent, _dieAnimationAction);
         }
 
         public void Dispose()
         {
             _core.LifeComponent.TakeDamageEvent.Unsubscribe(OnCharacterTakeDamageEvent);
-            _animatorDispatcher.UnsubscribeOnEvent(_deadEvent, _dieAnimationAction);
+            _animatorDispatcher.UnsubscribeOnEvent(_animationEvents.DeadEvent, _dieAnimationAction);
         }
 
         private void OnCharacterTakeDamageEvent(int _)

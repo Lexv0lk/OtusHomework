@@ -159,11 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7718c7acb594ab7ac97169c5f114fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position:
-    value: {x: 0, y: 0, z: 0}
   _rigidbodyMoveComponent:
     Direction:
       value: {x: 0, y: 0, z: 0}
     _rigidbody: {fileID: -4554007514668407227}
-    _speed: 15
+    _speed: 30
   _damage: 1

@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Game.Scripts.Components
 {
     [Serializable]
-    public class AttackComponent : ConditionalComponent
+    public class AttackComponent
     {
         public AtomicEvent AttackRequest;
         public AtomicEvent AttackAction;
@@ -16,6 +16,7 @@ namespace Game.Scripts.Components
         public AtomicEvent AttackEndEvent;
 
         public AtomicVariable<bool> IsInAttack;
+        public AtomicAnd CanAttack;
         
         [SerializeField] private int _damage;
         [SerializeField] private float _hitReloadTime;
@@ -25,16 +26,17 @@ namespace Game.Scripts.Components
 
         private List<IAtomicLogic> _mechanics = new();
 
-        public void Compose(IAtomicValue<bool> isTargetReached, IAtomicAction<int> targetTakeDamageAction)
+        public void Compose(IAtomicValue<bool> isTargetReached, IAtomicValue<AtomicEntity> target)
         {
-            _targetTakeDamageAction = targetTakeDamageAction;
             _isTargetReached = isTargetReached;
             
-            ReloadingHitMechanic hitMechanic = new ReloadingHitMechanic(isTargetReached,
+            CanAttack.Append(_isTargetReached);
+            
+            ReloadingHitMechanic hitMechanic = new ReloadingHitMechanic(CanAttack,
                 AttackRequest, _hitReloadTime);
 
             ConditionalStateAttackMechanic attackMechanic = new ConditionalStateAttackMechanic(AttackRequest,
-                AttackAction, AttackEndEvent, _isTargetReached, _targetTakeDamageAction, AttackEvent, IsInAttack,
+                AttackAction, AttackEndEvent, CanAttack, target, AttackEvent, IsInAttack,
                 _damage);
             
             _mechanics.Add(hitMechanic);

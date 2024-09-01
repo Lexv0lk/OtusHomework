@@ -142,44 +142,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641cca4a575846589187d7f2d9788e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterCore:
+  Target:
+    value: {fileID: 0}
+  _core:
+    AttackComponent:
+      IsInAttack:
+        value: 0
+      _damage: 1
+      _hitReloadTime: 1
     MoveComponent:
       Direction:
         value: {x: 0, y: 0, z: 0}
       IsMoving:
         value: 0
       _root: {fileID: 7964997623459932075}
-      _speed: 2
+      _speed: 4
     RotateComponent:
       ForwardDirection:
         value: {x: 0, y: 0, z: 0}
       _root: {fileID: 7964997623459932075}
-      _speed: 15
+      _speed: 16
     LifeComponent:
       IsDead:
         value: 0
       HealthAmount:
         value: 1
-  CharacterAnimation:
+    _followReachDistance: 1.7
+    _collider: {fileID: 6486345383869258}
+  _enemyAnimation:
     _animator: {fileID: 4828065441531083015}
     _animatorDispatcher: {fileID: 7917360334873893046}
     _deadBoolean: IsDead
     _moveBoolean: IsMoving
-    _deadEvent: Died
-  CharacterVfx:
-    _takeDamageVfx: {fileID: 1696610920232104273}
-  _enemyCore:
-    AttackComponent:
-      IsInAttack:
-        value: 0
-      _damage: 1
-      _hitReloadTime: 1
-    _followReachDistance: 1.7
-    _collider: {fileID: 6486345383869258}
-  _enemyAnimation:
     _attackTrigger: Attack
+    _deadEvent: Died
     _attackEvent: Attacked
     _attackEndEvent: AttackEnd
+  _enemyVfx:
+    _takeDamageVfx: {fileID: 1696610920232104273}
 --- !u!1001 &1696610920246370783
 PrefabInstance:
   m_ObjectHideFlags: 0

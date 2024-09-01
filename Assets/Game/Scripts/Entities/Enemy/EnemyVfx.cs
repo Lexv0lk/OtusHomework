@@ -4,23 +4,23 @@ using UnityEngine;
 namespace Game.Scripts.Entities
 {
     [Serializable]
-    public class CharacterVfx
+    public class EnemyVfx
     {
         [SerializeField] private ParticleSystem _takeDamageVfx;
 
-        private CharacterCore _core;
-
-        public void Compose(CharacterCore core)
+        private EnemyCore _playerCore;
+        
+        public void Compose(EnemyCore core)
         {
-            _core = core;
-            _core.LifeComponent.TakeDamageEvent.Subscribe(PlayTakeDamageVfx);
+            _playerCore = core;
+            _playerCore.LifeComponent.TakeDamageEvent.Subscribe(PlayTakeDamageVfx);
         }
 
         public void Dispose()
         {
-            _core.LifeComponent.TakeDamageEvent.Unsubscribe(PlayTakeDamageVfx);
+            _playerCore.LifeComponent.TakeDamageEvent.Unsubscribe(PlayTakeDamageVfx);
         }
-
+        
         private void PlayTakeDamageVfx(int _)
         {
             _takeDamageVfx.Play();

@@ -25,6 +25,21 @@ namespace Game.Scripts.Entities
                 AddLogic(mechanic);
         }
 
+        private void OnEnable()
+        {
+            Enable();
+        }
+
+        private void Update()
+        {
+            OnUpdate(Time.deltaTime);
+        }
+
+        private void OnDisable()
+        {
+            Disable();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out IAtomicEntity atomicEntity))

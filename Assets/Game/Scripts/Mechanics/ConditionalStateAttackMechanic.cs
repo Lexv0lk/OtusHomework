@@ -1,5 +1,6 @@
 using Atomic.Elements;
 using Atomic.Objects;
+using Game.Scripts.Tech;
 
 namespace Game.Scripts.Mechanics
 {
@@ -9,21 +10,21 @@ namespace Game.Scripts.Mechanics
         private readonly IAtomicObservable _attackAction;
         private readonly IAtomicObservable _attackEndEvent;
         private readonly IAtomicValue<bool> _canAttackTarget;
-        private readonly IAtomicAction<int> _targetTakeDamageAction;
+        private readonly IAtomicValue<AtomicEntity> _target;
         private readonly IAtomicAction _attackEvent;
         private readonly IAtomicVariable<bool> _isInAttack;
         private readonly int _damage;
 
         public ConditionalStateAttackMechanic(IAtomicObservable attackRequest, IAtomicObservable attackAction,
             IAtomicObservable attackEndEvent, IAtomicValue<bool> canAttackTarget,
-            IAtomicAction<int> targetTakeDamageAction, IAtomicAction attackEvent,
+            IAtomicValue<AtomicEntity> target, IAtomicAction attackEvent,
             IAtomicVariable<bool> isInAttack, int damage)
         {
             _attackRequest = attackRequest;
             _attackAction = attackAction;
             _attackEndEvent = attackEndEvent;
             _canAttackTarget = canAttackTarget;
-            _targetTakeDamageAction = targetTakeDamageAction;
+            _target = target;
             _attackEvent = attackEvent;
             _isInAttack = isInAttack;
             _damage = damage;
@@ -45,9 +46,9 @@ namespace Game.Scripts.Mechanics
         
         private void AttackTarget()
         {
-            if (_canAttackTarget.Value)
-                _targetTakeDamageAction.Invoke(_damage);
-            
+            if (_canAttackTarget.Value && _target.Value)
+                _target.Value.Get<IAtomicAction<int>>(LifeAPI.TAKE_DAMAGE_ACTION).Invoke(_damage);
+
             _attackEvent.Invoke();
         }
 

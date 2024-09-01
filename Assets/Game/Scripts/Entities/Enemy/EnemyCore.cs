@@ -15,6 +15,9 @@ namespace Game.Scripts.Entities
     public class EnemyCore
     {
         public AttackComponent AttackComponent;
+        public SimpleMoveComponent MoveComponent;
+        public RotateComponent RotateComponent;
+        public LifeComponent LifeComponent;
         
         [SerializeField] private float _followReachDistance = 1;
         [SerializeField] private Collider _collider;
@@ -22,46 +25,72 @@ namespace Game.Scripts.Entities
         private FollowTargetMechanic _followTargetMechanic;
         private LookAtTargetMechanic _lookAtTargetMechanic;
         private ColliderStateChangeFromDeathMechanic _colliderStateMechanic;
-        private AtomicEntity _player;
-
-        public void Construct(AtomicEntity player)
-        {
-            _player = player;
-        }
+        private IAtomicValue<AtomicEntity> _target;
+        
+        private List<IAtomicLogic> _mechanics = new();
                 
-        public void Compose(CharacterCore characterCore, IAtomicValue<Vector3> rootPosition)
+        public void Compose(IAtomicValue<Vector3> rootPosition, IAtomicValue<AtomicEntity> target)
         {
-            IAtomicValue<Vector3> targetPosition = new AtomicFunction<Vector3>(GetTargetPosition);
-
-            _followTargetMechanic = new FollowTargetMechanic(targetPosition,
-                rootPosition, characterCore.MoveComponent.Direction, _followReachDistance);
+            _target = target;
             
-            _lookAtTargetMechanic = new LookAtTargetMechanic(targetPosition,
-                rootPosition, characterCore.RotateComponent.ForwardDirection);
+            AtomicFunction<bool> isTargetAlive = new AtomicFunction<bool>(IsTargetAlive);
+            AtomicFunction<bool> isAlive = new AtomicFunction<bool>(IsAlive);
+            AtomicFunction<bool> isNotInAttack = new AtomicFunction<bool>(IsNotInAttack);
+            
+            LifeComponent.Compose();
+            MoveComponent.Compose();
+            RotateComponent.Compose();
+
+            _followTargetMechanic = new FollowTargetMechanic(_target,
+                rootPosition, MoveComponent.Direction, _followReachDistance);
+            
+            _lookAtTargetMechanic = new LookAtTargetMechanic(_target,
+                rootPosition, RotateComponent.ForwardDirection);
             
             _colliderStateMechanic =
-                new ColliderStateChangeFromDeathMechanic(characterCore.LifeComponent.IsDead, _collider);
+                new ColliderStateChangeFromDeathMechanic(LifeComponent.IsDead, _collider);
             
-            IAtomicAction<int> playerTakeDamageAction = _player.Get<IAtomicAction<int>>(LifeAPI.TAKE_DAMAGE_ACTION);
-            AttackComponent.Compose(_followTargetMechanic.IsReachedTarget, playerTakeDamageAction);
+            AttackComponent.Compose(_followTargetMechanic.IsReachedTarget, target);
+            
+            MoveComponent.CanMove.Append(isNotInAttack);
+            
+            MoveComponent.CanMove.Append(isAlive);
+            RotateComponent.CanRotate.Append(isAlive);
+            AttackComponent.CanAttack.Append(isAlive);
+            
+            MoveComponent.CanMove.Append(isTargetAlive);
+            RotateComponent.CanRotate.Append(isTargetAlive);
+            AttackComponent.CanAttack.Append(isTargetAlive);
+            
+            _mechanics.AddRange(MoveComponent.GetMechanics());
+            _mechanics.AddRange(RotateComponent.GetMechanics());
+            _mechanics.AddRange(LifeComponent.GetMechanics());
+            _mechanics.AddRange(AttackComponent.GetMechanics());
+            _mechanics.Add(_followTargetMechanic);
+            _mechanics.Add(_lookAtTargetMechanic);
+            _mechanics.Add(_colliderStateMechanic);
         }
 
-        public void Dispose()
-        {
-            AttackComponent.Dispose();
-        }
-
-        public IEnumerable<IAtomicLogic> GetMechanics()
-        {
-            var selfMechanics = new IAtomicLogic[]
-                { _followTargetMechanic, _lookAtTargetMechanic, _colliderStateMechanic };
-            
-            return selfMechanics.Union(AttackComponent.GetMechanics());
-        }
+        public IEnumerable<IAtomicLogic> GetMechanics() => _mechanics;
 
         private Vector3 GetTargetPosition()
         {
-            return _player.transform.position;
+            return _target.Value.transform.position;
+        }
+        
+        private bool IsAlive()
+        {
+            return LifeComponent.IsDead.Value == false;
+        }
+        
+        private bool IsTargetAlive()
+        {
+            return _target.Value != null && _target.Value.Get<IAtomicValue<bool>>(LifeAPI.IS_DEAD).Value == false;
+        }
+        
+        private bool IsNotInAttack()
+        {
+            return !AttackComponent.IsInAttack.Value;
         }
     }
 }

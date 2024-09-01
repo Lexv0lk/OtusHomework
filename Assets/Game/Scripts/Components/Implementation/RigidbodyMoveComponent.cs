@@ -19,7 +19,7 @@ namespace Game.Scripts.Components
 
         public void Compose()
         {
-            RigidbodyMoveMechanic moveMechanic = new(Direction, _rigidbody, _speed);
+            RigidbodyMoveMechanic moveMechanic = new RigidbodyMoveMechanic(Direction, _rigidbody, _speed);
             _mechanics.Add(moveMechanic);
         }
         

@@ -576,6 +576,46 @@ PrefabInstance:
     m_TransformParent: {fileID: 1366530279}
     m_Modifications:
     - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _core.MoveComponent._root
+      value: 
+      objectReference: {fileID: 625937916}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _playerVfx._takeDamageVfx
+      value: 
+      objectReference: {fileID: 625937917}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _core.MoveComponent._speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _playerAnimation._animator
+      value: 
+      objectReference: {fileID: 625937919}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _core.RotateComponent._root
+      value: 
+      objectReference: {fileID: 625937916}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _core.RotateComponent._speed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _core.ShootComponent._reloadTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _core.ShootComponent._shootPoint
+      value: 
+      objectReference: {fileID: 625937920}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _playerAnimation._animatorDispatcher
+      value: 
+      objectReference: {fileID: 625937918}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
+      propertyPath: _core.LifeComponent.HealthAmount.value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 625937921, guid: 3b5b2ae0f895574449961910366cbf8a, type: 3}
       propertyPath: CharacterCore.LifeComponent.HealthAmount.value
       value: 5
       objectReference: {fileID: 0}
@@ -644,6 +684,36 @@ PrefabInstance:
 --- !u!4 &625937916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3006422773680130874, guid: 3b5b2ae0f895574449961910366cbf8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 625937915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &625937917 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1977376666174438541, guid: 3b5b2ae0f895574449961910366cbf8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 625937915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &625937918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6589063960706316028, guid: 3b5b2ae0f895574449961910366cbf8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 625937915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563b51b7576f4844a9b4fad02584af41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &625937919 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3435628029611942440, guid: 3b5b2ae0f895574449961910366cbf8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 625937915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &625937920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1067890634428359185, guid: 3b5b2ae0f895574449961910366cbf8a,
     type: 3}
   m_PrefabInstance: {fileID: 625937915}
   m_PrefabAsset: {fileID: 0}
@@ -1591,7 +1661,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1548769828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3124996a5659434ea076deb805f11e53, type: 3}
+  m_Script: {fileID: 11500000, guid: e7bbc3a9c2bf42abb032c131e4b03178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 236932032, guid: a76c89c6a539356478cffc6e1b88e8dc, type: 3}

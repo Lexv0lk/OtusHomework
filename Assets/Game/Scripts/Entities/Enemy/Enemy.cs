@@ -1,4 +1,5 @@
 using Atomic.Elements;
+using Atomic.Extensions;
 using Atomic.Objects;
 using Game.Scripts.Tech;
 using UnityEngine;
@@ -6,80 +7,99 @@ using Zenject;
 
 namespace Game.Scripts.Entities
 {
-    public class Enemy : Character
+    public class Enemy : AtomicObject
     {
-        [SerializeField] private EnemyCore _enemyCore;
+        [Get(MoveAPI.MOVE_DIRECTION)]
+        public IAtomicVariable<Vector3> MoveDirection => _core.MoveComponent.Direction;
+        
+        [Get(MoveAPI.FORWARD_DIRECTION)]
+        public IAtomicVariable<Vector3> ForwardDirection => _core.RotateComponent.ForwardDirection;
 
+        [Get(LifeAPI.TAKE_DAMAGE_ACTION)]
+        public IAtomicAction<int> TakeDamageAction => _core.LifeComponent.TakeDamageAction;
+
+        [Get(LifeAPI.HEALTH)] 
+        public IAtomicValueObservable<int> Health => _core.LifeComponent.HealthAmount;
+
+        [Get(LifeAPI.IS_DEAD)] 
+        public IAtomicValueObservable<bool> IsDead => _core.LifeComponent.IsDead;
+
+        [Get(LifeAPI.DIE_EVENT)] 
+        public AtomicEvent<AtomicEntity> DieEvent;
+        
+        [Get(LifeAPI.DIE_ANIMATION_EVENT)] 
+        public AtomicEvent<AtomicEntity> DieAnimationEvent;
+
+        [Get(TechAPI.RESET_ACTION)] 
+        public IAtomicAction ResetAction => new AtomicAction(Reset);
+
+        [Get(EnemyAPI.TARGET)] 
+        public AtomicVariable<AtomicEntity> Target;
+        
+        [SerializeField] private EnemyCore _core;
         [SerializeField] private EnemyAnimation _enemyAnimation;
-
-        private IAtomicValueObservable<bool> _isPlayerDead;
-
-        [Inject]
-        private void Construct(AtomicEntity player)
+        [SerializeField] private EnemyVfx _enemyVfx;
+        
+        private void Awake()
         {
-            _enemyCore.Construct(player);
-            _isPlayerDead = player.Get<IAtomicValueObservable<bool>>(LifeAPI.IS_DEAD);
-        }
-
-        protected override void OnAwake()
-        {
-            _enemyCore.Compose(CharacterCore, new AtomicFunction<Vector3>(GetPosition));
-            _enemyAnimation.Compose(_enemyCore, CharacterAnimation, _isPlayerDead);
+            AtomicFunction<Vector3> rootPosition = new AtomicFunction<Vector3>(GetPosition);
             
-            CharacterCore.MoveComponent.AppendCondition(IsNotInAttack);
-            CharacterCore.MoveComponent.AppendCondition(IsPlayerAlive);
-            CharacterCore.RotateComponent.AppendCondition(IsPlayerAlive);
+            _core.Compose(rootPosition, Target);
+            _enemyAnimation.Compose(_core, Target, InvokeDieAnimationEvent);
+            _enemyVfx.Compose(_core);
             
-            _isPlayerDead.Subscribe(OnPlayerDeadStateChanged);
-
-            foreach (var mechanic in _enemyCore.GetMechanics())
+            foreach (var mechanic in _core.GetMechanics())
                 AddLogic(mechanic);
             
             foreach (var mechanic in _enemyAnimation.GetMechanics())
                 AddLogic(mechanic);
+            
+            _core.LifeComponent.IsDead.Subscribe(OnDeadStateChanged);
         }
 
-        protected override void OnUpdate()
+        private void OnEnable()
         {
-            if (CharacterCore.LifeComponent.IsDead.Value)
-                return;
-            
+            Enable();
+        }
+
+        private void Update()
+        {
             OnUpdate(Time.deltaTime);
         }
 
-        protected override void OnReset()
+        public void Reset()
         {
-            _enemyCore.AttackComponent.Reset();
+            _core.AttackComponent.Reset();
+            _core.LifeComponent.Reset();
+            Target.Value = null;
         }
 
-        protected override void OnDispose()
+        private void OnDisable()
         {
-            _enemyCore.Dispose();
+            Disable();
+        }
+
+        private void OnDestroy()
+        {
+            _core.LifeComponent.IsDead.Unsubscribe(OnDeadStateChanged);
             _enemyAnimation.Dispose();
-            _isPlayerDead.Unsubscribe(OnPlayerDeadStateChanged);
+            _enemyVfx.Dispose();
+        }
+
+        private void OnDeadStateChanged(bool isDead)
+        {
+            if (isDead)
+                DieEvent.Invoke(this);
+        }
+
+        private void InvokeDieAnimationEvent()
+        {
+            DieAnimationEvent.Invoke(this);
         }
 
         private Vector3 GetPosition()
         {
             return transform.position;
-        }
-
-        private void OnPlayerDeadStateChanged(bool newState)
-        {
-            if (newState)
-            {
-                CharacterCore.MoveComponent.Direction.Value = Vector3.zero;
-            }
-        }
-
-        private bool IsNotInAttack()
-        {
-            return !_enemyCore.AttackComponent.IsInAttack.Value;
-        }
-
-        private bool IsPlayerAlive()
-        {
-            return !_isPlayerDead.Value;
         }
     }
 }
