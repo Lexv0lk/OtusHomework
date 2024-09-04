@@ -6,6 +6,6 @@ namespace Data
     [GenerateAuthoringComponent]
     public struct TeamData : IComponentData
     {
-        public Team Team;
+        public Team Value;
     }
 }
