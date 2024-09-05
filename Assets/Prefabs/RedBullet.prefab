@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 861833469380521490}
   - component: {fileID: 8776718195887810492}
   - component: {fileID: 1301139686891415691}
+  - component: {fileID: 1068960526833102795}
+  - component: {fileID: 508714461121971258}
   m_Layer: 0
   m_Name: RedBullet
   m_TagString: Untagged
@@ -128,3 +130,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &1068960526833102795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7197043073522551961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78583dafcdba47bf9d10a081374ca3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &508714461121971258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7197043073522551961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e6654007c146ff871e99e07987d642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: 0

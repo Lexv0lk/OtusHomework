@@ -15,7 +15,7 @@ namespace Systems
 
             if (_currentDelay >= 1)
             {
-                Entities.ForEach((Entity entity, in WeaponData weaponData) =>
+                Entities.WithAll<WeaponData>().WithNone<FireRequestEvent>().ForEach((Entity entity) =>
                 {   
                     EntityManager.AddComponentData(entity, new FireRequestEvent());
                     _currentDelay = 0;

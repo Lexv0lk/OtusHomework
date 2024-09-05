@@ -10,11 +10,11 @@ namespace Systems
     {
         protected override void OnUpdate()
         {
-            Entities.ForEach((Entity entity, in LocalToWorld localToWorld, in ShootData shootData, in BulletSpawnEvent bulletSpawnEvent) =>
+            Entities.WithAll<BulletSpawnEvent>().ForEach((Entity entity, in ShootData shootData, in WeaponData weaponData) =>
             {
-                var bullet = EntityManager.Instantiate(shootData.BulletPrefab);
-                EntityManager.SetComponentData(bullet, new Translation{ Value = localToWorld.Position });
-                EntityManager.AddComponentData(bullet, new MoveDirectionData { Direction = new float3(0, 0, -5) });
+                var bullet = EntityManager.Instantiate(weaponData.BulletPrefab);
+                EntityManager.SetComponentData(bullet, new Translation{ Value = shootData.FirePosition });
+                EntityManager.AddComponentData(bullet, new MoveData { Direction = shootData.Direction, Speed = 5});
                 EntityManager.RemoveComponent(entity, typeof(BulletSpawnEvent));
             }).WithStructuralChanges().Run();
         }
