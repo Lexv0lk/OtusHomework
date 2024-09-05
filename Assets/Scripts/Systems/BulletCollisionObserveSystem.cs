@@ -10,6 +10,9 @@ using UnityEngine;
 
 namespace Systems
 {
+    [UpdateInGroup(typeof(FixedStepSimulationSystemGroup))]
+    [UpdateAfter(typeof(StepPhysicsWorld))]
+    [UpdateBefore(typeof(EndFramePhysicsSystem))]
     public partial class BulletCollisionObserveSystem : SystemBase
     {
         protected StepPhysicsWorld StepPhysicsWorld;
@@ -20,45 +23,54 @@ namespace Systems
             StepPhysicsWorld = World.GetOrCreateSystem<StepPhysicsWorld>();
             CommandBufferSystem = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
         }
-        
+
+        protected override void OnStartRunning()
+        {
+            base.OnStartRunning();
+            this.RegisterPhysicsRuntimeSystemReadOnly();
+        }
+
         protected override void OnUpdate()
         {
-            var collisionJob = new CollisionEvent
-            {
-                BulletGroup = GetComponentDataFromEntity<BulletTag>(false),
-                TeamGroup = GetComponentDataFromEntity<TeamData>(false),
-            };
-
-            Dependency = collisionJob.Schedule(StepPhysicsWorld.Simulation, Dependency);
+            Dependency = new TestCollisionJob().Schedule(StepPhysicsWorld.Simulation, Dependency);
         }
         
-        private struct CollisionEvent : ICollisionEventsJob
+        [BurstCompile]
+        private struct TestCollisionJob : ITriggerEventsJob
         {
-            public ComponentDataFromEntity<BulletTag> BulletGroup;
-            public ComponentDataFromEntity<TeamData> TeamGroup;
-
-            private bool IsBullet(Entity entity)
+            public void Execute(TriggerEvent triggerEvent)
             {
-                return BulletGroup.HasComponent(entity);
-            }
-            
-            public void Execute(Unity.Physics.CollisionEvent collisionEvent)
-            {
-                bool isBulletA = IsBullet(collisionEvent.EntityA);
-                bool isBulletB = IsBullet(collisionEvent.EntityB);
-                
-                if (isBulletA && isBulletB)
-                    return;
-
-                TeamData teamA, teamB;
-
-                if (TeamGroup.TryGetComponent(collisionEvent.EntityA, out teamA) &&
-                    TeamGroup.TryGetComponent(collisionEvent.EntityB, out teamB))
-                {
-                    if (teamA.Value == teamB.Value)
-                        return;
-                }
+                Debug.Log($"collision event: {triggerEvent}. Entities: {triggerEvent.EntityA}, {triggerEvent.EntityB}");
             }
         }
+        
+        // private struct CollisionEvent : ICollisionEventsJob
+        // {
+        //     public ComponentDataFromEntity<BulletTag> BulletGroup;
+        //     public ComponentDataFromEntity<TeamData> TeamGroup;
+        //
+        //     private bool IsBullet(Entity entity)
+        //     {
+        //         return BulletGroup.HasComponent(entity);
+        //     }
+        //     
+        //     public void Execute(Unity.Physics.CollisionEvent collisionEvent)
+        //     {
+        //         bool isBulletA = IsBullet(collisionEvent.EntityA);
+        //         bool isBulletB = IsBullet(collisionEvent.EntityB);
+        //         
+        //         if (isBulletA && isBulletB)
+        //             return;
+        //
+        //         TeamData teamA, teamB;
+        //
+        //         if (TeamGroup.TryGetComponent(collisionEvent.EntityA, out teamA) &&
+        //             TeamGroup.TryGetComponent(collisionEvent.EntityB, out teamB))
+        //         {
+        //             if (teamA.Value == teamB.Value)
+        //                 return;
+        //         }
+        //     }
+        // }
     }
 }
