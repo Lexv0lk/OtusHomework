@@ -1,29 +1,28 @@
 ﻿using Data;
-using Structs;
+using Data.Tags;
+using Enums;
 using Unity.Collections;
 using Unity.Entities;
-using Unity.Jobs;
 using Unity.Mathematics;
-using Unity.Physics;
-using Unity.Physics.Systems;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Systems
 {
     public partial class TargetDetectionSystem : SystemBase
     {
-        private float _closestDistance;
-        private Entity _closestEntity;
-        
         protected override void OnUpdate()
         {
-            var entityArray = GetEntityQuery(typeof(TeamData)).ToEntityArray(Allocator.Temp);
+            var queryDescription = new EntityQueryDesc
+            {
+                All = new ComponentType[] { typeof(TeamData) },
+                None = new ComponentType[] { typeof(BulletTag) }
+            };
+            var entityArray = GetEntityQuery(queryDescription).ToEntityArray(Allocator.TempJob);
             
             Entities.ForEach((int entityInQueryIndex, ref TargetData targetData, in LocalToWorld localToWorld, in TeamData teamData, in TargetDetectionData targetDetectionData) =>
             {
-                _closestDistance = float.MaxValue;
-                _closestEntity = Entity.Null;
+                float closestDistance = float.MaxValue;
+                Entity closestEntity = Entity.Null;
                 float3 position = localToWorld.Position;
                 Team team = teamData.Value;
 
@@ -38,18 +37,17 @@ namespace Systems
                     if (distance > targetDetectionData.Radius)
                         continue;
                     
-                    if (distance < _closestDistance)
+                    if (distance < closestDistance)
                     {
-                        _closestDistance = distance;
-                        _closestEntity = entityArray[i];
+                        closestDistance = distance;
+                        closestEntity = entityArray[i];
                     }
                 }
                 
-                targetData.Value = _closestEntity;
+                targetData.Value = closestEntity;
             })
             .WithDisposeOnCompletion(entityArray)
-            .WithoutBurst()
-            .Run();
+            .Schedule();
         }
     }
 }

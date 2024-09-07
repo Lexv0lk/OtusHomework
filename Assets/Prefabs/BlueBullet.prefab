@@ -77,5 +77,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 8367557829370760811, guid: 546391e8dc805d74eb7f2cd3375ccbcd,
+        type: 3}
+      propertyPath: m_Material.m_BelongsToCategories.m_Value.Category00
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367557829370760811, guid: 546391e8dc805d74eb7f2cd3375ccbcd,
+        type: 3}
+      propertyPath: m_Material.m_BelongsToCategories.m_Value.Category01
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367557829370760811, guid: 546391e8dc805d74eb7f2cd3375ccbcd,
+        type: 3}
+      propertyPath: m_Material.m_CollidesWithCategories.m_Value.Category01
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367557829370760811, guid: 546391e8dc805d74eb7f2cd3375ccbcd,
+        type: 3}
+      propertyPath: m_Material.m_CollidesWithCategories.m_Value.Category02
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367557829370760811, guid: 546391e8dc805d74eb7f2cd3375ccbcd,
+        type: 3}
+      propertyPath: m_Material.m_CollidesWithCategories.m_Value.Category03
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367557829370760811, guid: 546391e8dc805d74eb7f2cd3375ccbcd,
+        type: 3}
+      propertyPath: m_Material.m_CollidesWithCategories.m_Value.Category07
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 546391e8dc805d74eb7f2cd3375ccbcd, type: 3}

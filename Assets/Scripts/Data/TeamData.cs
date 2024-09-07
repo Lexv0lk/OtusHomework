@@ -1,4 +1,4 @@
-﻿using Structs;
+﻿using Enums;
 using Unity.Entities;
 
 namespace Data

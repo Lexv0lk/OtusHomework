@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 257982432612152014, guid: 4cbc4b7107db1a94188ec434adec4ac9,
+        type: 3}
+      propertyPath: m_Material.m_BelongsToCategories.m_Value.Category02
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257982432612152014, guid: 4cbc4b7107db1a94188ec434adec4ac9,
+        type: 3}
+      propertyPath: m_Material.m_BelongsToCategories.m_Value.Category03
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 257982432612152014, guid: 4cbc4b7107db1a94188ec434adec4ac9,
+        type: 3}
+      propertyPath: m_Material.m_CollidesWithCategories.m_Value.Category00
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 257982432612152014, guid: 4cbc4b7107db1a94188ec434adec4ac9,
+        type: 3}
+      propertyPath: m_Material.m_CollidesWithCategories.m_Value.Category01
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1889644153541988659, guid: 4cbc4b7107db1a94188ec434adec4ac9,
         type: 3}
       propertyPath: BulletPrefab
@@ -94,5 +114,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 03dadc5e59c25b04597767b6e998936b, type: 2}
+    - target: {fileID: 4258696277871114319, guid: 4cbc4b7107db1a94188ec434adec4ac9,
+        type: 3}
+      propertyPath: _bulletConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f7f896d47ffd54418aab6734bbe670d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cbc4b7107db1a94188ec434adec4ac9, type: 3}

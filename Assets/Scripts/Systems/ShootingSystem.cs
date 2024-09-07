@@ -8,31 +8,42 @@ namespace Systems
 {
     public partial class ShootingSystem : SystemBase
     {
+        private BeginSimulationEntityCommandBufferSystem _endSimulationEntityCommandBufferSystem;
+        
+        protected override void OnCreate()
+        {
+            _endSimulationEntityCommandBufferSystem = World.GetOrCreateSystem<BeginSimulationEntityCommandBufferSystem>();
+        }
+
         protected override void OnUpdate()
         {
-            Entities.WithAll<FireRequestEvent>().ForEach((Entity entity, ref ShootData shootData, in LocalToWorld localToWorld, in WeaponData weaponData, in TargetData targetData) =>
+            var commandBuffer = _endSimulationEntityCommandBufferSystem.CreateCommandBuffer();
+            
+            Entities.WithAll<FireRequestEvent>().WithNone<BulletSpawnEvent>().ForEach((Entity entity, ref ShootData shootData, in LocalToWorld localToWorld, in WeaponData weaponData, in TargetData targetData) =>
             {
                 if (targetData.Value == Entity.Null)
                     return;
                 
                 var firePointEntity = weaponData.FirePoint;
-                float3 firePointPosition = EntityManager.GetComponentData<LocalToWorld>(firePointEntity).Position;
-                float3 direction = GetFireDirection(targetData, localToWorld);
+                float3 firePointPosition = GetComponent<LocalToWorld>(firePointEntity).Position;
+                
+                float3 direction;
+                
+                if (HasComponent<LocalToWorld>(targetData.Value) == false)
+                    return;
+                
+                LocalToWorld targetLocalToWorld = GetComponent<LocalToWorld>(targetData.Value);
+                direction = targetLocalToWorld.Position - localToWorld.Position;
+                direction = math.normalize(direction);
+                
                 shootData.FirePosition = firePointPosition;
                 shootData.Direction = direction;
 
-                EntityManager.AddComponentData(entity, new BulletSpawnEvent());
-                EntityManager.RemoveComponent(entity, typeof(FireRequestEvent));
-            }).WithStructuralChanges().Run();
-        }
-
-        private float3 GetFireDirection(TargetData targetData, LocalToWorld localToWorld)
-        {
-            float3 direction;
-            LocalToWorld targetLocalToWorld = EntityManager.GetComponentData<LocalToWorld>(targetData.Value);
-            direction = targetLocalToWorld.Position - localToWorld.Position;
-            direction = math.normalize(direction);
-            return direction;
+                commandBuffer.AddComponent(entity, new BulletSpawnEvent());
+                commandBuffer.RemoveComponent<FireRequestEvent>(entity);
+            }).Schedule();
+            
+            _endSimulationEntityCommandBufferSystem.AddJobHandleForProducer(Dependency);
         }
     }
 }

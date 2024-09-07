@@ -1,4 +1,4 @@
-﻿namespace Structs
+﻿namespace Enums
 {
     public enum Team
     {
