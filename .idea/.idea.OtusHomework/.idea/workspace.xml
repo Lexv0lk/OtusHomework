@@ -4,7 +4,439 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="" />
+    <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EventBus.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EventBus/EventBus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EventBus/EventBus.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EventBus/EventHandlerCollection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EventBus/EventHandlerCollection.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EventBus/IEventHandlerCollection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EventBus/IEventHandlerCollection.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/SplitterGUILayout.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/SplitterGUILayout.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/SplitterGUILayout.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/SplitterGUILayout.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTask.Editor.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTask.Editor.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTask.Editor.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTask.Editor.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTaskTrackerTreeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTaskTrackerTreeView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTaskTrackerTreeView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTaskTrackerTreeView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTaskTrackerWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTaskTrackerWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTaskTrackerWindow.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Editor/UniTaskTrackerWindow.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncLazy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncLazy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncLazy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncLazy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncReactiveProperty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncReactiveProperty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncReactiveProperty.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncReactiveProperty.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncUnit.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/AsyncUnit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenEqualityComparer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenEqualityComparer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenEqualityComparer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenEqualityComparer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenSourceExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenSourceExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenSourceExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CancellationTokenSourceExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Channel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Channel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Channel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Channel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncMethodBuilderAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncMethodBuilderAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncMethodBuilderAttribute.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncMethodBuilderAttribute.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncUniTaskMethodBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncUniTaskMethodBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncUniTaskMethodBuilder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncUniTaskMethodBuilder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncUniTaskVoidMethodBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncUniTaskVoidMethodBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncUniTaskVoidMethodBuilder.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncUniTaskVoidMethodBuilder.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/StateMachineRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/StateMachineRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/StateMachineRunner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/CompilerServices/StateMachineRunner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/EnumerableAsyncExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/EnumerableAsyncExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/EnumerableAsyncExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/EnumerableAsyncExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/EnumeratorAsyncExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/EnumeratorAsyncExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/EnumeratorAsyncExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/EnumeratorAsyncExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/ExceptionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/ExceptionExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/ExceptionExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/ExceptionExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables/AddressablesAsyncExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables/AddressablesAsyncExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables/AddressablesAsyncExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables/AddressablesAsyncExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables/UniTask.Addressables.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables/UniTask.Addressables.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables/UniTask.Addressables.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/Addressables/UniTask.Addressables.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween/DOTweenAsyncExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween/DOTweenAsyncExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween/DOTweenAsyncExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween/DOTweenAsyncExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween/UniTask.DOTween.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween/UniTask.DOTween.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween/UniTask.DOTween.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/DOTween/UniTask.DOTween.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/TextMeshProAsyncExtensions.InputField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/TextMeshProAsyncExtensions.InputField.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/TextMeshProAsyncExtensions.InputField.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/TextMeshProAsyncExtensions.InputField.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/TextMeshProAsyncExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/TextMeshProAsyncExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/TextMeshProAsyncExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/TextMeshProAsyncExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/UniTask.TextMeshPro.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/UniTask.TextMeshPro.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/UniTask.TextMeshPro.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/UniTask.TextMeshPro.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/IUniTaskAsyncEnumerable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/IUniTaskAsyncEnumerable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/IUniTaskAsyncEnumerable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/IUniTaskAsyncEnumerable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/IUniTaskSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/IUniTaskSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/IUniTaskSource.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/IUniTaskSource.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayPool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayPool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayPoolUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayPoolUtil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayPoolUtil.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayPoolUtil.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayUtil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayUtil.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ArrayUtil.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ContinuationQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ContinuationQueue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ContinuationQueue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ContinuationQueue.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/DiagnosticsExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/DiagnosticsExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/DiagnosticsExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/DiagnosticsExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/Error.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/Error.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/Error.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/Error.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/MinimumQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/MinimumQueue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/MinimumQueue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/MinimumQueue.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/PlayerLoopRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/PlayerLoopRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/PlayerLoopRunner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/PlayerLoopRunner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/PooledDelegate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/PooledDelegate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/PooledDelegate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/PooledDelegate.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/RuntimeHelpersAbstraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/RuntimeHelpersAbstraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/RuntimeHelpersAbstraction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/RuntimeHelpersAbstraction.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/StatePool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/StatePool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/StatePool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/StatePool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/TaskTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/TaskTracker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/TaskTracker.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/TaskTracker.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/UnityEqualityComparer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/UnityEqualityComparer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/UnityEqualityComparer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/UnityEqualityComparer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/UnityWebRequestExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/UnityWebRequestExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/UnityWebRequestExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/UnityWebRequestExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ValueStopwatch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ValueStopwatch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ValueStopwatch.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/ValueStopwatch.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/WeakDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/WeakDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/WeakDictionary.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Internal/WeakDictionary.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Aggregate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Aggregate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Aggregate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Aggregate.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/All.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/All.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/All.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/All.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Any.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Any.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Any.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Any.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AppendPrepend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AppendPrepend.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AppendPrepend.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AppendPrepend.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AsUniTaskAsyncEnumerable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AsUniTaskAsyncEnumerable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AsUniTaskAsyncEnumerable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AsUniTaskAsyncEnumerable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AsyncEnumeratorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AsyncEnumeratorBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AsyncEnumeratorBase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/AsyncEnumeratorBase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Average.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Average.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Average.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Average.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Buffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Buffer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Buffer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Buffer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Cast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Cast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Cast.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Cast.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/CombineLatest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/CombineLatest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/CombineLatest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/CombineLatest.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Concat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Concat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Concat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Concat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Contains.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Contains.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Contains.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Contains.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Count.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Count.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Count.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Count.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Create.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Create.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Create.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Create.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/DefaultIfEmpty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/DefaultIfEmpty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/DefaultIfEmpty.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/DefaultIfEmpty.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Distinct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Distinct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Distinct.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Distinct.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/DistinctUntilChanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/DistinctUntilChanged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/DistinctUntilChanged.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/DistinctUntilChanged.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Do.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Do.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Do.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Do.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ElementAt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ElementAt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ElementAt.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ElementAt.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Empty.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Empty.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Empty.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Empty.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Except.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Except.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Except.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Except.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/First.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/First.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/First.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/First.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ForEach.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ForEach.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ForEach.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ForEach.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/GroupBy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/GroupBy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/GroupBy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/GroupBy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/GroupJoin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/GroupJoin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/GroupJoin.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/GroupJoin.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Intersect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Intersect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Intersect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Intersect.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Join.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Join.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Join.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Join.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Last.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Last.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Last.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Last.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/LongCount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/LongCount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/LongCount.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/LongCount.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Max.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Max.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Max.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Max.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Min.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Min.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Min.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Min.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/MinMax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/MinMax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/MinMax.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/MinMax.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Never.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Never.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Never.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Never.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/OfType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/OfType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/OfType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/OfType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/OrderBy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/OrderBy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/OrderBy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/OrderBy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Pairwise.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Pairwise.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Pairwise.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Pairwise.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Publish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Publish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Publish.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Publish.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Queue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Queue.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Queue.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Queue.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Range.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Range.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Range.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Range.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Repeat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Repeat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Repeat.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Repeat.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Return.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Return.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Return.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Return.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Reverse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Reverse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Reverse.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Reverse.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Select.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Select.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Select.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Select.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SelectMany.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SelectMany.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SelectMany.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SelectMany.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SequenceEqual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SequenceEqual.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SequenceEqual.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SequenceEqual.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Single.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Single.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Single.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Single.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Skip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Skip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Skip.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Skip.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipLast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipLast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipLast.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipLast.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipUntil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipUntil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipUntil.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipUntil.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipUntilCanceled.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipUntilCanceled.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipUntilCanceled.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipUntilCanceled.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipWhile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipWhile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipWhile.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/SkipWhile.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Subscribe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Subscribe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Subscribe.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Subscribe.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Sum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Sum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Sum.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Sum.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Take.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Take.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Take.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Take.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeLast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeLast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeLast.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeLast.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeUntil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeUntil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeUntil.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeUntil.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeUntilCanceled.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeUntilCanceled.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeUntilCanceled.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeUntilCanceled.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeWhile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeWhile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeWhile.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/TakeWhile.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Throw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Throw.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Throw.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Throw.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToArray.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToArray.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToArray.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToDictionary.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToDictionary.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToHashSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToHashSet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToHashSet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToHashSet.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToList.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToList.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToLookup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToLookup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToLookup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToObservable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToObservable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToObservable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToObservable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToUniTaskAsyncEnumerable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToUniTaskAsyncEnumerable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToUniTaskAsyncEnumerable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/ToUniTaskAsyncEnumerable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UniTask.Linq.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UniTask.Linq.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UniTask.Linq.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UniTask.Linq.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Union.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Union.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Union.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Union.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/EveryUpdate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/EveryUpdate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/EveryUpdate.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/EveryUpdate.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/EveryValueChanged.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/EveryValueChanged.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/EveryValueChanged.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/EveryValueChanged.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/Timer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/Timer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/Timer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Where.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Where.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Where.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Where.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Zip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Zip.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Zip.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Linq/Zip.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/MoveNextSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/MoveNextSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/MoveNextSource.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/MoveNextSource.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/PlayerLoopHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/PlayerLoopHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/PlayerLoopHelper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/PlayerLoopHelper.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/PlayerLoopTimer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/PlayerLoopTimer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/PlayerLoopTimer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/PlayerLoopTimer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Progress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Progress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Progress.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Progress.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TaskPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TaskPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TaskPool.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TaskPool.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TimeoutController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TimeoutController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TimeoutController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TimeoutController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TriggerEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TriggerEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TriggerEvent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/TriggerEvent.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncAwakeTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncAwakeTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncAwakeTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncAwakeTrigger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncDestroyTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncDestroyTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncDestroyTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncDestroyTrigger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncStartTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncStartTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncStartTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncStartTrigger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncTriggerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncTriggerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncTriggerBase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncTriggerBase.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncTriggerExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncTriggerExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncTriggerExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/AsyncTriggerExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/MonoBehaviourMessagesTriggers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/MonoBehaviourMessagesTriggers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/MonoBehaviourMessagesTriggers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/Triggers/MonoBehaviourMessagesTriggers.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Bridge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Bridge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Bridge.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Bridge.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Delay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Delay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Delay.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Delay.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Factory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Factory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Factory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Factory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Run.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Run.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Run.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Run.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Threading.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Threading.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Threading.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.Threading.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WaitUntil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WaitUntil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WaitUntil.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WaitUntil.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAll.Generated.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAll.Generated.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAll.Generated.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAll.Generated.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAll.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAll.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAll.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAny.Generated.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAny.Generated.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAny.Generated.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAny.Generated.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAny.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAny.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAny.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.WhenAny.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTask.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskCompletionSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskCompletionSource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskCompletionSource.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskCompletionSource.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.Shorthand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.Shorthand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.Shorthand.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.Shorthand.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskObservableExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskObservableExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskObservableExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskObservableExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskScheduler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskScheduler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskScheduler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskScheduler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskSynchronizationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskSynchronizationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskSynchronizationContext.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskSynchronizationContext.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskVoid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskVoid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskVoid.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UniTaskVoid.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AssetBundleRequestAllAssets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AssetBundleRequestAllAssets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AssetBundleRequestAllAssets.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AssetBundleRequestAllAssets.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AsyncGPUReadback.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AsyncGPUReadback.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AsyncGPUReadback.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AsyncGPUReadback.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.Jobs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.Jobs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.Jobs.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.Jobs.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.MonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.MonoBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.MonoBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.MonoBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.uGUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.uGUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.uGUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.uGUI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityBindingExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityBindingExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityBindingExtensions.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityBindingExtensions.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityWebRequestException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityWebRequestException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityWebRequestException.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/UnityWebRequestException.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/_InternalVisibleTo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/_InternalVisibleTo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/_InternalVisibleTo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/Runtime/_InternalVisibleTo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/UniTask/package.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/UniTask/package.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +445,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lexv0lk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Lexv0lk/OtusHomework.git&quot;,
+    &quot;accountId&quot;: &quot;aa3b404f-6730-452c-bc41-bde02b2cab9f&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -24,26 +468,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "homework__save__system",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;homework__EventBus&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Lexvo\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Lexvo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="G:\Programs\Unity\2021.3.7f1\Editor\Unity.exe" />
@@ -92,6 +536,8 @@
       <updated>1722787470443</updated>
       <workItem from="1722787472192" duration="2147000" />
       <workItem from="1722790426748" duration="3533000" />
+      <workItem from="1725738709892" duration="1909000" />
+      <workItem from="1725791637633" duration="1854000" />
     </task>
     <servers />
   </component>
