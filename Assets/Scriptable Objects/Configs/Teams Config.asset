@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8ba74d2d004580b1b3b5229d50132f, type: 3}
+  m_Name: Teams Config
+  m_EditorClassIdentifier: 
+  _blueTeam:
+  - {fileID: 11400000, guid: 34824dc92c1efd043aa21cee4d67bda7, type: 2}
+  - {fileID: 11400000, guid: 00af99f6725f5e940aa82e43120612d3, type: 2}
+  - {fileID: 11400000, guid: c108c46a1df93a0488cb7ab4cca8c4ae, type: 2}
+  - {fileID: 11400000, guid: 306d003a85106d343ba9c15eb3226647, type: 2}
+  _redTeam:
+  - {fileID: 11400000, guid: e23a768786466544da369b3b12db9a23, type: 2}
+  - {fileID: 11400000, guid: c72d11fcf0189894a97bfd8523f179e6, type: 2}
+  - {fileID: 11400000, guid: eef5f0a56586edd47936d6084b2d8d96, type: 2}
+  - {fileID: 11400000, guid: 9c320e0e067d08d42bea38373f72bfb5, type: 2}
