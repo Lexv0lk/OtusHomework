@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace UI
@@ -54,6 +55,7 @@ namespace UI
             return this.views[index];
         }
 
+        [Button]
         public void SetActive(bool isActive)
         {
             this.canvas.sortingOrder = isActive ? FORWARD_LAYER : BACK_LAYER;

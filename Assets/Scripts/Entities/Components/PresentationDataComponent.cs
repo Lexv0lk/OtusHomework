@@ -2,11 +2,11 @@ using UnityEngine;
 
 namespace Entities.Components
 {
-    public struct BaseViewComponent
+    public struct PresentationDataComponent
     {
         public Sprite Icon;
 
-        public BaseViewComponent(Sprite icon)
+        public PresentationDataComponent(Sprite icon)
         {
             Icon = icon;
         }

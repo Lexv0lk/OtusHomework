@@ -2,7 +2,7 @@
 using Entities.Components;
 using UnityEngine;
 
-namespace Configs.Entities
+namespace Configs
 {
     [CreateAssetMenu(fileName = "Sample", menuName = "Entities/Sample")]
     public class BaseHeroConfig : SOEntity
@@ -15,7 +15,7 @@ namespace Configs.Entities
         {
             RemoveAll();
             Add(new StatsComponent(_attack, _health));
-            Add(new BaseViewComponent(_icon));
+            Add(new PresentationDataComponent(_icon));
         }
     }
 }

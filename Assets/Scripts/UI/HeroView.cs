@@ -11,7 +11,7 @@ namespace UI
     //Менять нельзя!
     public sealed class HeroView : MonoBehaviour
     {
-        internal event UnityAction OnClicked
+        public event UnityAction OnClicked
         {
             add { this.button.onClick.AddListener(value); }
             remove { this.button.onClick.RemoveListener(value); }

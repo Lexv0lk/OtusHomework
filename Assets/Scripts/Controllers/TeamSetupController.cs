@@ -4,6 +4,7 @@ using DI;
 using Entities;
 using Entities.Components;
 using UI;
+using Utils;
 using Zenject;
 
 namespace Controllers
@@ -21,21 +22,24 @@ namespace Controllers
 
         public void Initialize()
         {
-            SetupTeamView(_teamsConfig.RedTeam, _teamViewSetup.RedTeam);
-            SetupTeamView(_teamsConfig.BlueTeam, _teamViewSetup.BlueTeam);
+            SetupTeamView(_teamsConfig.RedTeam, _teamViewSetup.RedTeam, Team.Red);
+            SetupTeamView(_teamsConfig.BlueTeam, _teamViewSetup.BlueTeam, Team.Blue);
         }
 
-        private void SetupTeamView(IReadOnlyList<SOEntity> entities, HeroListView views)
+        private void SetupTeamView(IReadOnlyList<SOEntity> entities, HeroListView views, Team team)
         {
             for (int i = 0; i < entities.Count; i++)
             {
                 var entity = entities[i];
                 
-                if (entity.TryGet<BaseViewComponent>(out var viewComponent))
+                if (entity.TryGet<PresentationDataComponent>(out var viewComponent))
                     views.GetView(i).SetIcon(viewComponent.Icon);
                 
                 if (entity.TryGet<StatsComponent>(out var statsComponent))
                     views.GetView(i).SetStats($"{statsComponent.Attack} / {statsComponent.Health}");
+                
+                entity.Add(new HeroPresentationComponent(views.GetView(i)));
+                entity.Add(new TeamComponent(team));
             }
         }
     }

@@ -1,15 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Entities
 {
-    public abstract class SOEntity : ScriptableObject
+    public abstract class SOEntity : ScriptableObject, IEntity
     {
-        private readonly BaseEntity _baseEntity = new();
+        private readonly ComponentList _componentList = new();
 
-        public void Add(object component) => _baseEntity.Add(component);
+        public void Add(object component) => _componentList.Add(component);
         
-        public void RemoveAll() => _baseEntity.RemoveAll();
+        public void RemoveAll() => _componentList.RemoveAll();
         
-        public bool TryGet<T>(out T result) => _baseEntity.TryGet(out result);
+        public bool TryGet<T>(out T result) => _componentList.TryGet(out result);
+
+        public T Get<T>() => _componentList.Get<T>();
+
+        public IReadOnlyList<object> GetAll() => _componentList.GetAll();
     }
 }
