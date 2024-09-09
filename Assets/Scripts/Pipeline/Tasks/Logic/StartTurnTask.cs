@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Configs;
 using Entities;
+using Entities.Components;
 using EventBus.Events;
 using Models;
-using UnityEngine;
 using Utils;
 
 namespace Pipeline.Tasks.Logic
@@ -12,16 +12,16 @@ namespace Pipeline.Tasks.Logic
     {
         private readonly CurrentTurn _currentTurn;
         private readonly EventBus.EventBus _eventBus;
-        private readonly IteratableList<IteratableList<SOEntity>> _teams;
+        private readonly IteratableList<IteratableList<IEntity>> _teams;
 
-        public StartTurnTask(CurrentTurn currentTurn, TeamsConfig teamsConfig, EventBus.EventBus eventBus)
+        public StartTurnTask(CurrentTurn currentTurn, TeamsSetup teamsSetup, EventBus.EventBus eventBus)
         {
             _currentTurn = currentTurn;
             _eventBus = eventBus;
-
-            var redTeam = new IteratableList<SOEntity>(teamsConfig.RedTeam);
-            var blueTeam = new IteratableList<SOEntity>(teamsConfig.BlueTeam);
-            _teams = new IteratableList<IteratableList<SOEntity>>(new List<IteratableList<SOEntity>> {redTeam, blueTeam});
+            
+            _teams = new IteratableList<IteratableList<IEntity>>();
+            _teams.Add(teamsSetup.RedTeam);
+            _teams.Add(teamsSetup.BlueTeam);
         }
         
         protected override void OnRun()
@@ -29,9 +29,20 @@ namespace Pipeline.Tasks.Logic
             var currentTeam = _teams.GetNext();
             var currentEntity = currentTeam.GetNext();
             _currentTurn.EntityInTurn = currentEntity;
+
+            while (_currentTurn.EntityInTurn.TryGet<FrozenTag>(out var frozenTag))
+            {
+                frozenTag.TurnsLeft--;
+                
+                if (frozenTag.TurnsLeft == 0)
+                    _currentTurn.EntityInTurn.Remove<FrozenTag>();
+                else
+                    _currentTurn.EntityInTurn.Set(frozenTag);
+                
+                _currentTurn.EntityInTurn = currentTeam.GetNext();
+            }
             
-            _eventBus.RaiseEvent(new StartTurnEvent(currentEntity));
-            
+            _eventBus.RaiseEvent(new StartTurnEvent(_currentTurn.EntityInTurn));
             Finish();
         }
     }

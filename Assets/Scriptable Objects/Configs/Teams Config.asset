@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Teams Config
   m_EditorClassIdentifier: 
   _blueTeam:
-  - {fileID: 11400000, guid: 34824dc92c1efd043aa21cee4d67bda7, type: 2}
-  - {fileID: 11400000, guid: 00af99f6725f5e940aa82e43120612d3, type: 2}
-  - {fileID: 11400000, guid: c108c46a1df93a0488cb7ab4cca8c4ae, type: 2}
-  - {fileID: 11400000, guid: 306d003a85106d343ba9c15eb3226647, type: 2}
+  - {fileID: 11400000, guid: f80c7ffd73c5f4140816dfe699da915f, type: 2}
+  - {fileID: 11400000, guid: 16c8c567d05d4c048bd47d982f879e0e, type: 2}
+  - {fileID: 11400000, guid: 79e225a3214636c42acd8542e2de59f0, type: 2}
+  - {fileID: 11400000, guid: f8be6046635d25840a891a412f777f05, type: 2}
   _redTeam:
-  - {fileID: 11400000, guid: e23a768786466544da369b3b12db9a23, type: 2}
-  - {fileID: 11400000, guid: c72d11fcf0189894a97bfd8523f179e6, type: 2}
-  - {fileID: 11400000, guid: eef5f0a56586edd47936d6084b2d8d96, type: 2}
-  - {fileID: 11400000, guid: 9c320e0e067d08d42bea38373f72bfb5, type: 2}
+  - {fileID: 11400000, guid: f73a3b3a4c6a89540a56d73a960b9a37, type: 2}
+  - {fileID: 11400000, guid: f57b0d91082e2814b8a27274b123d0d7, type: 2}
+  - {fileID: 11400000, guid: 27651fbe28ed4d7429298d12530d397f, type: 2}
+  - {fileID: 11400000, guid: 147b86549aa65a048b1dc1ec95851c51, type: 2}

@@ -18,9 +18,14 @@ namespace Pipeline
         
         public void Initialize()
         {
+            var startVisualPipelineTask = _container.Instantiate<StartVisualPipelineTask>();
+            
             _turnPipeline.AddTask(_container.Instantiate<StartTurnTask>());
-            _turnPipeline.AddTask(_container.Instantiate<StartVisualPipelineTask>());
+            _turnPipeline.AddTask(startVisualPipelineTask);
             _turnPipeline.AddTask(_container.Instantiate<PlayerInputTask>());
+            _turnPipeline.AddTask(startVisualPipelineTask);
+            _turnPipeline.AddTask(_container.Instantiate<EndTurnTask>());
+            _turnPipeline.AddTask(startVisualPipelineTask);
         }
     }
 }

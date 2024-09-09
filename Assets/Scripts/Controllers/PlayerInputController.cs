@@ -8,25 +8,25 @@ namespace Controllers
 {
     public class PlayerInputController : IInitializable, IDisposable
     {
-        private readonly TeamViewSetup _teamViewSetup;
+        private readonly UIService _uiService;
 
         public event Action<HeroView> Clicked;
 
-        public PlayerInputController(TeamViewSetup teamViewSetup)
+        public PlayerInputController(UIService _uiService)
         {
-            _teamViewSetup = teamViewSetup;
+            this._uiService = _uiService;
         }
 
         public void Initialize()
         {
-            _teamViewSetup.BlueTeam.OnHeroClicked += OnHeroViewClicked;
-            _teamViewSetup.RedTeam.OnHeroClicked += OnHeroViewClicked;
+            _uiService.GetBluePlayer().OnHeroClicked += OnHeroViewClicked;
+            _uiService.GetRedPlayer().OnHeroClicked += OnHeroViewClicked;
         }
 
         public void Dispose()
         {
-            _teamViewSetup.BlueTeam.OnHeroClicked -= OnHeroViewClicked;
-            _teamViewSetup.RedTeam.OnHeroClicked -= OnHeroViewClicked;
+            _uiService.GetBluePlayer().OnHeroClicked -= OnHeroViewClicked;
+            _uiService.GetRedPlayer().OnHeroClicked -= OnHeroViewClicked;
         }
 
         private void OnHeroViewClicked(HeroView view)

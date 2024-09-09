@@ -14,8 +14,8 @@ namespace Pipeline.Tasks
 
         public void Finish()
         {
-            _endCallback?.Invoke();
             OnFinish();
+            _endCallback?.Invoke();
         }
 
         protected virtual void OnRun() {}

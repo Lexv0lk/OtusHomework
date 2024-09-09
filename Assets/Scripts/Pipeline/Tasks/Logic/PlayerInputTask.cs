@@ -4,6 +4,7 @@ using Configs;
 using Controllers;
 using Entities;
 using Entities.Components;
+using EventBus.Events;
 using Models;
 using UI;
 using UnityEngine;
@@ -15,17 +16,20 @@ namespace Pipeline.Tasks.Logic
     {
         private readonly PlayerInputController _playerInputController;
         private readonly CurrentTurn _currentTurn;
+        private readonly EventBus.EventBus _eventBus;
         private readonly List<IEntity> _entities = new();
         
-        public PlayerInputTask(PlayerInputController playerInputController, TeamsConfig teamsConfig, CurrentTurn currentTurn)
+        public PlayerInputTask(PlayerInputController playerInputController, TeamsSetup teamsSetup,
+            CurrentTurn currentTurn, EventBus.EventBus eventBus)
         {
             _playerInputController = playerInputController;
             _currentTurn = currentTurn;
+            _eventBus = eventBus;
 
-            foreach (var entity in teamsConfig.RedTeam)
+            foreach (var entity in teamsSetup.RedTeam.GetAllNonIteratable())
                 _entities.Add(entity);
             
-            foreach (var entity in teamsConfig.BlueTeam)
+            foreach (var entity in teamsSetup.BlueTeam.GetAllNonIteratable())
                 _entities.Add(entity);
         }
 
@@ -46,6 +50,8 @@ namespace Pipeline.Tasks.Logic
             
             if (_currentTurn.EntityInTurn.Get<TeamComponent>().Team == entityTeam)
                 return;
+            
+            _eventBus.RaiseEvent(new TurnAttackEvent(_currentTurn.EntityInTurn, entity));
             
             Finish();
         }

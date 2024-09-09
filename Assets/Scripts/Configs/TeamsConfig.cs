@@ -7,10 +7,10 @@ namespace Configs
     [CreateAssetMenu(fileName = "Teams Config", menuName = "Configs/Teams")]
     public class TeamsConfig : ScriptableObject
     {
-        [SerializeField] private SOEntity[] _blueTeam;
-        [SerializeField] private SOEntity[] _redTeam;
+        [SerializeField] private List<EntityConfig> _blueTeam = new();
+        [SerializeField] private List<EntityConfig> _redTeam = new();
         
-        public IReadOnlyList<SOEntity> BlueTeam => _blueTeam;
-        public IReadOnlyList<SOEntity> RedTeam => _redTeam;
+        public List<EntityConfig> BlueTeam => _blueTeam;
+        public List<EntityConfig> RedTeam => _redTeam;
     }
 }
