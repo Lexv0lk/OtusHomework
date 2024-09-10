@@ -1,5 +1,6 @@
 ﻿using Entities.Components;
 using EventBus.Events;
+using Utils;
 
 namespace EventBus.Handlers.Logic
 {
@@ -12,8 +13,10 @@ namespace EventBus.Handlers.Logic
         protected override void OnHandleEvent(HealEvent evt)
         {
             var targetStats = evt.Target.Get<StatsComponent>();
-            targetStats.Health += evt.Amount;
+            targetStats.CurrentHealth += evt.Amount;
             evt.Target.Set(targetStats);
+            
+            EntityDebug.Log(evt.Target, $"healed {evt.Amount} hp");
         }
     }
 }

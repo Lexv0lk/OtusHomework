@@ -15,4 +15,17 @@ MonoBehaviour:
   _attack: 4
   _health: 25
   _icon: {fileID: 21300000, guid: 16ea401ccf7c8420988360f8fc9fb55d, type: 3}
+  _abilityClips:
+  - {fileID: 8300000, guid: 64a83b34af3b741c39341e7d4c00cffa, type: 3}
+  - {fileID: 8300000, guid: f83a9e4ed40d64d6690cdc9b3c9415ff, type: 3}
+  _deathClips:
+  - {fileID: 8300000, guid: 33ff38fb452f04c6dbcbbf203bcd8f8a, type: 3}
+  _lowHealthClips:
+  - {fileID: 8300000, guid: fcaff7f46290d4657b035525168557a1, type: 3}
+  _startTurnClips:
+  - {fileID: 8300000, guid: fe032ac64c73c436d82ad960d3aba327, type: 3}
+  - {fileID: 8300000, guid: ce128ffcd4db84b3089372afa554b761, type: 3}
+  - {fileID: 8300000, guid: fbeb766cb42ef4f26b456f01bf0380ba, type: 3}
+  - {fileID: 8300000, guid: c3bc0693b2b82454587ab200c3b922b0, type: 3}
+  - {fileID: 8300000, guid: f3b7030c6f2704921bd6c3a92ae9b560, type: 3}
   _healAmount: 1

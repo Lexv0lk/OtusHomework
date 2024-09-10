@@ -15,4 +15,12 @@ MonoBehaviour:
   _attack: 2
   _health: 50
   _icon: {fileID: 21300000, guid: 2059f3310f8404adcac5457e5e772e52, type: 3}
+  _abilityClips: []
+  _deathClips:
+  - {fileID: 8300000, guid: 7d8f63236f074456dac94230db57fac4, type: 3}
+  _lowHealthClips:
+  - {fileID: 8300000, guid: 0ebd6580ff27d4dc1a08513f4d2330d3, type: 3}
+  _startTurnClips:
+  - {fileID: 8300000, guid: 58a60bdc5e2d64a81a2b9d53513b684b, type: 3}
+  - {fileID: 8300000, guid: 0ba3f36a6a4424d0ab20e02a25c18d1d, type: 3}
   _turnsInFreeze: 1

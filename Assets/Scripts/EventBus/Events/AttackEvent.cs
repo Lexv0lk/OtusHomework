@@ -2,7 +2,7 @@
 
 namespace EventBus.Events
 {
-    public struct AttackEvent
+    public struct AttackEvent : IEvent
     {
         public IEntity Source;
         public IEntity Target;

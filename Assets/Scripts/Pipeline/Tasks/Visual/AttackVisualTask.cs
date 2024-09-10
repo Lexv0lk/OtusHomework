@@ -1,18 +1,17 @@
 ﻿using Cysharp.Threading.Tasks;
-using Entities;
-using Entities.Components;
+using UI;
 
 namespace Pipeline.Tasks.Visual
 {
     public class AttackVisualTask : EventTask
     {
-        private readonly IEntity _sourceEntity;
-        private readonly IEntity _targetEntity;
+        private readonly HeroView _sourceView;
+        private readonly HeroView _targetView;
 
-        public AttackVisualTask(IEntity sourceEntity, IEntity targetEntity)
+        public AttackVisualTask(HeroView sourceView, HeroView targetView)
         {
-            _sourceEntity = sourceEntity;
-            _targetEntity = targetEntity;
+            _sourceView = sourceView;
+            _targetView = targetView;
         }
 
         protected override void OnRun()
@@ -22,11 +21,7 @@ namespace Pipeline.Tasks.Visual
 
         private async UniTaskVoid AnimateAttack()
         {
-            var sourceView = _sourceEntity.Get<HeroPresentationComponent>().View;
-            var targetView = _targetEntity.Get<HeroPresentationComponent>().View;
-            
-            await sourceView.AnimateAttack(targetView);
-            
+            await _sourceView.AnimateAttack(_targetView);
             Finish();
         }
     }

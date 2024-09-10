@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Configs;
 using Entities;
 using Entities.Components;
 using EventBus.Events;
@@ -11,17 +12,19 @@ namespace EventBus.Handlers.Logic
     public class TakeDamageEventHandler : BaseHandler<TakeDamageEvent>
     {
         private readonly TeamsSetup _teamsSetup;
+        private readonly LobbySettings _lobbySettings;
 
-        public TakeDamageEventHandler(EventBus eventBus, TeamsSetup teamsSetup) : base(eventBus)
+        public TakeDamageEventHandler(EventBus eventBus, TeamsSetup teamsSetup, LobbySettings lobbySettings) : base(eventBus)
         {
             _teamsSetup = teamsSetup;
+            _lobbySettings = lobbySettings;
         }
 
         protected override void OnHandleEvent(TakeDamageEvent evt)
         {
             var defenderStats = evt.Target.Get<StatsComponent>();
             
-            int lastDefenderHealth = defenderStats.Health;
+            int lastDefenderHealth = defenderStats.CurrentHealth;
             int newDefenderHealth;
 
             if (evt.Target.TryGet<ShieldComponent>(out var shieldComponent) && shieldComponent.Used == false)
@@ -32,12 +35,19 @@ namespace EventBus.Handlers.Logic
             }
             else
             {
-                newDefenderHealth = Mathf.Max(0, defenderStats.Health - evt.Damage);
+                newDefenderHealth = Mathf.Max(0, defenderStats.CurrentHealth - evt.Damage);
             }
             
             int damageDealed = lastDefenderHealth - newDefenderHealth;
-            
+            EntityDebug.Log(evt.Target, $"got {damageDealed} damage");
             evt.Target.Set(new StatsComponent(defenderStats.Attack, newDefenderHealth));
+
+            float lastHealthPart = (float)lastDefenderHealth / defenderStats.MaxHealth;
+            float newHealthPart = (float)newDefenderHealth / defenderStats.MaxHealth;
+
+            if (lastHealthPart >= _lobbySettings.LowHealthThreshold &&
+                newHealthPart < _lobbySettings.LowHealthThreshold && newHealthPart > 0)
+                EventBus.RaiseEvent(new LowHealthEvent(evt.Target));
 
             if (newDefenderHealth <= 0)
             {
@@ -46,6 +56,7 @@ namespace EventBus.Handlers.Logic
             else if (evt.Target.TryGet<MassAttackComponent>(out var massAttackComponent))
             {
                 Team targetTeam = evt.Target.Get<TeamComponent>().Team;
+                EventBus.RaiseEvent(new SpecialAbilityEvent(evt.Target));
                 DealMassAttack(targetTeam == Team.Red ? _teamsSetup.BlueTeam.GetAllNonIteratable() : _teamsSetup.RedTeam.GetAllNonIteratable(),
                     evt.Target, massAttackComponent.Damage);
             }
@@ -53,8 +64,9 @@ namespace EventBus.Handlers.Logic
             if (evt.Source.TryGet<VampireAttackComponent>(out var vampireAttackComponent) && Random.Range(0, 1) <= vampireAttackComponent.Chance)
             {
                 var sourceStats = evt.Source.Get<StatsComponent>();
-                sourceStats.Health += damageDealed;
-                evt.Source.Set(sourceStats);
+
+                if (sourceStats.CurrentHealth > 0)
+                    EventBus.RaiseEvent(new HealEvent(evt.Source, damageDealed));
             }
         }
         

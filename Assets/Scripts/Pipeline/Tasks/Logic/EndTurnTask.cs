@@ -36,6 +36,7 @@ namespace Pipeline.Tasks.Logic
                     } while (randomTeammate == entity);
                     
                     _eventBus.RaiseEvent(new HealEvent(randomTeammate, randomHealComponent.Value));
+                    _eventBus.RaiseEvent(new SpecialAbilityEvent(entity));
                 }
             }
             

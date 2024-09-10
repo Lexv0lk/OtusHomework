@@ -13,7 +13,8 @@ namespace EventBus.Handlers.Visual
 
         protected override void OnHandleEvent(AttackEvent evt)
         {
-            VisualPipeline.AddTask(new AttackVisualTask(evt.Source, evt.Target));
+            VisualPipeline.AddTask(new AttackVisualTask(evt.Source.Get<HeroPresentationComponent>().View,
+                evt.Target.Get<HeroPresentationComponent>().View));
         }
     }
 }

@@ -14,6 +14,8 @@ namespace DI
         public override void InstallBindings()
         {
             Container.Bind<UIService>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<AudioPlayer>().FromComponentInHierarchy().AsSingle();
+            
             Container.Bind<VisualPipeline>().AsSingle();
             Container.Bind<TurnPipeline>().AsSingle();
             Container.Bind<CurrentTurn>().AsSingle();
@@ -21,7 +23,6 @@ namespace DI
 
             Container.Bind<EventBus.EventBus>().AsSingle();
             
-            Container.BindInterfacesAndSelfTo<TurnAttackEventHandler>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<AttackEventHandler>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<TakeDamageEventHandler>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<HealEventHandler>().AsSingle().NonLazy();
@@ -32,13 +33,14 @@ namespace DI
             Container.BindInterfacesAndSelfTo<TakeDamageVisualHandler>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<HealVisualHandler>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<DestroyVisualHandler>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<SpecialAbilityVisualHandler>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<LowHealthVisualHandler>().AsSingle().NonLazy();
 
             Container.BindInterfacesAndSelfTo<TeamSetupInstaller>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<PlayerInputController>().AsSingle().NonLazy();
             
             Container.BindInterfacesAndSelfTo<TurnPipelineInstaller>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<TurnPipelineStartController>().AsSingle().NonLazy();
-
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using EventBus.Events;
+﻿using Entities.Components;
+using EventBus.Events;
 using Pipeline.Tasks.Visual;
 using Pipeline.Visual;
 
@@ -12,7 +13,9 @@ namespace EventBus.Handlers.Visual
 
         protected override void OnHandleEvent(TakeDamageEvent evt)
         {
-            VisualPipeline.AddTask(new TakeDamageVisualTask(evt.Target, evt.Damage));
+            var view = evt.Target.Get<HeroPresentationComponent>().View;
+            var stats = evt.Target.Get<StatsComponent>();
+            VisualPipeline.AddTask(new TakeDamageVisualTask(view, stats));
         }
     }
 }

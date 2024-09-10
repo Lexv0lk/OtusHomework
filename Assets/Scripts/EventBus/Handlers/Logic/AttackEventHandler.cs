@@ -14,11 +14,6 @@ namespace EventBus.Handlers.Logic
         {
             var attackerStats = evt.Source.Get<StatsComponent>();
             EventBus.RaiseEvent(new TakeDamageEvent(evt.Target, evt.Source, attackerStats.Attack));
-            
-            if (evt.Source.TryGet<FrozeAttackComponent>(out var frozeAttackComponent))
-            {
-                evt.Target.Add(new FrozenTag(frozeAttackComponent.TurnsDuration));
-            }
         }
     }
 }

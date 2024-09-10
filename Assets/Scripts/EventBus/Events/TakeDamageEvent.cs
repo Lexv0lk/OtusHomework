@@ -2,7 +2,7 @@
 
 namespace EventBus.Events
 {
-    public struct TakeDamageEvent
+    public struct TakeDamageEvent : IEvent
     {
         public IEntity Target;
         public IEntity Source;

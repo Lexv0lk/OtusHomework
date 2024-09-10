@@ -50,8 +50,9 @@ namespace Pipeline.Tasks.Logic
             
             if (_currentTurn.EntityInTurn.Get<TeamComponent>().Team == entityTeam)
                 return;
-            
-            _eventBus.RaiseEvent(new TurnAttackEvent(_currentTurn.EntityInTurn, entity));
+
+            _currentTurn.TargetEntity = entity;
+            //_eventBus.RaiseEvent(new TurnAttackEvent(_currentTurn.EntityInTurn, entity));
             
             Finish();
         }

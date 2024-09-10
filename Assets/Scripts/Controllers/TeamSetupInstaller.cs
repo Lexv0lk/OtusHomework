@@ -39,7 +39,7 @@ namespace Controllers
                     views.GetView(i).SetIcon(viewComponent.Icon);
                 
                 if (entity.TryGet<StatsComponent>(out var statsComponent))
-                    views.GetView(i).SetStats($"{statsComponent.Attack} / {statsComponent.Health}");
+                    views.GetView(i).SetStats($"{statsComponent.Attack} / {statsComponent.CurrentHealth}");
                 
                 entity.Add(new HeroPresentationComponent(views.GetView(i)));
                 entity.Add(new TeamComponent(team));

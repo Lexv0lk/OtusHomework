@@ -2,13 +2,17 @@
 {
     public struct StatsComponent
     {
+        public readonly int MaxHealth;
+        
         public int Attack;
-        public int Health;
+        public int CurrentHealth;
         
         public StatsComponent(int attack, int health)
         {
+            MaxHealth = health;
+            
             Attack = attack;
-            Health = health;
+            CurrentHealth = MaxHealth;
         }
     }
 }

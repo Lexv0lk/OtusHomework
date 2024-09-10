@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Configs;
+﻿using Controllers;
 using Entities;
 using Entities.Components;
 using EventBus.Events;
@@ -12,13 +11,15 @@ namespace Pipeline.Tasks.Logic
     {
         private readonly CurrentTurn _currentTurn;
         private readonly EventBus.EventBus _eventBus;
+        private readonly TurnPipelineStartController _turnPipelineStartController;
         private readonly IteratableList<IteratableList<IEntity>> _teams;
 
-        public StartTurnTask(CurrentTurn currentTurn, TeamsSetup teamsSetup, EventBus.EventBus eventBus)
+        public StartTurnTask(CurrentTurn currentTurn, TeamsSetup teamsSetup, EventBus.EventBus eventBus, TurnPipelineStartController turnPipelineStartController)
         {
             _currentTurn = currentTurn;
             _eventBus = eventBus;
-            
+            _turnPipelineStartController = turnPipelineStartController;
+
             _teams = new IteratableList<IteratableList<IEntity>>();
             _teams.Add(teamsSetup.RedTeam);
             _teams.Add(teamsSetup.BlueTeam);
@@ -26,6 +27,15 @@ namespace Pipeline.Tasks.Logic
         
         protected override void OnRun()
         {
+            foreach (var team in _teams.GetAllNonIteratable())
+            {
+                if (team.Count == 0)
+                {
+                    _turnPipelineStartController.StopPipeline();
+                    return;
+                }
+            }
+            
             var currentTeam = _teams.GetNext();
             var currentEntity = currentTeam.GetNext();
             _currentTurn.EntityInTurn = currentEntity;

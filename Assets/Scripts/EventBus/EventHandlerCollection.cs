@@ -29,9 +29,9 @@ namespace EventBus
             if (evt is not T concreteEvent)
                 return;
             
-            for (_currentIndex = 0; _currentIndex < _handlers.Count; _currentIndex++)
+            for (int i = 0; i < _handlers.Count; i++)
             {
-                var action = (Action<T>)_handlers[_currentIndex];
+                var action = (Action<T>)_handlers[i];
                 action.Invoke(concreteEvent);
             }
             

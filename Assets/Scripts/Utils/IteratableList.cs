@@ -7,6 +7,8 @@ namespace Utils
         private readonly List<T> _team;
         private int _currentIndex = -1;
 
+        public int Count => _team.Count;
+
         public IteratableList(List<T> team)
         {
             _team = team;

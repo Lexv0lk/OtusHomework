@@ -2,7 +2,7 @@
 
 namespace EventBus.Events
 {
-    public struct StartTurnEvent
+    public struct StartTurnEvent : IEvent
     {
         public IEntity Entity;
 

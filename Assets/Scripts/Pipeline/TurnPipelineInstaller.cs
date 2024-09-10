@@ -23,6 +23,7 @@ namespace Pipeline
             _turnPipeline.AddTask(_container.Instantiate<StartTurnTask>());
             _turnPipeline.AddTask(startVisualPipelineTask);
             _turnPipeline.AddTask(_container.Instantiate<PlayerInputTask>());
+            _turnPipeline.AddTask(_container.Instantiate<ProceedTurnTask>());
             _turnPipeline.AddTask(startVisualPipelineTask);
             _turnPipeline.AddTask(_container.Instantiate<EndTurnTask>());
             _turnPipeline.AddTask(startVisualPipelineTask);

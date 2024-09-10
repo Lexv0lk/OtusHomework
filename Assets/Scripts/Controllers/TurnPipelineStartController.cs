@@ -19,6 +19,12 @@ namespace Controllers
             _turnPipeline.RunNextTask();
         }
 
+        public void StopPipeline()
+        {
+            _turnPipeline.OnFinished -= OnFinished;
+            _turnPipeline.Reset();
+        }
+
         private void OnFinished()
         {
             _turnPipeline.Reset();

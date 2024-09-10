@@ -2,7 +2,7 @@
 
 namespace EventBus.Events
 {
-    public struct HealEvent
+    public struct HealEvent : IEvent
     {
         public IEntity Target;
         public int Amount;

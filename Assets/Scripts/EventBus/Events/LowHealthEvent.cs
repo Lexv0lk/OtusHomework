@@ -2,11 +2,11 @@
 
 namespace EventBus.Events
 {
-    public struct DestroyEvent : IEvent
+    public struct LowHealthEvent : IEvent
     {
         public IEntity Entity;
-
-        public DestroyEvent(IEntity entity)
+        
+        public LowHealthEvent(IEntity entity)
         {
             Entity = entity;
         }

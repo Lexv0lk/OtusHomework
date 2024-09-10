@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b0cd8d22392436a877b72c2a65096a8, type: 3}
-  m_Name: Configs Installer
+  m_Script: {fileID: 11500000, guid: 9a9535643da84c459b463ecdd74d83cc, type: 3}
+  m_Name: Lobby Settings
   m_EditorClassIdentifier: 
-  _teamsConfig: {fileID: 11400000, guid: 7d1f887fc80b51f4ba2f391a739e7afa, type: 2}
-  _lobbySettings: {fileID: 11400000, guid: 9e4be446d7829ac479a5c7991e7e0c09, type: 2}
+  _lowHealthThreshold: 0.2

@@ -39,13 +39,11 @@ namespace Pipeline
                 return;
             }
             
-            Debug.Log($"Running {_tasks[_currentIndex].GetType()}");
             _tasks[_currentIndex].Run(OnTaskFinished);
         }
 
         private void OnTaskFinished()
         {
-            Debug.Log($"Finished {_tasks[_currentIndex].GetType()}");
             RunNextTask();
         }
     }
