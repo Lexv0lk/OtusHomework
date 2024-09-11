@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c5cde447334267a8094100c9e1d55c, type: 3}
+  m_Name: ProduceTimeUpgradeConfig
+  m_EditorClassIdentifier: 
+  _id: ProduceTimeUpgrade
+  _maxLevel: 40
+  _priceTable:
+    _basePrice: 10
+    _levels: 00000000140000001e00000028000000320000003c00000046000000500000005a000000640000006e00000078000000820000008c00000096000000a0000000aa000000b4000000be000000c8000000d2000000dc000000e6000000f0000000fa000000040100000e01000018010000220100002c01000036010000400100004a010000540100005e01000068010000720100007c0100008601000090010000
+  _upgradeTable:
+    _startProduceTime: 15
+    _endProduceTime: 3
+    _produceTimeStep: -0.31
+    _levels:
+    - 15
+    - 14.69
+    - 14.38
+    - 14.07
+    - 13.76
+    - 13.45
+    - 13.14
+    - 12.83
+    - 12.52
+    - 12.21
+    - 11.9
+    - 11.59
+    - 11.28
+    - 10.97
+    - 10.66
+    - 10.35
+    - 10.04
+    - 9.73
+    - 9.42
+    - 9.11
+    - 8.8
+    - 8.49
+    - 8.18
+    - 7.87
+    - 7.56
+    - 7.25
+    - 6.94
+    - 6.63
+    - 6.32
+    - 6.01
+    - 5.7
+    - 5.39
+    - 5.08
+    - 4.77
+    - 4.46
+    - 4.15
+    - 3.84
+    - 3.53
+    - 3.22
+    - 3

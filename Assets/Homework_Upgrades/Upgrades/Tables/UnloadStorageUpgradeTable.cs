@@ -1,14 +1,14 @@
-﻿using System;
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Homework_Upgrades.Upgrades.Tables
 {
     [Serializable]
-    public class LoadStorageUpgradeTable
+    public class UnloadStorageUpgradeTable
     {
-        [SerializeField] private int _startLoadStorage;
-        [SerializeField] private int _loadStep;
+        [SerializeField] private int _startUnloadStorage;
+        [SerializeField] private int _unloadStep;
 
         [Space]
         [ReadOnly]
@@ -25,7 +25,7 @@ namespace Homework_Upgrades.Upgrades.Tables
             GUILayout.Label($"Level {index + 1}");
         }
 
-        public int GetLoadStorage(int level)
+        public int GetUnloadStorage(int level)
         {
             int index = level - 1;
             return _levels[index];
@@ -39,12 +39,12 @@ namespace Homework_Upgrades.Upgrades.Tables
         private void EvaluateTable(int maxLevel)
         {
             int[] levels = new int[maxLevel];
-            int currentLoadStorage = _startLoadStorage;
+            int currentLoadStorage = _startUnloadStorage;
             
             for (var i = 0; i < maxLevel; i++)
             {
                 levels[i] = currentLoadStorage;
-                currentLoadStorage += _loadStep;
+                currentLoadStorage += _unloadStep;
             }
 
             _levels = levels;

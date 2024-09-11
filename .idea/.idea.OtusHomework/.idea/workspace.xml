@@ -5,25 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UpgradeConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UpgradeConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/LoadStorageUpgradeTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/LoadStorageUpgradeTable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UpgradePriceTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UpgradePriceTable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/DI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/DI/GameInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/DI/GameInstaller.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/LoadStorageUpgradeConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/LoadStorageUpgradeConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/ProduceTimeUpgradeConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/ProduceTimeUpgradeConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UnloadStorageUpgradeConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UnloadStorageUpgradeConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric/UpgradesFabric.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric/UpgradesFabric.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/LoadStorageUpgrade.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/LoadStorageUpgrade.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/ProduceTimeUpgrade.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/ProduceTimeUpgrade.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/ProduceTimeUpgradeTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/ProduceTimeUpgradeTable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UnloadStorageUpgradeTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UnloadStorageUpgradeTable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Test.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Test/UpgradesTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Test/UpgradesTest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/UnloadStorageUpgrade.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/UnloadStorageUpgrade.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Upgrade.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Upgrade.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEditor.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Assemblies/NoEmitAndNoEditor.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UpgradeConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UpgradeConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/LoadStorageUpgradeTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/LoadStorageUpgradeTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UpgradePriceTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UpgradePriceTable.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +44,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lexv0lk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Lexv0lk/OtusHomework.git&quot;,
+    &quot;accountId&quot;: &quot;aa3b404f-6730-452c-bc41-bde02b2cab9f&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric/UpgradesFabric.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,28 +74,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "homework__save__system",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;homework__upgrades&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Lexvo\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Lexvo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="G:\Programs\Unity\2021.3.7f1\Editor\Unity.exe" />
@@ -126,6 +153,8 @@
       <workItem from="1722787472192" duration="2147000" />
       <workItem from="1722790426748" duration="3533000" />
       <workItem from="1726047553651" duration="2923000" />
+      <workItem from="1726059247777" duration="79000" />
+      <workItem from="1726059372566" duration="5238000" />
     </task>
     <servers />
   </component>

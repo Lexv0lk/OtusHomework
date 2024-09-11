@@ -1,5 +1,4 @@
-﻿using System;
-using Homework_Upgrades.Upgrades.Tables;
+﻿using Homework_Upgrades.Upgrades.Tables;
 using UnityEngine;
 
 namespace Homework_Upgrades.Upgrades.Configs
@@ -8,16 +7,17 @@ namespace Homework_Upgrades.Upgrades.Configs
     {
         [SerializeField] private string _id;
         [SerializeField] private int _maxLevel;
-        [SerializeField] private UpgradePriceTable _upgradePriceTable;
+        [SerializeField] private UpgradePriceTable _priceTable;
+        
+        public string Id => _id;
+        public int MaxLevel => _maxLevel;
+        public UpgradePriceTable PriceTable => _priceTable;
 
         protected virtual void OnValidate()
         {
-            _upgradePriceTable.Validate(_maxLevel);
+            _priceTable.Validate(_maxLevel);
         }
-    }
-
-    public class LoadStorageUpgradeConfig : UpgradeConfig
-    {
         
+        public abstract Upgrade CreateUpgrade();
     }
 }

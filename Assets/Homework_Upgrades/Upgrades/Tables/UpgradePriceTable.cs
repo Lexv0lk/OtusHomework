@@ -8,12 +8,10 @@ namespace Homework_Upgrades.Upgrades.Tables
     public class UpgradePriceTable
     {
         [SerializeField] private int _basePrice;
-        
-        [ListDrawerSettings(OnBeginListElementGUI = "DrawLevels")]
-        [ReadOnly]
-        [SerializeField]
+
+        [ListDrawerSettings(OnBeginListElementGUI = "DrawLevels")] [ReadOnly] [SerializeField]
         private int[] _levels;
-        
+
         private void DrawLevels(int index)
         {
             GUILayout.Space(8);
@@ -26,17 +24,17 @@ namespace Homework_Upgrades.Upgrades.Tables
             index = Mathf.Clamp(index, 0, _levels.Length - 1);
             return _levels[index];
         }
-        
+
         public void Validate(int maxLevel)
         {
             EvaluatePriceTable(maxLevel);
         }
-        
+
         private void EvaluatePriceTable(int maxLevel)
         {
             var table = new int[maxLevel];
             table[0] = 0;
-            
+
             for (var level = 2; level <= maxLevel; level++)
             {
                 var price = _basePrice * level;
