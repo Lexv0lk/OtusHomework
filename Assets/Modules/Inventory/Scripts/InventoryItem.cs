@@ -1,4 +1,5 @@
 using System;
+using Lessons.MetaGame.Inventory.Components;
 using UnityEngine;
 
 namespace Lessons.MetaGame.Inventory
@@ -20,13 +21,13 @@ namespace Lessons.MetaGame.Inventory
         private InventoryItemMetadata metadata;
 
         [SerializeReference]
-        private object[] components;
+        private IInventoryItemComponent[] components;
 
         public InventoryItem(
             string name,
             InventoryItemFlags flags,
             InventoryItemMetadata metadata,
-            params object[] components
+            params IInventoryItemComponent[] components
         )
         {
             this.name = name;
@@ -35,7 +36,7 @@ namespace Lessons.MetaGame.Inventory
             this.components = components;
         }
 
-        public T GetComponent<T>()
+        public T GetComponent<T>() where T : IInventoryItemComponent
         {
             foreach (var component in this.components)
             {
@@ -48,17 +49,33 @@ namespace Lessons.MetaGame.Inventory
             throw new Exception($"Component of type {typeof(T).Name} is not found!");
         }
 
+        public bool TryGetComponent<T>(out T component) where T : IInventoryItemComponent
+        {
+            foreach (var comp in this.components)
+            {
+                if (comp is T tComponent)
+                {
+                    component = tComponent;
+                    return true;
+                }
+            }
+
+            component = default;
+            return false;
+        }
+
         public InventoryItem Clone()
         {
             var count = this.components.Length;
-            var components = new object[count];
+            var components = new IInventoryItemComponent[count];
 
             for (int i = 0; i < count; i++)
             {
                 var component = this.components[i];
+                
                 if (component is ICloneable cloneable)
                 {
-                    component = cloneable.Clone();
+                    component = (IInventoryItemComponent)cloneable.Clone();
                 }
 
                 components[i] = component;
