@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Homework_Upgrades.Upgrades.Configs;
-using Homework_Upgrades.Upgrades.Fabric;
+using Homework_Upgrades.Upgrades.Factory;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -10,62 +10,47 @@ namespace Homework_Upgrades.Upgrades.Test
 {
     public class UpgradesTest : MonoBehaviour
     {
-        private readonly List<Upgrade> _upgrades = new();
-        
-        [SerializeField] private ProduceTimeUpgradeConfig _produceTimeUpgradeConfig;
-        [SerializeField] private LoadStorageUpgradeConfig _loadStorageUpgradeConfig;
-        [SerializeField] private UnloadStorageUpgradeConfig _unloadStorageUpgradeConfig;
+        [SerializeField] private UpgradeConfig[] _configs;
 
         [Header("Save Test")] 
         [SerializeField] private SaveStub[] _saves;
 
-        private UpgradesFabric _upgradesFabric;
-        
-        private Upgrade _produceTimeUpgrade;
-        private Upgrade _loadStorageUpgrade;
-        private Upgrade _unloadStorageUpgrade;
+        private UpgradesController _upgradesController;
 
         [Inject]
-        private void Construct(UpgradesFabric fabric)
+        private void Construct(UpgradesController upgradesController)
         {
-            _upgradesFabric = fabric;
+            _upgradesController = upgradesController;
         }
 
         private void Awake()
         {
-            _produceTimeUpgrade = _upgradesFabric.CreateUpgrade(_produceTimeUpgradeConfig);
-            _loadStorageUpgrade = _upgradesFabric.CreateUpgrade(_loadStorageUpgradeConfig);
-            _unloadStorageUpgrade = _upgradesFabric.CreateUpgrade(_unloadStorageUpgradeConfig);
-            
-            _upgrades.Add(_produceTimeUpgrade);
-            _upgrades.Add(_loadStorageUpgrade);
-            _upgrades.Add(_unloadStorageUpgrade);
+            foreach (var config in _configs)
+                _upgradesController.AddUpgrade(config);
         }
 
         private void Start()
         {
             foreach (var save in _saves)
-                foreach (var upgrade in _upgrades)
-                    if (save.UpgradeId == upgrade.Id)
-                        upgrade.SetupLevel(save.SavedLevel);
+                _upgradesController.GetUpgrade(save.UpgradeId).SetupLevel(save.SavedLevel);
         }
 
         [Button]
         private void UpProduceTime()
         {
-            _produceTimeUpgrade.LevelUp();
+            _upgradesController.LevelUp<ProduceTimeUpgrade>();
         }
         
         [Button]
         private void UpLoadStorage()
         {
-            _loadStorageUpgrade.LevelUp();
+            _upgradesController.LevelUp<LoadStorageUpgrade>();
         }
         
         [Button]
         private void UpUnloadStorage()
         {
-            _unloadStorageUpgrade.LevelUp();
+            _upgradesController.LevelUp<UnloadStorageUpgrade>();
         }
 
         [Serializable]

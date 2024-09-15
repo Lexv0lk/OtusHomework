@@ -1,5 +1,7 @@
 ﻿using Game.GamePlay.Conveyor;
-using Homework_Upgrades.Upgrades.Fabric;
+using Game.GamePlay.Upgrades;
+using Homework_Upgrades.Upgrades;
+using Homework_Upgrades.Upgrades.Factory;
 using Zenject;
 
 namespace Homework_Upgrades.DI
@@ -9,7 +11,10 @@ namespace Homework_Upgrades.DI
         public override void InstallBindings()
         {
             Container.Bind<ConveyorEntity>().FromComponentInHierarchy().AsCached();
-            Container.Bind<UpgradesFabric>().FromNew().AsSingle().NonLazy();
+            Container.Bind<IMoneyStorage>().FromComponentInHierarchy().AsSingle();
+            
+            Container.Bind<UpgradesFactory>().FromNew().AsSingle();
+            Container.Bind<UpgradesController>().FromNew().AsSingle().NonLazy();
         }
     }
 }

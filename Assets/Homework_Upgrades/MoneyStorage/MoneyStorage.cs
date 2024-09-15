@@ -10,7 +10,7 @@ namespace Game.GamePlay.Upgrades
         public event Action<int> OnMoneySpent;
         public int Money => _money;
 
-        private int _money;
+        [SerializeField] private int _money;
         
         public void EarnMoney(int amount)
         {

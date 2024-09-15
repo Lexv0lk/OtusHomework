@@ -5,37 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/DI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/DI/GameInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/DI/GameInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/LoadStorageUpgradeConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/LoadStorageUpgradeConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/ProduceTimeUpgradeConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/ProduceTimeUpgradeConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UnloadStorageUpgradeConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UnloadStorageUpgradeConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric/UpgradesFabric.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric/UpgradesFabric.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/LoadStorageUpgrade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/LoadStorageUpgrade.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/ProduceTimeUpgrade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/ProduceTimeUpgrade.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/ProduceTimeUpgradeTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/ProduceTimeUpgradeTable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UnloadStorageUpgradeTable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UnloadStorageUpgradeTable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Test.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Test/UpgradesTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Test/UpgradesTest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/UnloadStorageUpgrade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/UnloadStorageUpgrade.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Upgrade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Upgrade.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/UpgradesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/UpgradesController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UpgradeConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Configs/UpgradeConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/LoadStorageUpgradeTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/LoadStorageUpgradeTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UpgradePriceTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Tables/UpgradePriceTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/DI/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/DI/GameInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Factory.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric/UpgradesFabric.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Factory/UpgradesFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Fabric/UpgradesFabric.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Factory/UpgradesFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Test/UpgradesTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Homework_Upgrades/Upgrades/Test/UpgradesTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +131,8 @@
       <workItem from="1722790426748" duration="3533000" />
       <workItem from="1726047553651" duration="2923000" />
       <workItem from="1726059247777" duration="79000" />
-      <workItem from="1726059372566" duration="5238000" />
+      <workItem from="1726059372566" duration="5281000" />
+      <workItem from="1726393816910" duration="2281000" />
     </task>
     <servers />
   </component>

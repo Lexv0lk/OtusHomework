@@ -1,13 +1,13 @@
 ﻿using Homework_Upgrades.Upgrades.Configs;
 using Zenject;
 
-namespace Homework_Upgrades.Upgrades.Fabric
+namespace Homework_Upgrades.Upgrades.Factory
 {
-    public class UpgradesFabric
+    public class UpgradesFactory
     {
         private readonly DiContainer _container;
 
-        public UpgradesFabric(DiContainer container)
+        public UpgradesFactory(DiContainer container)
         {
             _container = container;
         }
