@@ -15,7 +15,6 @@ namespace Session
         private readonly SessionLogTimeView _view;
 
         public DateTime CurrentEnterTime { get; private set; }
-        public DateTime CurrentExitTime { get; private set; }
 
         public SessionLogTimeController(ServerTimeController serverTimeController, SessionLogTimeView view)
         {
@@ -36,26 +35,9 @@ namespace Session
             CurrentEnterTime = _serverTimeController.GetCurrentTime();
         }
         
-        public void SetLastTime(SessionTimeSave timeSave)
+        public void SetupLastTime(DateTime startTime, DateTime endTime)
         {
-            if (string.IsNullOrEmpty(timeSave.StartTime) || string.IsNullOrEmpty(timeSave.EndTime))
-                return;
-            
-            var enterTime = DateTime.Parse(timeSave.StartTime);
-            var exitTime = DateTime.Parse(timeSave.EndTime);
-            _view.SetData(enterTime.ToString("dd.MM.yyyy HH:mm:ss"), exitTime.ToString("dd.MM.yyyy HH:mm:ss"));
-        }
-
-        public SessionTimeSave GetCurrentTime()
-        {
-            var enterTime = CurrentEnterTime;
-            var exitTime = _serverTimeController.GetCurrentTime();
-
-            return new SessionTimeSave
-            {
-                StartTime = enterTime.ToString(),
-                EndTime = exitTime.ToString()
-            };
+            _view.SetData(startTime.ToString("dd.MM.yyyy HH:mm:ss"), endTime.ToString("dd.MM.yyyy HH:mm:ss"));
         }
     }
 }
