@@ -5,29 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Chest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Chest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsContext.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Configs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Configs/ChestConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Configs/ChestConfig.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/int2.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/int2.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/IReward.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/IReward.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/ChestsSaveLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/ChestsSaveLoader.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/ChestViewPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/ChestViewPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/IChestViewPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/IChestViewPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View/ChestView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View/ChestView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/UnityUIExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/UnityUIExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/IRewardVisitor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/IRewardVisitor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/RewardsApplier.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/RewardsApplier.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Storage.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Storage/StorageMock.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Storage/StorageMock.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/LogTimeSaveLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/LogTimeSaveLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/SaveData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Session/SessionLogTimeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Session/SessionLogTimeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Save.json" beforeDir="false" afterPath="$PROJECT_DIR$/Save.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rewards/IReward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/IReward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/ChestsSaveLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/ChestsSaveLoader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/8d/d86dfefe/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6afd1274f120405096bc1ad9e2010ba6157a00/71/2438ed52/Sprite.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ToDelete/DI/ConfigsInstaller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ToDelete/DI/GameInstaller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/ISaveLoader.cs" root0="FORCE_HIGHLIGHTING" />
@@ -141,7 +141,8 @@
       <workItem from="1722790426748" duration="3533000" />
       <workItem from="1726479914396" duration="2236000" />
       <workItem from="1726591555582" duration="3809000" />
-      <workItem from="1726694904838" duration="3571000" />
+      <workItem from="1726694904838" duration="3912000" />
+      <workItem from="1726731819300" duration="3450000" />
     </task>
     <servers />
   </component>

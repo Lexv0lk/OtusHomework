@@ -18,7 +18,7 @@ namespace Chests
         [Button]
         private void AddChest(ChestConfig config)
         {
-            _chestsController.AddChest(config);
+            _chestsController.Add(config);
         }
     }
 }

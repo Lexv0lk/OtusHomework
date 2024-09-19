@@ -49,6 +49,8 @@ namespace SaveSystem.SaveLoaders
                 chests.Add(new Chest(chestSave.Name, icon, chestSave.CloseDuration,
                     chestSave.Rewards, DateTime.Parse(chestSave.CreateTime)));
             }
+            
+            service.SetupChests(chests);
         }
     }
 }
