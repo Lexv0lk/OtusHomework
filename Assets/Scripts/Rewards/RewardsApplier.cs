@@ -13,12 +13,12 @@ namespace Rewards
         
         public void Visit(GoldReward reward)
         {
-            _storage.AddGold(reward.Amount);
+            _storage.AddGold(reward.GoldAmount);
         }
 
         public void Visit(RubyReward reward)
         {
-            _storage.AddRuby(reward.Amount);
+            _storage.AddRuby(reward.RubyAmount);
         }
     }
 }

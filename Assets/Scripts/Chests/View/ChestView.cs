@@ -21,6 +21,9 @@ namespace Chests.View
         {
             _presenter = presenter;
 
+            _name.text = presenter.Name;
+            _icon.sprite = presenter.Icon;
+
             _presenter.OpenCommand.BindTo(_openButton).AddTo(_compositeDisposable);
             _presenter.TimeLeft.SubscribeToText(_timeLeft).AddTo(_compositeDisposable);
             _presenter.CanOpen.Subscribe(OnCanOpenChanged).AddTo(_compositeDisposable);

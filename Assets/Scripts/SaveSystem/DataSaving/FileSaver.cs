@@ -8,8 +8,9 @@ namespace SaveSystem.DataSaving
         
         public void SaveData(string value)
         {
-            using (var stream = new StreamWriter(File.OpenWrite(FILENAME)))
-                stream.Write(value);
+            using (FileStream fs = new FileStream(FILENAME, FileMode.Create, FileAccess.Write))
+                using (var stream = new StreamWriter(fs))
+                    stream.Write(value);
         }
 
         public bool TryGetData(out string result)

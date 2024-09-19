@@ -10,7 +10,7 @@ namespace Rewards
     [Serializable]
     public struct GoldReward : IReward
     {
-        public int Amount;
+        public int GoldAmount;
 
         public void Accept(IRewardVisitor visitor)
         {
@@ -21,7 +21,7 @@ namespace Rewards
     [Serializable]
     public struct RubyReward : IReward
     {
-        public int Amount;
+        public int RubyAmount;
 
         public void Accept(IRewardVisitor visitor)
         {

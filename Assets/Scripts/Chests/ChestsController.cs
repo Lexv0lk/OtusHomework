@@ -4,7 +4,9 @@ using System.Linq;
 using Chests.Configs;
 using DI.Contexts;
 using Rewards;
+using Sirenix.Utilities;
 using Time;
+using UniRx;
 
 namespace Chests
 {
@@ -13,10 +15,10 @@ namespace Chests
         private readonly ServerTimeController _serverTimeController;
         private readonly RewardsApplier _rewardsApplier;
 
-        private List<Chest> _currentChests = new();
+        private ReactiveCollection<Chest> _currentChests = new();
         private TimeSpan _chestTimeCached;
 
-        public IEnumerable<Chest> CurrentChests => _currentChests;
+        public IReadOnlyReactiveCollection<Chest> CurrentChests => _currentChests;
 
         public ChestsController(ServerTimeController serverTimeController, RewardsApplier rewardsApplier)
         {
@@ -26,7 +28,8 @@ namespace Chests
 
         public void SetupChests(IEnumerable<Chest> chests)
         {
-            _currentChests = chests.ToList();
+            _currentChests.Clear();
+            _currentChests.AddRange(chests);
         }
         
         public void Add(ChestConfig config)

@@ -14,8 +14,11 @@ namespace Chests
         public IEnumerable<IReward> Rewards { get; }
         public DateTime CreateTime { get; private set; }
         
+        public ChestConfig Config { get; }
+        
         public Chest(ChestConfig config, DateTime createTime)
         {
+            Config = config;
             Name = config.Name;
             Icon = config.Icon;
             CloseDuration = config.CloseDuration;

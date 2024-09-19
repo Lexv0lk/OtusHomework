@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: Configs Installer
   m_EditorClassIdentifier: 
   _serverTimeConfig: {fileID: 11400000, guid: 4b5d4a62b9104154eac35d33825b82cf, type: 2}
+  _chestConfigs:
+  - {fileID: 11400000, guid: eca16eae3cce6b74fbb645d3524bc732, type: 2}
+  - {fileID: 11400000, guid: 0528176ee4d40cd479ac1f2e7a1ed74e, type: 2}
+  - {fileID: 11400000, guid: a308e5edaad20af40a3cbafa62d7a546, type: 2}

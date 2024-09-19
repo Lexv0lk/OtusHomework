@@ -1,9 +1,13 @@
-﻿using DI.Contexts;
+﻿using Chests;
+using Chests.View;
+using DI.Contexts;
+using Rewards;
 using SaveSystem;
 using SaveSystem.DataSaving;
 using SaveSystem.SaveLoaders;
 using Session;
 using Session.View;
+using Storage;
 using Time;
 using Zenject;
 
@@ -15,10 +19,15 @@ namespace DI
         {
             Container.Bind<SessionDurationView>().FromComponentInHierarchy().AsCached();
             Container.Bind<SessionLogTimeView>().FromComponentInHierarchy().AsCached();
+            Container.Bind<ChestListView>().FromComponentInHierarchy().AsCached();
+            Container.Bind<StorageMock>().FromComponentInHierarchy().AsSingle();
             
             Container.BindInterfacesAndSelfTo<ServerTimeController>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SessionDurationController>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SessionLogTimeController>().AsSingle().NonLazy();
+
+            Container.Bind<RewardsApplier>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ChestsController>().AsSingle();
             
             BindSaveContext();
         }
@@ -31,6 +40,7 @@ namespace DI
             Container.Bind<GameRepository>().AsSingle();
 
             Container.BindInterfacesAndSelfTo<LogTimeSaveLoader>().AsCached();
+            Container.BindInterfacesAndSelfTo<ChestsSaveLoader>().AsCached();
 
             Container.BindInterfacesAndSelfTo<SaveLoadingController>().AsSingle().NonLazy();
         }

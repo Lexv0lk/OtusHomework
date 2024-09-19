@@ -20,11 +20,7 @@ namespace SaveSystem.SaveLoaders
     [Serializable]
     public struct ChestSave
     {
-        public string Name;
-        public string IconTexture;
-        public int2 IconTextureSize;
-        public float CloseDuration;
-        public IReward[] Rewards;
+        public string Id;
         public string CreateTime;
     }
 }

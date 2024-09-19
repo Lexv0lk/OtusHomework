@@ -37,7 +37,7 @@ namespace Chests.Presenters
             while (CanOpen.Value == false)
             {
                 if (_chestsController.TryGetChestTimeLeft(_chest, out TimeSpan timeLeft))
-                    TimeLeft.Value = timeLeft.ToString("HH:mm:ss");
+                    TimeLeft.Value = timeLeft.ToString(@"hh\:mm\:ss");
                 else
                     TimeLeft.Value = "Loading...";
 

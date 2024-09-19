@@ -5,28 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/ChestViewPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/ChestViewPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/IChestViewPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/IChestViewPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View/ChestView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View/ChestView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/UnityUIExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/UnityUIExtensions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/IRewardVisitor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/IRewardVisitor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/RewardsApplier.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/RewardsApplier.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Storage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Storage/StorageMock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Storage/StorageMock.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix/GlobalSerializationConfig.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Sirenix/Odin Inspector/Config/Resources/Sirenix/GlobalSerializationConfig.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Chest.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Chests.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Chests/Gold Chest.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Chests/Gold Chest.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Chests/Silver Chest.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Chests/Silver Chest.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Chests/Wooden Chest.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Chests/Wooden Chest.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Configs/ChestConfigList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Configs/ChestConfigList.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/ChestListViewPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/ChestListViewPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/IChestListViewPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/IChestListViewPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View/ChestListView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View/ChestListView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/ColorData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/ColorData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/SpriteData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/SpriteData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/game-icons-of-treasure-chests-closed-trunks-free-vector.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/game-icons-of-treasure-chests-closed-trunks-free-vector.jpg.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sample Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Sample Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Configs Installer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Configs Installer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chests/Chest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Chest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/ChestsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chests/Configs/ChestConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Configs/ChestConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/ChestViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/Presenters/ChestViewPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chests/View/ChestView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chests/View/ChestView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DI/ConfigsInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DI/ConfigsInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DI/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DI/GameInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rewards/IReward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/IReward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rewards/RewardsApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rewards/RewardsApplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/ChestsSaveLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/ChestsSaveLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveLoaders/SaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Save.json" beforeDir="false" afterPath="$PROJECT_DIR$/Save.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +76,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/8d/d86dfefe/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6afd1274f120405096bc1ad9e2010ba6157a00/71/2438ed52/Sprite.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5052d022f324b928c26238e98b5a5b729200/85/db5e8194/LinqExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ToDelete/DI/ConfigsInstaller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../ToDelete/DI/GameInstaller.cs" root0="SKIP_HIGHLIGHTING" />
@@ -118,10 +144,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3988">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="3988" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -142,7 +168,10 @@
       <workItem from="1726479914396" duration="2236000" />
       <workItem from="1726591555582" duration="3809000" />
       <workItem from="1726694904838" duration="3912000" />
-      <workItem from="1726731819300" duration="3450000" />
+      <workItem from="1726731819300" duration="3473000" />
+      <workItem from="1726754689176" duration="3392000" />
+      <workItem from="1726758425556" duration="1994000" />
+      <workItem from="1726777967521" duration="2270000" />
     </task>
     <servers />
   </component>
@@ -159,6 +188,25 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameRepository.cs</url>
+          <line>31</line>
+          <properties documentPath="G:\projects\OtusHomework\Assets\Scripts\SaveSystem\GameRepository.cs" containingFunctionPresentation="Method 'SaveState'">
+            <startOffsets>
+              <option value="905" />
+            </startOffsets>
+            <endOffsets>
+              <option value="962" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
