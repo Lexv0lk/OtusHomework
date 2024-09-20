@@ -5,32 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentContext.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/EquipmentBuffObserver.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/EquipmentBuffObserver.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/Components/EquipmentDamageChanger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/Components/EquipmentDamageChanger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/Components/EquipmentHealthChanger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/Components/EquipmentHealthChanger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/Components/EquipmentSpeedChanger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/Components/EquipmentSpeedChanger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/GameInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DI/GameInstaller.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Configs/InventoryItem (Boots) 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Configs/InventoryItem (Boots) 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Configs/InventoryItem (Boots).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Configs/InventoryItem (Boots).asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Configs/InventoryItem (Crystal).asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Configs/InventoryItem (Crystal).asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Configs/InventoryItem (SuperBoots).asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Configs/InventoryItem (SuperBoots).asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene (Start).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene (Start).unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/EquipmentBuffObserver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/EquipmentBuffObserver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/IEquipmentObserver.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/IEquipmentObserver.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/IInventoryObserver.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/IInventoryObserver.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/ListInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/ListInventory.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +35,8 @@
     &quot;accountId&quot;: &quot;aa3b404f-6730-452c-bc41-bde02b2cab9f&quot;
   }
 }</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/d8/f4b5447c/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -66,26 +49,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;homework__equipment&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "homework__equipment",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Lexvo\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Lexvo\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="G:\Programs\Unity\2021.3.7f1\Editor\Unity.exe" />
@@ -99,6 +84,14 @@
       <option name="EXE_PATH" value="G:\Programs\Unity\2021.3.7f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath G:\projects\OtusHomework -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="G:\projects\OtusHomework" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.7f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\UnityProjects\OtusHomework -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\UnityProjects\OtusHomework" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -135,19 +128,32 @@
       <workItem from="1722787472192" duration="2147000" />
       <workItem from="1722790426748" duration="3533000" />
       <workItem from="1726128961591" duration="4570000" />
+      <workItem from="1726839675342" duration="1792000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
     <option name="unityProject" value="true" />
     <option name="unityProjectFolder" value="true" />
   </component>
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

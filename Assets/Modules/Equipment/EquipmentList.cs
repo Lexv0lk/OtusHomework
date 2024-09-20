@@ -1,45 +1,38 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Lessons.MetaGame.Inventory;
-using Modules.Equipment.Observers;
+using Lessons.MetaGame.Inventory.Components;
 using Sirenix.OdinInspector;
 
 namespace Modules.Equipment
 {
     public class EquipmentList
     {
-        [ShowInInspector, ReadOnly] private readonly List<EquipmentSlot> _slots = new();
-        private readonly List<IEquipmentObserver> _observers = new();
-        
+        [ShowInInspector, ReadOnly] private readonly Dictionary<EquipmentType, InventoryItem> _slots = new();
+
+        public event Action<InventoryItem> ItemEquipped;
+        public event Action<InventoryItem> ItemUnequipped;
+
         public EquipmentList() {}
 
-        public EquipmentList(List<EquipmentSlot> slots)
+        public EquipmentList(EquipmentType[] types)
         {
-            _slots = slots;
+            foreach (var type in types)
+                _slots.Add(type, null);
         }
 
-        public void AddObserver(IEquipmentObserver observer)
-        {
-            _observers.Add(observer);
-        }
-
-        public void RemoveObserver(IEquipmentObserver observer)
-        {
-            _observers.Remove(observer);
-        }
-        
         public bool TryEquip(InventoryItem item)
         {
-            foreach (var slot in _slots)
+            if (CanEquip(item, out var equipmentComponent))
             {
-                if (slot.CanEquip(item))
-                {
-                    if (slot.CurrentItem != null)
-                        OnItemUnequipped(slot.CurrentItem);
-                    
-                    slot.Equip(item);
-                    OnItemEquipeed(item);
-                    return true;
-                }
+                var oldItem = _slots[equipmentComponent.EquipmentType];
+                
+                if (oldItem != null)
+                    ItemUnequipped?.Invoke(oldItem);
+
+                _slots[equipmentComponent.EquipmentType] = item;
+                ItemEquipped?.Invoke(item);
+                return true;
             }
 
             return false;
@@ -47,12 +40,12 @@ namespace Modules.Equipment
 
         public bool Unequip(InventoryItem item)
         {
-            foreach (var slot in _slots)
+            if (item.TryGetComponent<InventoryItemEquipmentComponent>(out var equipmentComponent))
             {
-                if (slot.CurrentItem == item)
+                if (_slots[equipmentComponent.EquipmentType] == item)
                 {
-                    OnItemUnequipped(item);
-                    slot.Unequip();
+                    _slots[equipmentComponent.EquipmentType] = null;
+                    ItemUnequipped?.Invoke(item);
                     return true;
                 }
             }
@@ -62,29 +55,23 @@ namespace Modules.Equipment
 
         public bool Unequip(EquipmentType type)
         {
-            foreach (var slot in _slots)
+            if (_slots[type] != null)
             {
-                if (slot.EquipmentType == type && slot.CurrentItem != null)
-                {
-                    OnItemUnequipped(slot.CurrentItem);
-                    slot.Unequip();
-                    return true;
-                }
+                var oldItem = _slots[type];
+                _slots[type] = null;
+                ItemUnequipped?.Invoke(oldItem);
+                return true;
             }
 
             return false;
         }
 
-        private void OnItemUnequipped(InventoryItem item)
+        private bool CanEquip(InventoryItem item, out InventoryItemEquipmentComponent equipmentComponent)
         {
-            foreach (var observer in _observers)
-                observer.OnItemEquipped(item);
-        }
-        
-        private void OnItemEquipeed(InventoryItem item)
-        {
-            foreach (var observer in _observers)
-                observer.OnItemUnequipped(item);
+            if (!item.TryGetComponent<InventoryItemEquipmentComponent>(out equipmentComponent))
+                return false;
+
+            return true;
         }
     }
 }

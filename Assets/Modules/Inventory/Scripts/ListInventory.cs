@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
@@ -8,7 +9,9 @@ namespace Lessons.MetaGame.Inventory
     {
         [ShowInInspector, ReadOnly]
         private List<InventoryItem> items;
-        private readonly List<IInventoryObserver> observers = new();
+
+        public event Action<InventoryItem> ItemAdded;
+        public event Action<InventoryItem> ItemRemoved;
 
         public ListInventory(params InventoryItem[] items)
         {
@@ -25,7 +28,7 @@ namespace Lessons.MetaGame.Inventory
             if (!this.items.Contains(item))
             {
                 this.items.Add(item);
-                this.OnItemAdded(item);
+                ItemAdded?.Invoke(item);
             }
         }
         
@@ -33,7 +36,7 @@ namespace Lessons.MetaGame.Inventory
         {
             if (this.items.Remove(item))
             {
-                this.OnItemRemoved(item);
+                ItemRemoved?.Invoke(item);
             }
         }
 
@@ -58,16 +61,6 @@ namespace Lessons.MetaGame.Inventory
             return this.items.ToList();
         }
 
-        public void AddObserver(IInventoryObserver observer)
-        {
-            this.observers.Add(observer);
-        }
-
-        public void RemoveObserver(IInventoryObserver observer)
-        {
-            this.observers.Remove(observer);            
-        }
-
         public bool FindItem(string name, out InventoryItem result)
         {
             foreach (var inventoryItem in this.items)
@@ -81,22 +74,6 @@ namespace Lessons.MetaGame.Inventory
             
             result = null;
             return false;
-        }
-
-        private void OnItemAdded(InventoryItem item)
-        {
-            foreach (var observer in this.observers)
-            {
-                observer.OnItemAdded(item);
-            }
-        }
-        
-        private void OnItemRemoved(InventoryItem item)
-        {
-            foreach (var observer in this.observers)
-            {
-                observer.OnItemRemoved(item);
-            }
         }
 
         public int GetCount(string item)

@@ -10,15 +10,14 @@ namespace Modules.Equipment
     public class EquipmentContext : MonoBehaviour
     {
         [ShowInInspector] private EquipmentList _equipment = new();
-        [SerializeField] private List<EquipmentSlot> _startSlots = new();
+        [SerializeField] private EquipmentType[] _startSlots;
         
         [Inject]
         private void Construct(DiContainer diContainer)
         {
             _equipment = new EquipmentList(_startSlots);
-            
-            var buffObserver = diContainer.Instantiate<EquipmentBuffObserver>();
-            _equipment.AddObserver(buffObserver);
+            diContainer.Bind<EquipmentList>().FromInstance(_equipment);
+            diContainer.Instantiate<EquipmentBuffObserver>();
         }
 
         [Button]

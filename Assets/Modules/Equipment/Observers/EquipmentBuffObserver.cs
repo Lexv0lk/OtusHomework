@@ -3,16 +3,21 @@ using Lessons.MetaGame.Inventory.Components;
 
 namespace Modules.Equipment.Observers
 {
-    public class EquipmentBuffObserver : IEquipmentObserver
+    public class EquipmentBuffObserver
     {
         private readonly Player _player;
+        private readonly EquipmentList _equipmentList;
 
-        public EquipmentBuffObserver(Player player)
+        public EquipmentBuffObserver(Player player, EquipmentList equipmentList)
         {
             _player = player;
+            _equipmentList = equipmentList;
+
+            _equipmentList.ItemEquipped += OnItemEquipped;
+            _equipmentList.ItemUnequipped += OnItemUnequipped;
         }
         
-        public void OnItemEquipped(InventoryItem item)
+        private void OnItemEquipped(InventoryItem item)
         {
             if (item.TryGetComponent<EquipmentDamageChanger>(out var damageChanger))
                 _player.damage += damageChanger.DamageAddition;
@@ -24,7 +29,7 @@ namespace Modules.Equipment.Observers
                 _player.speed += speedChanger.SpeedAddition;
         }
 
-        public void OnItemUnequipped(InventoryItem item)
+        private void OnItemUnequipped(InventoryItem item)
         {
             if (item.TryGetComponent<EquipmentDamageChanger>(out var damageChanger))
                 _player.damage -= damageChanger.DamageAddition;
@@ -34,6 +39,12 @@ namespace Modules.Equipment.Observers
             
             if (item.TryGetComponent<EquipmentSpeedChanger>(out var speedChanger))
                 _player.speed -= speedChanger.SpeedAddition;
+        }
+
+        ~EquipmentBuffObserver()
+        {
+            _equipmentList.ItemEquipped -= OnItemEquipped;
+            _equipmentList.ItemUnequipped -= OnItemUnequipped;
         }
     }
 }
