@@ -1,0 +1,17 @@
+{
+    "name": "Modules.Equipment",
+    "rootNamespace": "",
+    "references": [
+        "GUID:07f958b81533449f9f7e3604b475a810",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

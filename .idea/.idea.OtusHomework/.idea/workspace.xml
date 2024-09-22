@@ -5,15 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/Modules.Equipment.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/Modules.Equipment.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Tests.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Tests/EquipmentTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Tests/EquipmentTests.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/Modules.Inventory.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/Modules.Inventory.asmdef.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/EquipmentBuffObserver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/EquipmentBuffObserver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/IEquipmentObserver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/IEquipmentObserver.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/IInventoryObserver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/IInventoryObserver.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/ListInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/ListInventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/EquipmentContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentContext.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/EquipmentContext.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/EquipmentList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentList.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/EquipmentList.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/EquipmentSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/EquipmentSlot.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/EquipmentSlot.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/Observers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/EquipmentBuffObserver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/Observers/EquipmentBuffObserver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Equipment/Observers/EquipmentBuffObserver.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Equipment/Scripts/Observers/EquipmentBuffObserver.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/InventoryContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modules/Inventory/Scripts/InventoryContext.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +45,9 @@
     &quot;accountId&quot;: &quot;aa3b404f-6730-452c-bc41-bde02b2cab9f&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Modules/Equipment/Tests/EquipmentTests.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -54,7 +67,7 @@
     "Discover.Launch.Via.Unity": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "homework__equipment",
+    "git-widget-placeholder": "homework__TDD",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -129,6 +142,7 @@
       <workItem from="1722790426748" duration="3533000" />
       <workItem from="1726128961591" duration="4570000" />
       <workItem from="1726839675342" duration="1792000" />
+      <workItem from="1727009209788" duration="6375000" />
     </task>
     <servers />
   </component>

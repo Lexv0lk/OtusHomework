@@ -15,7 +15,7 @@ namespace Modules.Equipment
 
         public EquipmentList() {}
 
-        public EquipmentList(EquipmentType[] types)
+        public EquipmentList(params EquipmentType[] types)
         {
             foreach (var type in types)
                 _slots.Add(type, null);
@@ -25,6 +25,9 @@ namespace Modules.Equipment
         {
             if (CanEquip(item, out var equipmentComponent))
             {
+                if (_slots.ContainsKey(equipmentComponent.EquipmentType) == false)
+                    return false;
+                
                 var oldItem = _slots[equipmentComponent.EquipmentType];
                 
                 if (oldItem != null)
@@ -38,11 +41,26 @@ namespace Modules.Equipment
             return false;
         }
 
+        public bool IsEquipped(InventoryItem item)
+        {
+            if (item.TryGetComponent<InventoryItemEquipmentComponent>(out var equipmentComponent))
+                return _slots.ContainsKey(equipmentComponent.EquipmentType) 
+                       && _slots[equipmentComponent.EquipmentType] == item;
+
+            return false;
+        }
+
+        public bool IsEquipped(EquipmentType type)
+        {
+            return _slots.ContainsKey(type) && _slots[type] != null;
+        }
+
         public bool Unequip(InventoryItem item)
         {
             if (item.TryGetComponent<InventoryItemEquipmentComponent>(out var equipmentComponent))
             {
-                if (_slots[equipmentComponent.EquipmentType] == item)
+                if (_slots.ContainsKey(equipmentComponent.EquipmentType) 
+                    && _slots[equipmentComponent.EquipmentType] == item)
                 {
                     _slots[equipmentComponent.EquipmentType] = null;
                     ItemUnequipped?.Invoke(item);
@@ -55,7 +73,7 @@ namespace Modules.Equipment
 
         public bool Unequip(EquipmentType type)
         {
-            if (_slots[type] != null)
+            if (_slots.ContainsKey(type) && _slots[type] != null)
             {
                 var oldItem = _slots[type];
                 _slots[type] = null;

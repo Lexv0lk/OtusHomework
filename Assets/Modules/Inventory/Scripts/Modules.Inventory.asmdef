@@ -1,0 +1,16 @@
+{
+    "name": "Modules.Inventory",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f3c82137609d4d168ab68594927b0a2d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
