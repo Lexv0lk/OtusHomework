@@ -1,3 +1,4 @@
+using AB_Utility.FromSceneToEntityConverter;
 using Client.Systems;
 using Leopotam.EcsLite;
 using UnityEngine;
@@ -26,6 +27,7 @@ namespace Client
                 // .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ("events"))
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
+                .ConvertScene()
                 .Init();
         }
 
