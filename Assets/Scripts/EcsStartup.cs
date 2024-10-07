@@ -1,6 +1,7 @@
 using AB_Utility.FromSceneToEntityConverter;
 using Client.Systems;
 using Leopotam.EcsLite;
+using Leopotam.EcsLite.Di;
 using UnityEngine;
 
 namespace Client
@@ -16,6 +17,7 @@ namespace Client
             _systems = new EcsSystems(_world);
             _systems
                 .Add(new MovementSystem())
+                .Add(new TransformViewSystem())
                 // register your systems here, for example:
                 // .Add (new TestSystem1 ())
                 // .Add (new TestSystem2 ())
@@ -28,6 +30,7 @@ namespace Client
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
                 .ConvertScene()
+                .Inject()
                 .Init();
         }
 
