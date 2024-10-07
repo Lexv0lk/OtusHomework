@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="" />
+    <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Team.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Team.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/AttackComponents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/AttackComponents.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/BaseMoveComponents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/BaseMoveComponents.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/TargetComponents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/TargetComponents.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/MovementSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/MovementSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Lexv0lk"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Lexv0lk/OtusHomework.git",
+    "accountId": "aa3b404f-6730-452c-bc41-bde02b2cab9f"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -26,8 +53,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Notification.DisplayName-DoNotAsk-GitHub Copilot": "GitHub Copilot",
+    "Notification.DoNotAsk-GitHub Copilot": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "homework__save__system",
+    "git-widget-placeholder": "homework__ECS__RTS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,6 +121,7 @@
       <updated>1722787470443</updated>
       <workItem from="1722787472192" duration="2147000" />
       <workItem from="1722790426748" duration="3533000" />
+      <workItem from="1728309100828" duration="2204000" />
     </task>
     <servers />
   </component>
