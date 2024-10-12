@@ -1,37 +1,66 @@
 using AB_Utility.FromSceneToEntityConverter;
+using Client.Components;
+using Client.Services;
 using Client.Systems;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
+using Leopotam.EcsLite.Entities;
+using Leopotam.EcsLite.ExtendedSystems;
+using Leopotam.EcsLite.Helpers;
 using UnityEngine;
 
 namespace Client
 {
-    internal sealed class EcsStartup : MonoBehaviour
+    internal sealed class EcsStartup : MonoSingletone<EcsStartup>
     {
         private EcsWorld _world;
+        private EcsWorld _events;
         private IEcsSystems _systems;
-
-        private void Start()
+        private EntityManager _entityManager;
+        
+        public EcsEntityBuilder CreateEntity(string worldName = null)
         {
-            _world = new EcsWorld();
-            _systems = new EcsSystems(_world);
-            _systems
-                .Add(new MovementSystem())
-                .Add(new TransformViewSystem())
-                // register your systems here, for example:
-                // .Add (new TestSystem1 ())
-                // .Add (new TestSystem2 ())
+            return new EcsEntityBuilder(GetWorld(worldName));
+        }
+        
+        public EcsWorld GetWorld(string worldName = null)
+        {
+            return _systems.GetWorld(worldName);
+        }
 
-                // register additional worlds here, for example:
-                // .AddWorld (new EcsWorld (), "events")
+        protected override void Awake()
+        {
+            base.Awake();
+            _entityManager = new EntityManager();
+            _world = new EcsWorld();
+            _events = new EcsWorld();
+            _systems = new EcsSystems(_world);
+            _systems.AddWorld(_events, EcsWorlds.EVENTS);
+            _systems
+                .Add(new ReloadTimeUpdateSystem())
+                .Add(new MeleeAttackRequestSystem())
+                .Add(new TakeDamageRequestSystem())
+                
+                .Add(new TargetDetectionSystem())
+                .Add(new MoveToTargetSystem())
+                
+                .Add(new LookAtTargetSystem())
+                .Add(new MovementSystem())
+                .Add(new InvokeAttackAnimationSystem())
+                
+                .Add(new TransformViewSystem())
+                .Add(new SpeedAnimatorViewSystem())
 #if UNITY_EDITOR
-                // add debug systems for custom worlds here, for example:
-                // .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ("events"))
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
-                .ConvertScene()
-                .Inject()
-                .Init();
+                .DelHere<TakeDamageEvent>();
+        }
+        
+        private void Start()
+        {
+            _entityManager.Initialize(_world);
+            _systems.Inject(_entityManager);
+            _systems.Init();
         }
 
         private void Update()
@@ -52,6 +81,11 @@ namespace Client
             }
 
             // cleanup custom worlds here.
+            if (_events != null)
+            {
+                _events.Destroy();
+                _events = null;
+            }
 
             // cleanup default world.
             if (_world != null)

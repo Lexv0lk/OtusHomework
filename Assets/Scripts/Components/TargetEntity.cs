@@ -4,7 +4,7 @@ using Leopotam.EcsLite;
 namespace Client.Components
 {
     [Serializable]
-    public struct Target
+    public struct TargetEntity
     {
         public EcsPackedEntity Value;
     }

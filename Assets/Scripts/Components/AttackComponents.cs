@@ -7,7 +7,7 @@ namespace Client.Components
     public struct AttackData
     {
         public float Range;
-        public float Rate;
+        public float ReloadTime;
         public float Damage;
     }
 
@@ -21,5 +21,11 @@ namespace Client.Components
     public struct TeamData
     {
         public Team Value;
+    }
+
+    [Serializable]
+    public struct Reload
+    {
+        public float TimeLeft;
     }
 }

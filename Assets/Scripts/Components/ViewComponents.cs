@@ -8,4 +8,10 @@ namespace Client.Components
     {
         public Transform Value;
     }
+
+    [Serializable]
+    public struct AnimatorView
+    {
+        public Animator Animator;
+    }
 }

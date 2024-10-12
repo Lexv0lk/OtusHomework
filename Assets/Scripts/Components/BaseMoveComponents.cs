@@ -18,7 +18,8 @@ namespace Client.Components
     [Serializable]
     public struct MoveSpeed
     {
-        public float Value;
+        public float BaseSpeed;
+        public float CurrentSpeed;
     }
 
     [Serializable]
