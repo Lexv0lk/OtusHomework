@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: _team
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5422280098574712992, guid: 9efe60d89fb4b4fa882e16b1af2b6b1a,
+        type: 3}
+      propertyPath: _team
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8692576747330127513, guid: 9efe60d89fb4b4fa882e16b1af2b6b1a,
         type: 3}
       propertyPath: m_Name
@@ -1290,6 +1295,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1263304700}
     m_Modifications:
+    - target: {fileID: 428441585825429128, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f,
+        type: 3}
+      propertyPath: _weaponInfo.BulletPrefab
+      value: 
+      objectReference: {fileID: 6230743913764646784, guid: 3c8f267f05de26f479ad2c238dcdecbf,
+        type: 3}
     - target: {fileID: 1870072543877420728, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1381,7 +1392,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3706512390748910118, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f, type: 3}
     - {fileID: 7353950645687951423, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f, type: 3}
 --- !u!4 &1914976720 stripped
@@ -1640,7 +1650,6 @@ PrefabInstance:
       value: Archer (Blue)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3706512390748910118, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f, type: 3}
     - {fileID: 7353950645687951423, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f, type: 3}
 --- !u!1001 &7657002863243684347

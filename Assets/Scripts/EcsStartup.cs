@@ -38,8 +38,13 @@ namespace Client
             _systems.AddWorld(_events, EcsWorlds.EVENTS);
             _systems
                 .Add(new ReloadTimeUpdateSystem())
+                .Add(new RangeAttackRequestSystem())
                 .Add(new MeleeAttackRequestSystem())
+                .Add(new SpawnRequestSystem())
+                .Add(new BulletCollisionRequestSystem())
                 .Add(new TakeDamageRequestSystem())
+                .Add(new HealthDeathSystem())
+                .Add(new InactiveDestroySystem())
                 
                 .Add(new TargetDetectionSystem())
                 .Add(new MoveToTargetSystem())
@@ -53,7 +58,8 @@ namespace Client
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
-                .DelHere<TakeDamageEvent>();
+                .DelHere<TakeDamageEvent>()
+                .DelHere<Inactive>();
         }
         
         private void Start()

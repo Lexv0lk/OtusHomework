@@ -5,30 +5,6 @@ using Leopotam.EcsLite.Helpers;
 
 namespace Client.Systems
 {
-    public class RangeAttackRequestSystem : IEcsRunSystem
-    {
-        private readonly EcsFilterInject<Inc<RangeAttackRequest, SourceEntity, Position>> _filter = EcsWorlds.EVENTS;
-        
-        private readonly EcsPoolInject<TargetEntity> _defaultTargetPool = default;
-        private readonly EcsPoolInject<AttackData> _attackDataPool = default;
-        
-        private readonly EcsWorldInject _eventWorld = EcsWorlds.EVENTS;
-        private readonly EcsWorldInject _defaultWorld = default;
-        
-        private readonly EcsFactoryInject<SpawnRequest, Position, Rotation, Prefab> _factory = EcsWorlds.EVENTS;
-        
-        public void Run(IEcsSystems systems)
-        {
-            var defaultWorld = _defaultWorld.Value;
-            var eventsWorld = _eventWorld.Value;
-
-            foreach (var @event in _filter.Value)
-            {
-                
-            }
-        }
-    }
-    
     public class MeleeAttackRequestSystem : IEcsRunSystem
     {
         private readonly EcsWorldInject _eventWorld = EcsWorlds.EVENTS;
@@ -38,7 +14,7 @@ namespace Client.Systems
         
         private readonly EcsFilterInject<Inc<MeleeAttackRequest, SourceEntity>> _filter = EcsWorlds.EVENTS;
         private readonly EcsPoolInject<TargetEntity> _defaultTargetPool = default;
-        private readonly EcsPoolInject<AttackData> _attackDataPool = default;
+        private readonly EcsPoolInject<Damage> _damagePool = default;
         
         public void Run(IEcsSystems systems)
         {
@@ -50,9 +26,9 @@ namespace Client.Systems
                 {
                     if (_defaultTargetPool.Value.Has(sourceEntity))
                     {
-                        if (_attackDataPool.Value.Has(sourceEntity))
+                        if (_damagePool.Value.Has(sourceEntity))
                         {
-                            float damage = _attackDataPool.Value.Get(sourceEntity).Damage;
+                            float damage = _damagePool.Value.Get(sourceEntity).Value;
 
                             _factory.Value.NewEntity(
                                 new TakeDamageRequest(),

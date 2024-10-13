@@ -8,7 +8,6 @@ namespace Client.Components
     {
         public float Range;
         public float ReloadTime;
-        public float Damage;
     }
 
     [Serializable]

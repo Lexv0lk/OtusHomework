@@ -5,67 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1040081-06e9-4779-8dfa-ba111f492798" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Damage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Damage.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Events.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Events/TakeDamageEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Events/TakeDamageEvent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Prefab.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Prefab.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/MeleeAttackRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/MeleeAttackRequest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/RangeAttackRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/RangeAttackRequest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/SpawnRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/SpawnRequest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/TakeDamageRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/TakeDamageRequest.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/SourceEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/SourceEntity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EcsWorlds.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EcsWorlds.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/MonoSingletone.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Services/MonoSingletone.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/InvokeAttackAnimationSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/InvokeAttackAnimationSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LookAtTargetSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LookAtTargetSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/MeleeAttackRequestSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/MeleeAttackRequestSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/MoveToTargetSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/MoveToTargetSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ReloadTimeUpdateSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ReloadTimeUpdateSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnRequestSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnRequestSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SpeedAnimatorViewSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SpeedAnimatorViewSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/TakeDamageRequestSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/TakeDamageRequestSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/TargetDetectionSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/TargetDetectionSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/TransformViewSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/TransformViewSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Views/AnimatorEventsDispatcher.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Views/AnimatorEventsDispatcher.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Views/MeleeAttackAnimationHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Views/MeleeAttackAnimationHandler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Installers/ArcherInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Installers/ArcherInstaller.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Installers/BulletInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Installers/BulletInstaller.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Installers/SwordsmanInstaller.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Installers/SwordsmanInstaller.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/CollisionEnterRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Requests/CollisionEnterRequest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Tags.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Tags/BulletTag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Tags/BulletTag.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Tags/Inactive.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Tags/Inactive.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/BulletCollisionRequestSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/BulletCollisionRequestSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/InactiveDestroySystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/InactiveDestroySystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/RangeAttackRequestSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/RangeAttackRequestSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Views/BulletCollisionComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Views/BulletCollisionComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Views/RangeAttackAnimationHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Views/RangeAttackAnimationHandler.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtusHomework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetsPack/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/animation/animation_infantry/Shield/shield_04_attack_A.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetsPack/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/animation/animation_infantry/Shield/shield_04_attack_A.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetsPack/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/animation/animation_infantry/Archer/archer_04_attack_A.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetsPack/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/animation/animation_infantry/Archer/archer_04_attack_A.FBX.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetsPack/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/sample_scene/animation_samples/sample_archer.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetsPack/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/sample_scene/animation_samples/sample_archer.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetsPack/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/sample_scene/animation_samples/sample_infantry.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetsPack/ToonyTinyPeople/TT_RTS/TT_RTS_Standard/sample_scene/animation_samples/sample_infantry.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Archer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Swordman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Swordman.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/AttackComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/AttackComponents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/BaseMoveComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/BaseMoveComponents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/Installers/UnitInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/Installers/UnitInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/TargetComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/TargetEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/TargetComponents.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/TargetEntity.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/ViewComponents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/ViewComponents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EcsStartup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EcsStartup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/MovementSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/MovementSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/MeleeAttackRequestSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/MeleeAttackRequestSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/TargetDetectionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/TargetDetectionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,30 +73,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "Notification.DisplayName-DoNotAsk-GitHub Copilot": "GitHub Copilot",
-    "Notification.DoNotAsk-GitHub Copilot": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "homework__ECS__RTS",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.build.unityPlugin",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-GitHub Copilot&quot;: &quot;GitHub Copilot&quot;,
+    &quot;Notification.DoNotAsk-GitHub Copilot&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;homework__ECS__RTS&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.build.unityPlugin&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Lexvo\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Lexvo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Lexvo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="G:\Programs\Unity\2021.3.7f1\Editor\Unity.exe" />
@@ -149,10 +124,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="23404">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27928">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="23404" />
+      <option name="pid" value="27928" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -176,6 +151,7 @@
       <workItem from="1728659920127" duration="3590000" />
       <workItem from="1728718137133" duration="12092000" />
       <workItem from="1728732855874" duration="3532000" />
+      <workItem from="1728839785413" duration="5043000" />
     </task>
     <servers />
   </component>
@@ -191,6 +167,25 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Systems/RangeAttackRequestSystem.cs</url>
+          <line>28</line>
+          <properties documentPath="G:\projects\OtusHomework\Assets\Scripts\Systems\RangeAttackRequestSystem.cs" containingFunctionPresentation="Method 'Run'">
+            <startOffsets>
+              <option value="1103" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1187" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

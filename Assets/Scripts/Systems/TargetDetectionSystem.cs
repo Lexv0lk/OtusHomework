@@ -9,7 +9,7 @@ namespace Client.Systems
     public class TargetDetectionSystem : IEcsRunSystem
     {
         private readonly EcsFilterInject<Inc<TargetEntity, TeamData, Position>> _filterToUpdateTarget;
-        private readonly EcsFilterInject<Inc<TeamData, Position>> _filterToFindTarget;
+        private readonly EcsFilterInject<Inc<TeamData, Position>, Exc<BulletTag>> _filterToFindTarget;
         
         public void Run(IEcsSystems systems)
         {
