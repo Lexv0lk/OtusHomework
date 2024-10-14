@@ -8,6 +8,8 @@ namespace Client.Systems
 {
     public class TargetDetectionSystem : IEcsRunSystem
     {
+        private readonly EcsWorldInject _defaultWorld = default;
+        
         private readonly EcsFilterInject<Inc<TargetEntity, TeamData, Position>> _filterToUpdateTarget;
         private readonly EcsFilterInject<Inc<TeamData, Position>, Exc<BulletTag>> _filterToFindTarget;
         
@@ -22,6 +24,10 @@ namespace Client.Systems
                 float closestDistance = float.MaxValue;
                 Team entityTeam = teamDataPool.Get(entity).Value;
                 Vector3 entityPosition = positionPool.Get(entity).Value;
+                ref TargetEntity targetEntity = ref _filterToUpdateTarget.Pools.Inc1.Get(entity);
+                
+                if (targetEntity.Value.Unpack(_defaultWorld.Value, out int targetEntityInd))
+                    continue;
 
                 foreach (var possibleTarget in _filterToFindTarget.Value)
                 {
@@ -40,10 +46,8 @@ namespace Client.Systems
                     }
                 }
                 
-                ref TargetEntity targetEntity = ref _filterToUpdateTarget.Pools.Inc1.Get(entity);
-
                 if (closestTarget != -1)
-                    targetEntity.Value = systems.GetWorld().PackEntity(closestTarget);
+                    targetEntity.Value = _defaultWorld.Value.PackEntity(closestTarget);
                 else
                     targetEntity.Value = new EcsPackedEntity();
             }

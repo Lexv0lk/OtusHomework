@@ -28,6 +28,12 @@ namespace Client.Systems
             {
                 if (_filter.Pools.Inc3.Get(@event).Value.Unpack(defaultWorld, out int sourceEntity))
                 {
+                    if (_inactivePool.Value.Has(sourceEntity))
+                    {
+                        eventsWorld.DelEntity(@event);
+                        continue;
+                    }
+                    
                     if (_filter.Pools.Inc4.Get(@event).Value.Unpack(defaultWorld, out int targetEntity))
                     {
                         if (_teamPool.Value.Has(sourceEntity) && _teamPool.Value.Has(targetEntity))
