@@ -78,4 +78,26 @@ namespace Leopotam.EcsLite.Helpers
             return new EcsFactoryInject<T1, T2, T3, T4> {worldName = worldName};
         }
     }
+    
+    public struct EcsFactoryInject<T1, T2, T3, T4, T5> : IEcsDataInject
+        where T1 : struct
+        where T2 : struct
+        where T3 : struct
+        where T4 : struct
+        where T5 : struct
+    {
+        public EcsFactory<T1, T2, T3, T4, T5> Value;
+
+        private string worldName;
+
+        void IEcsDataInject.Fill(IEcsSystems systems)
+        {
+            Value = new EcsFactory<T1, T2, T3, T4, T5>(systems.GetWorld(this.worldName));
+        }
+
+        public static implicit operator EcsFactoryInject<T1, T2, T3, T4, T5>(string worldName)
+        {
+            return new EcsFactoryInject<T1, T2, T3, T4, T5> {worldName = worldName};
+        }
+    }
 }

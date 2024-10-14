@@ -55,6 +55,8 @@ namespace Client
                 
                 .Add(new TransformViewSystem())
                 .Add(new SpeedAnimatorViewSystem())
+                .Add(new UnitDamageViewSystem())
+                .Add(new BuildingsHarmViewSystem())
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif

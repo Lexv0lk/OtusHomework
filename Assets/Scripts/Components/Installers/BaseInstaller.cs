@@ -12,7 +12,7 @@ namespace Client.Components.Installers
         
         protected override void Install(Entity entity)
         {
-            entity.AddData(new Health() { Value = _health });
+            entity.AddData(new Health() { CurrentHealth = _health, MaxHealth = _health });
             entity.AddData(new TeamData() { Value = _team });
             entity.AddData(new Position() { Value = _baseEnter.position});
         }

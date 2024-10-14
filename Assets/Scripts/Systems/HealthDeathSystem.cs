@@ -13,7 +13,7 @@ namespace Client.Systems
         {
             foreach (var entity in _filter.Value)
             {
-                if (_filter.Pools.Inc1.Get(entity).Value <= 0)
+                if (_filter.Pools.Inc1.Get(entity).CurrentHealth <= 0)
                 {
                     _inactivePool.Value.Add(entity) = new Inactive();
                 }

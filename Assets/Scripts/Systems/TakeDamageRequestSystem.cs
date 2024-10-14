@@ -28,7 +28,7 @@ namespace Client.Systems
                     if (_healthPool.Value.Has(targetEntity))
                     {
                         ref Health health = ref _healthPool.Value.Get(targetEntity);
-                        health.Value = Mathf.Max(0, health.Value - _filter.Pools.Inc3.Get(@event).Value);
+                        health.CurrentHealth = Mathf.Max(0, health.CurrentHealth - _filter.Pools.Inc3.Get(@event).Value);
 
                         if (_defaultPositionPool.Value.Has(targetEntity))
                         {

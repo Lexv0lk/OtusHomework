@@ -13,7 +13,8 @@ namespace Client.Components
     [Serializable]
     public struct Health
     {
-        public float Value;
+        public float MaxHealth;
+        public float CurrentHealth;
     }
 
     [Serializable]

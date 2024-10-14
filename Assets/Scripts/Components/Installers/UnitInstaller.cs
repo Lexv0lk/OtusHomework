@@ -14,6 +14,7 @@ namespace Client.Components.Installers
         
         protected override void Install(Entity entity)
         {
+            entity.AddData(new UnitTag());
             entity.AddData(new Position() { Value = transform.position });
             entity.AddData(new Rotation() { Value = transform.rotation });
             entity.AddData(new MoveSpeed() { BaseSpeed = _moveSpeed, CurrentSpeed = 0 });
@@ -23,7 +24,7 @@ namespace Client.Components.Installers
             entity.AddData(new AnimatorView() { Animator = _animator });
             entity.AddData(new TargetEntity());
             entity.AddData(new Reload());
-            entity.AddData(new Health() { Value = _health });
+            entity.AddData(new Health() { CurrentHealth = _health, MaxHealth = _health});
             entity.AddData(_attackData);
         }
 
