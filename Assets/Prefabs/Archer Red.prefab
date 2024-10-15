@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 428441585825429128, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f,
+        type: 3}
+      propertyPath: _weaponInfo.BulletPrefab
+      value: 
+      objectReference: {fileID: 6230743913764646784, guid: 3c8f267f05de26f479ad2c238dcdecbf,
+        type: 3}
     - target: {fileID: 1870072543877420728, guid: 2edb3dcb9e85f4750b5bc0c0cac3d77f,
         type: 3}
       propertyPath: m_RootOrder

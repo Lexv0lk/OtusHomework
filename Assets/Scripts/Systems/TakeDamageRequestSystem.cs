@@ -13,11 +13,13 @@ namespace Client.Systems
         private readonly EcsFilterInject<Inc<TakeDamageRequest, TargetEntity, Damage>> _filter =
             EcsWorlds.EVENTS;
 
-        private readonly EcsPoolInject<Health> _healthPool = default;
         private readonly EcsPoolInject<TakeDamageRequest> _requestsPool = EcsWorlds.EVENTS;
         private readonly EcsPoolInject<TakeDamageEvent> _eventsPool = EcsWorlds.EVENTS;
-        private readonly EcsPoolInject<Position> _defaultPositionPool = default;
         private readonly EcsPoolInject<Position> _eventsPositionPool = EcsWorlds.EVENTS;
+        
+        private readonly EcsPoolInject<Health> _healthPool = default;
+        private readonly EcsPoolInject<Position> _defaultPositionPool = default;
+        private readonly EcsPoolInject<CenterPointView> _centerPointPool = default;
         
         public void Run(IEcsSystems systems)
         {
@@ -30,10 +32,18 @@ namespace Client.Systems
                         ref Health health = ref _healthPool.Value.Get(targetEntity);
                         health.CurrentHealth = Mathf.Max(0, health.CurrentHealth - _filter.Pools.Inc3.Get(@event).Value);
 
-                        if (_defaultPositionPool.Value.Has(targetEntity))
+                        if (_eventsPositionPool.Value.Has(@event) == false)
                         {
-                            ref var position = ref _eventsPositionPool.Value.Add(@event);
-                            position.Value = _defaultPositionPool.Value.Get(targetEntity).Value;
+                            if (_centerPointPool.Value.Has(targetEntity))
+                            {
+                                Vector3 position = _centerPointPool.Value.Get(targetEntity).Value.position;
+                                _eventsPositionPool.Value.Add(@event) = new Position() { Value = position };
+                            }
+                            else if (_defaultPositionPool.Value.Has(targetEntity))
+                            {
+                                _eventsPositionPool.Value.Add(@event) = _defaultPositionPool.Value.Get(targetEntity);
+
+                            }
                         }
                         
                         _requestsPool.Value.Del(@event);

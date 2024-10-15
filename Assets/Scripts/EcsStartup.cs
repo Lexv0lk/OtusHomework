@@ -1,5 +1,5 @@
-using AB_Utility.FromSceneToEntityConverter;
 using Client.Components;
+using Client.Configs;
 using Client.Services;
 using Client.Systems;
 using Leopotam.EcsLite;
@@ -13,6 +13,8 @@ namespace Client
 {
     internal sealed class EcsStartup : MonoSingletone<EcsStartup>
     {
+        [SerializeField] private VFXConfig _vfxConfig;
+        
         private EcsWorld _world;
         private EcsWorld _events;
         private IEcsSystems _systems;
@@ -37,6 +39,8 @@ namespace Client
             _systems = new EcsSystems(_world);
             _systems.AddWorld(_events, EcsWorlds.EVENTS);
             _systems
+                .Add(new LifeTimeLimitationSystem())
+                .Add(new NoParentDestroySystem())
                 .Add(new ReloadTimeUpdateSystem())
                 .Add(new RangeAttackRequestSystem())
                 .Add(new MeleeAttackRequestSystem())
@@ -60,14 +64,14 @@ namespace Client
 #if UNITY_EDITOR
                 .Add(new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem())
 #endif
-                .DelHere<TakeDamageEvent>()
+                .DelHere<TakeDamageEvent>(EcsWorlds.EVENTS)
                 .DelHere<Inactive>();
         }
         
         private void Start()
         {
             _entityManager.Initialize(_world);
-            _systems.Inject(_entityManager);
+            _systems.Inject(_entityManager, _vfxConfig);
             _systems.Init();
         }
 

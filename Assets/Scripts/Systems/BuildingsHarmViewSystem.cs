@@ -1,4 +1,5 @@
 ﻿using Client.Components;
+using Client.Configs;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using Leopotam.EcsLite.Helpers;
@@ -16,6 +17,8 @@ namespace Client.Systems
         private EcsPoolInject<Health> _healthPool = default;
 
         private EcsFactoryInject<SpawnRequest, Position, Rotation, Prefab, Parent> _factory = EcsWorlds.EVENTS;
+
+        private EcsCustomInject<VFXConfig> _vfxConfig;
         
         public void Run(IEcsSystems systems)
         {
@@ -46,7 +49,7 @@ namespace Client.Systems
                                 new SpawnRequest(),
                                 new Position { Value = harmViewData.Positions[i].Position },
                                 new Rotation { Value = Quaternion.identity },
-                                new Prefab { Value = harmViewData.HarmPrefab },
+                                new Prefab { Value = _vfxConfig.Value.FireVFX },
                                 new Parent { Value = defaultWorld.PackEntity(entity) }
                             );
                         }

@@ -15,7 +15,7 @@ namespace Client.Systems
 
         private readonly EcsPoolInject<UnitTag> _unitPool = default;
 
-        private readonly EcsFactoryInject<SpawnRequest, Position, Rotation, Prefab> _factory = default;
+        private readonly EcsFactoryInject<SpawnRequest, Position, Rotation, Prefab> _factory = EcsWorlds.EVENTS;
 
         private readonly EcsCustomInject<VFXConfig> _config;
         

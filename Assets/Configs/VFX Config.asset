@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e783a76baac45bfa8cbebd20de8c1ce, type: 3}
+  m_Name: VFX Config
+  m_EditorClassIdentifier: 
+  _bloodVFX: {fileID: 5363576972377027669, guid: 75965e88570203646b34fd95ad4318d9,
+    type: 3}
+  _fireVFX: {fileID: 7550494352919156387, guid: ae6513c3a7924b049a3c24ecbac8dddc,
+    type: 3}

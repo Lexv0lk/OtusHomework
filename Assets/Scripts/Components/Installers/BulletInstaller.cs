@@ -8,6 +8,7 @@ namespace Client.Components.Installers
     {
         [SerializeField] private float _damage;
         [SerializeField] private float _moveSpeed;
+        [SerializeField] private float _maxLifeTime;
         [SerializeField] private Team _team;
 
         protected override void Install(Entity entity)
@@ -20,6 +21,7 @@ namespace Client.Components.Installers
             entity.AddData(new MoveDirection() { Value = transform.forward});
             entity.AddData(new TransformView() { Value = transform });
             entity.AddData(new Damage() { Value = _damage });
+            entity.AddData(new LifeTimeLimit { MaximalLifeTime = _maxLifeTime, CurrentLifeTime = 0 });
         }
 
         protected override void Dispose(Entity entity)

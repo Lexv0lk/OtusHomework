@@ -7,7 +7,9 @@ namespace Client.Configs
     public class VFXConfig : ScriptableObject
     {
         [SerializeField] private Entity _bloodVFX;
+        [SerializeField] private Entity _fireVFX;
 
         public Entity BloodVFX => _bloodVFX;
+        public Entity FireVFX => _fireVFX;
     }
 }

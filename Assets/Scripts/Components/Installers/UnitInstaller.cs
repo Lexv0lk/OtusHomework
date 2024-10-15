@@ -11,10 +11,12 @@ namespace Client.Components.Installers
         [SerializeField] private float _health;
         [SerializeField] private Team _team;
         [SerializeField] private AttackData _attackData;
+        [SerializeField] private Transform _bloodPoint;
         
         protected override void Install(Entity entity)
         {
             entity.AddData(new UnitTag());
+            entity.AddData(new CenterPointView { Value = _bloodPoint });
             entity.AddData(new Position() { Value = transform.position });
             entity.AddData(new Rotation() { Value = transform.rotation });
             entity.AddData(new MoveSpeed() { BaseSpeed = _moveSpeed, CurrentSpeed = 0 });

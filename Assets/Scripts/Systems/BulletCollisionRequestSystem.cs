@@ -17,7 +17,7 @@ namespace Client.Systems
         private readonly EcsPoolInject<Inactive> _inactivePool = default;
         private readonly EcsPoolInject<TeamData> _teamPool = default;
         
-        private readonly EcsFactoryInject<TakeDamageRequest, TargetEntity, Damage> _factory = EcsWorlds.EVENTS;
+        private readonly EcsFactoryInject<TakeDamageRequest, TargetEntity, Damage, Position> _factory = EcsWorlds.EVENTS;
         
         public void Run(IEcsSystems systems)
         {
@@ -45,7 +45,8 @@ namespace Client.Systems
                                     _factory.Value.NewEntity(
                                         new TakeDamageRequest(),
                                         _filter.Pools.Inc4.Get(@event),
-                                        _damagePool.Value.Get(sourceEntity)
+                                        _damagePool.Value.Get(sourceEntity),
+                                        _filter.Pools.Inc5.Get(@event)
                                     );
                                 }
                                 

@@ -9,7 +9,6 @@ namespace Client.Components
     {
         public HarmedPosition[] Positions;
         public int CurrentPosIndex;
-        public Entity HarmPrefab;
     }
 
     [Serializable]
