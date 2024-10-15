@@ -7,22 +7,22 @@ using Leopotam.EcsLite.Di;
 using Leopotam.EcsLite.Entities;
 using Leopotam.EcsLite.ExtendedSystems;
 using Leopotam.EcsLite.Helpers;
-using UnityEngine;
 
 namespace Client
 {
     internal sealed class EcsStartup : MonoSingletone<EcsStartup>
     {
-        [SerializeField] private VFXConfig _vfxConfig;
-        [SerializeField] private PoolService _poolService;
-        [SerializeField] private GameObject _endGameView;
-        [SerializeField] private Entity[] _bases;
-        
         private EcsWorld _world;
         private EcsWorld _events;
         private IEcsSystems _systems;
         private EntityManager _entityManager;
-        private EndGameController _endGameController;
+        private VFXConfig _vfxConfig;
+
+        public void Initialize(EntityManager entityManager, VFXConfig vfxConfig)
+        {
+            _entityManager = entityManager;
+            _vfxConfig = vfxConfig;
+        }
         
         public EcsEntityBuilder CreateEntity(string worldName = null)
         {
@@ -37,8 +37,6 @@ namespace Client
         protected override void Awake()
         {
             base.Awake();
-            _entityManager = new EntityManager(_poolService);
-            _endGameController = new EndGameController(_entityManager, _endGameView, _bases);
             _world = new EcsWorld();
             _events = new EcsWorld();
             _systems = new EcsSystems(_world);
