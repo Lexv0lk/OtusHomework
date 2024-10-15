@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,14 @@ namespace Leopotam.EcsLite.Entities
         private EcsWorld world;
 
         private readonly Dictionary<int, Entity> entities = new();
+        private readonly PoolService _poolService;
+
+        public event Action<Entity> Destroying;
+
+        public EntityManager(PoolService poolService = null)
+        {
+            _poolService = poolService;
+        }
         
         public void Initialize(EcsWorld world)
         {
@@ -24,7 +33,21 @@ namespace Leopotam.EcsLite.Entities
 
         public Entity Create(Entity prefab, Vector3 position, Quaternion rotation, Transform parent = null)
         {
-            Entity entity = GameObject.Instantiate(prefab, position, rotation, parent);
+            Entity entity;
+
+            if (_poolService != null && _poolService.TryGet(prefab, out entity))
+            {
+                entity.transform.position = position;
+                entity.transform.rotation = rotation;
+                
+                if (parent != null)
+                    entity.transform.parent = parent;
+            }
+            else
+            {
+                entity = GameObject.Instantiate(prefab, position, rotation, parent);
+            }
+            
             entity.Initialize(this.world);
             this.entities.Add(entity.Id, entity);
             return entity;
@@ -35,7 +58,10 @@ namespace Leopotam.EcsLite.Entities
             if (this.entities.Remove(id, out Entity entity))
             {
                 entity.Dispose();
-                GameObject.Destroy(entity.gameObject);
+                Destroying?.Invoke(entity);
+                
+                if (_poolService == null || _poolService.TryRelease(entity) == false)
+                    GameObject.Destroy(entity.gameObject);
             }
         }
 

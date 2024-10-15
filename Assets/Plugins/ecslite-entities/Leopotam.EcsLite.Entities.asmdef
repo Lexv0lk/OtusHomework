@@ -2,7 +2,8 @@
     "name": "Leopotam.EcsLite.Entities",
     "rootNamespace": "",
     "references": [
-        "GUID:e59bf9fc7d5a44b18a819a92edd46163"
+        "GUID:e59bf9fc7d5a44b18a819a92edd46163",
+        "GUID:675972345d0644e7a698d7c85b384866"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
