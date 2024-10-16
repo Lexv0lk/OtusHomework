@@ -1416,12 +1416,42 @@ MonoBehaviour:
       type: {class: IsStorageFullCondition, ns: Engine, asm: Assembly-CSharp}
       data:
         storageObject: 6
+    - rid: 2621862820669292582
+      type: {class: BTNodeSequence, ns: Atomic.AI, asm: Atomic.AI.BehaviourTree}
+      data:
+        name: Storage Check
+        nodes:
+        - rid: 2621862820669292583
+        - rid: 2621862820669292587
+        - rid: 2621862820669292588
+    - rid: 2621862820669292583
+      type: {class: BTNodeCondition, ns: Atomic.AI, asm: Atomic.AI.BehaviourTree}
+      data:
+        name: Is Storage NOT Full
+        condition:
+          rid: 2621862820669292584
+    - rid: 2621862820669292584
+      type: {class: NotBlackboardCondition, ns: Atomic.AI, asm: Atomic.AI.Elements}
+      data:
+        condition:
+          rid: 2621862820669292585
+    - rid: 2621862820669292585
+      type: {class: IsStorageFullCondition, ns: Engine, asm: Assembly-CSharp}
+      data:
+        storageObject: 6
+    - rid: 2621862820669292587
+      type: {class: MoveToTargetBTNode, ns: Game.Engine, asm: Assembly-CSharp}
+      data:
+        targetKey: 6
+    - rid: 2621862820669292588
+      type: {class: MoveResourcesToBarnBTNode, ns: Game.Engine, asm: Assembly-CSharp}
     - rid: 7170861465270747136
       type: {class: BTNodeSelector, ns: Atomic.AI, asm: Atomic.AI.BehaviourTree}
       data:
         name: HarvestWood
         nodes:
         - rid: 7170861465270747138
+        - rid: 2621862820669292582
         - rid: 2621862820669292558
     - rid: 7170861465270747138
       type: {class: BTNodeSequence, ns: Atomic.AI, asm: Atomic.AI.BehaviourTree}
