@@ -9,6 +9,7 @@ namespace Game.Engine
     {
         [SerializeField, BlackboardKey] private int _gameObjectKey;
         [SerializeField] private bool _isActive;
+        
         public void Invoke(IBlackboard blackboard)
         {
             GameObject gameObject = blackboard.GetObject<GameObject>(_gameObjectKey);

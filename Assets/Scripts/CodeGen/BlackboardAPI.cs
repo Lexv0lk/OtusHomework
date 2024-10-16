@@ -21,6 +21,7 @@ namespace Game
         public const int WaypointPause = 10; // float
         public const int WaypointTime = 11; // float
         public const int Enemy = 12; // GameObject : class
+        public const int Axe = 13; // GameObject : class
 
 
         ///Extensions
@@ -214,6 +215,22 @@ namespace Game
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool DelEnemy(this IBlackboard obj) => obj.DelObject(Enemy);
+
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static bool HasAxe(this IBlackboard obj) => obj.HasObject(Axe);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static GameObject  GetAxe(this IBlackboard obj) => obj.GetObject<GameObject >(Axe);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static bool TryGetAxe(this IBlackboard obj, out GameObject  value) => obj.TryGetObject(Axe, out value);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static void SetAxe(this IBlackboard obj, GameObject  value) => obj.SetObject(Axe, value);
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static bool DelAxe(this IBlackboard obj) => obj.DelObject(Axe);
 
     }
 }
