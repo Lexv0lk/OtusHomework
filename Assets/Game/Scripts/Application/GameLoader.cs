@@ -1,19 +1,19 @@
-using UnityEngine.SceneManagement;
+using Cysharp.Threading.Tasks;
 
 namespace SampleGame
 {
     public sealed class GameLoader
     {
-        //TODO: Сделать через Addressables
-        public void UnloadGame()
+        private readonly SceneLoader _sceneLoader;
+
+        public GameLoader(SceneLoader sceneLoader)
         {
-            SceneManager.UnloadSceneAsync("Game");
+            _sceneLoader = sceneLoader;
         }
         
-        //TODO: Сделать через Addressables
         public void LoadGame()
         {
-            SceneManager.LoadScene("Game");
+            _sceneLoader.LoadScene("Assets/Game/Scenes/Game.unity").Forget();
         }
     }
 }

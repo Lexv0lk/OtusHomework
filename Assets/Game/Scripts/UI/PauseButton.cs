@@ -9,16 +9,32 @@ namespace SampleGame
         private Button button;
         
         [SerializeField]
-        private PauseScreen pauseScreen;
+        private PauseScreenPlaceholder pauseScreenPlaceholder;
 
         private void OnEnable()
         {
-            this.button.onClick.AddListener(this.pauseScreen.Show);
+            if (pauseScreenPlaceholder.IsReady == false)
+            {
+                this.pauseScreenPlaceholder.Spawned += OnPauseScreenSpawned;
+            }
+            else
+            {
+                this.button.onClick.AddListener(this.pauseScreenPlaceholder.UI.Show);
+            }
         }
 
         private void OnDisable()
         {
-            this.button.onClick.RemoveListener(this.pauseScreen.Show);
+            this.pauseScreenPlaceholder.Spawned -= OnPauseScreenSpawned;
+            
+            if (pauseScreenPlaceholder.IsReady)
+                this.button.onClick.RemoveListener(this.pauseScreenPlaceholder.UI.Show);
+        }
+
+        private void OnPauseScreenSpawned(PauseScreen pauseScreen)
+        {
+            this.pauseScreenPlaceholder.Spawned -= OnPauseScreenSpawned;
+            this.button.onClick.AddListener(this.pauseScreenPlaceholder.UI.Show);
         }
     }
 }

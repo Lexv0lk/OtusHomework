@@ -1,13 +1,19 @@
-using UnityEngine.SceneManagement;
+using Cysharp.Threading.Tasks;
 
 namespace SampleGame
 {
     public sealed class MenuLoader
     {
-        //TODO: Сделать через Addressables
+        private readonly SceneLoader _sceneLoader;
+
+        public MenuLoader(SceneLoader sceneLoader)
+        {
+            _sceneLoader = sceneLoader;
+        }
+        
         public void LoadMenu()
         {
-            SceneManager.LoadScene("Menu");
+            _sceneLoader.LoadScene("Assets/Game/Scenes/Menu.unity").Forget();
         }
     }
 }

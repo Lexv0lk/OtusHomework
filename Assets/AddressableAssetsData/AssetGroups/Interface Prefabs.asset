@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Interface Prefabs
+  m_EditorClassIdentifier: 
+  m_GroupName: Interface Prefabs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9bf58ba0d3449ed4eaacb3458cd8b5e3
+  m_SerializeEntries:
+  - m_GUID: 2e4558fee079a4560a88243884ada50e
+    m_Address: Assets/Game/Prefabs/UI/MenuScreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d3b77ff19d204d1cb351de63cb12c50
+    m_Address: Assets/Game/Prefabs/UI/PauseScreen.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c4d819f052024f59985aec892946e11
+    m_Address: Assets/Game/Prefabs/UI/Button.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 06ee926b65085664aabaa52c135dd350, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fab1af16fa2b7e14789c62f7dedb665f, type: 2}
+    - {fileID: 11400000, guid: aab146b698599814da7d20af9b5d3967, type: 2}

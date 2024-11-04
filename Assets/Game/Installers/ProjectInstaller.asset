@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801d227e37ce4b769b0e7c827d5ac595, type: 3}
   m_Name: ProjectInstaller
   m_EditorClassIdentifier: 
+  _uiPrefabsConfig: {fileID: 11400000, guid: 6d0291da43f93074383229ec072ad1bf, type: 2}
